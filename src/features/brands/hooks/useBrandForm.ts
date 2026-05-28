@@ -1,0 +1,41 @@
+import { useState } from "react"
+import { addBrand } from "../../../services"
+import { Timestamp } from "firebase/firestore"
+
+export const useBrandForm = () => {
+    const [ brand, setBrand ] = useState('')
+    const [ loading, setLoading ] = useState(false)
+
+    const currentUser = {
+        uid: 'Vfog3tRIC4QWPfHSRAGR',
+        name: 'Mario Labbé',
+    }
+
+    const handleSubmit = async ( e: React.FormEvent<HTMLFormElement> ) => {
+        e.preventDefault()
+        
+        if (!brand.trim()) {
+            alert('El nombre de la marca es obligatorio')    
+            return 
+        }
+        
+        try {
+            setLoading(true)
+            await addBrand({ 
+                name: brand,
+                created_by: currentUser,
+                created_at: Timestamp.now()
+            })
+
+            setBrand('')
+        } catch ( error ) {
+            console.error(`Error creando marca: ${error}`)
+            alert('Hubo un error creando la marca, intente nuevamente')
+        } finally {
+            setLoading(false)
+        }
+    }
+    return {
+        loading, setBrand, handleSubmit, brand 
+    }
+}
