@@ -35,7 +35,7 @@ const CertificateForm = () => {
                         if (counter) handleTagTypeChange(counter) 
                     }}
                 >
-                    <option value="">Seleccionar tipo</option>
+                    <option value="">Seleccionar etiqueta</option>
                     {tagCounters.map(counter => (
                         <option key={counter.id} value={counter.id}>
                             {counter.prefix || counter.id}

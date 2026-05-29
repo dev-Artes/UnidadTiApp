@@ -22,9 +22,6 @@ export type CheckUserExistsPayload = {
 
 export type NewBrand = Omit<Brand, 'id'>
 
-export interface SoftwareItem {
-    name: string
-}
 
 export interface Device {
     id: string
@@ -85,21 +82,21 @@ export interface Certificate {
 export type CertificateRecord = Certificate & { id: string }
 
 export type RealTagCounterType =
-  | 'PC-LE'
-  | 'PCART'
-  | 'PCISUCH'
-  | 'PCMAC'
-  | 'PCMAPA'
-  | 'PCTNCH'
+    | 'PCART'
+    | 'PC-LE'
+    | 'PCMAC'
+    | 'PCMAPA'
+    | 'PCTNCH'
+    | 'PCISUCH'
 
-export type SpecialTagCounterType = 'NO APLICA'
+export type SpecialTagCounterType = 'NO-APLICA'
 
 export type TagCounterType = RealTagCounterType | SpecialTagCounterType
 
 export interface TagCounter {
     id: RealTagCounterType 
     prefix: string
-    lastNumber: number
+    lastNumber?: number
     isStatic?: boolean
 }
 

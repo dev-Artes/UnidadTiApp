@@ -83,7 +83,6 @@ export const useCertificateForm = () => {
             setTagCounters(
                 tagCountersSnap.docs
                     .map(d => ({ id: d.id, ...d.data() } as TagCounter))
-                    .filter(t => !t.isStatic)
             )
             setComputers(computersData)
         }
@@ -191,16 +190,10 @@ export const useCertificateForm = () => {
                     type: selectedDevice,
                     model,
                     serialNumber,
-                    created_by: {
-                        uid: currentUser!.uid,
-                        name: currentUser!.displayName ?? 'Sin nombre',
-                    },
+                    created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
                     created_at: serverTimestamp() as Timestamp,
                 },
-                created_by: {
-                    uid: currentUser!.uid,
-                    name: currentUser!.displayName ?? 'Sin nombre',
-                },
+                created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
                 created_at: serverTimestamp() as Timestamp,
             }
 
@@ -211,7 +204,7 @@ export const useCertificateForm = () => {
                 certificateNumber: newNumber,
             }
 
-            generatePDF(completeCertificate)  // 👈
+            // generatePDF(completeCertificate)  
             resetForm()
 
             setSelectedTagType(null)

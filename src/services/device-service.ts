@@ -6,7 +6,7 @@ import type { Device, NewDevice } from '../types/entidades'
 
 const addDevice = async ( Device: NewDevice ): Promise<void> => {
   try {
-    const docRef = doc(collection(db, 'Devices'))
+    const docRef = doc(collection(db, 'devices'))
 
     await setDoc(docRef, {
       id:docRef.id,
@@ -21,7 +21,7 @@ const addDevice = async ( Device: NewDevice ): Promise<void> => {
 
 const getDevicesById = async (DeviceId: string): Promise<Device | undefined> => {
   try {
-    const DeviceDoc = doc(db, 'Devices', DeviceId)
+    const DeviceDoc = doc(db, 'devices', DeviceId)
     const snapshot = await getDoc(DeviceDoc)
     if (snapshot.exists()) return { id: snapshot.id, ...snapshot.data() } as Device
   } catch (error) {
@@ -32,7 +32,7 @@ const getDevicesById = async (DeviceId: string): Promise<Device | undefined> => 
 
 const getDevices = async (): Promise<Device[]> => {
   try {
-    const snapshot = await getDocs(collection(db, 'Devices'))
+    const snapshot = await getDocs(collection(db, 'devices'))
     return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Device))
   } catch (error) {
     console.error('Error getting Devices:', error)
@@ -42,7 +42,7 @@ const getDevices = async (): Promise<Device[]> => {
 
 const updateDevice = async (DeviceId: string, updatedDevice: Partial<NewDevice>): Promise<void> => {
   try {
-    await updateDoc(doc(db, 'Devices', DeviceId), updatedDevice)
+    await updateDoc(doc(db, 'devices', DeviceId), updatedDevice)
   } catch (error) {
     console.error('Error updating Device:', error)
     throw error
@@ -51,7 +51,7 @@ const updateDevice = async (DeviceId: string, updatedDevice: Partial<NewDevice>)
 
 const deleteDevice = async (DeviceId: string): Promise<void> => {
   try {
-    await deleteDoc(doc(db, 'Devices', DeviceId))
+    await deleteDoc(doc(db, 'devices', DeviceId))
   } catch (error) {
     console.error('Error deleting Device:', error)
     throw error
