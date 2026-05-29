@@ -359,10 +359,6 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp( 1776978063,373000000)
     },
-    
-]
-
-const moreData: Certificate[] = [
     {
         "id": "0Dh19fnQTKhTQp6VTV8d",
         "certificateNumber": 193,
@@ -396,12 +392,14 @@ const moreData: Certificate[] = [
         },
         software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones, softwareList.oracle],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp( 1767965068,0)
+    }, 
+    {
+        "id": "1EvaiixrxsBUWcrtgFI5",
+
     }
 ]
 
-
 //     {
-//         "id": "1EvaiixrxsBUWcrtgFI5",
 //         "year": 2025,
 //         "serialNumber": "",
 //         "assignedTo": "Mauricio Toro",

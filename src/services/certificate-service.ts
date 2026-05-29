@@ -39,6 +39,21 @@ const getLastCertificateNumber = async (): Promise<number> => {
   }
 }
 
+const migrateCertificate = async (certificate: Certificate): Promise<void> => {
+  try {
+    const { id, ...rest } = certificate
+    const docRef = doc(collection(db, 'certificates'))
+    await setDoc(docRef, {
+        id: docRef.id,
+        ...rest,
+    })
+  } catch (error) {
+    console.error('Error migrating certificate:', error)
+    throw error
+  }
+}
+
+
 const addCertificate = async (certificate: Omit<Certificate, 'id' | 'certificateNumber'>): Promise<number> => {
   try {
     const certificateNumber = await getCertificateNumber()
@@ -94,6 +109,6 @@ const deleteCertificate = async (certificateId: string): Promise<void> => {
 
 export {
   addCertificate, getCertificates, deleteCertificate,
-  updateCertificate, getCertificateById,
+  updateCertificate, getCertificateById, migrateCertificate,
   getCertificateNumber, getLastCertificateNumber
 }

@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Button, Layout } from '../components'
+import { migrateCertificate } from '../services'
+import { dataToPush } from '../utils/DataToMigrate'
 
 const Home = () => {
 
@@ -13,6 +15,15 @@ const Home = () => {
         navigateTo('/certificate/reassignment')
     }
 
+    const submitData = async () => {
+
+        for (const certificate of dataToPush) {
+            await migrateCertificate(certificate)
+        }
+        alert(`${dataToPush.length} certificados migrados`)
+    }
+
+
     return (
         <Layout>
             <div className="container mx-auto">
@@ -24,6 +35,10 @@ const Home = () => {
                     </Button>
                     <Button variant='green' type='submit' onClick={navigateToReassignment} >
                         {'Reasignacion de equipos'}
+                    </Button>
+
+                    <Button variant='blue' type='submit' onClick={submitData} >
+                        {'EnviarData'}
                     </Button>
                 </div>
                 </div>

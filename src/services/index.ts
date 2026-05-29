@@ -5,4 +5,4 @@ export { addSoftware, getSoftware, updateSoftware, deleteSoftware } from './soft
 export { addBrand, getBrands, updateBrand, deleteBrand, getBrandById } from './brands-service'
 export { addDevice, getDevices, deleteDevice, getDevicesById, updateDevice } from './device-service'
 export { addComputer, getComputers, updateComputer, deleteComputer, getComputerById, reassignComputer } from './computer-service'
-export { addCertificate, getCertificateNumber, getCertificates, getCertificateById, getLastCertificateNumber, deleteCertificate, updateCertificate } from './certificate-service'
+export { addCertificate, getCertificateNumber, getCertificates, getCertificateById, migrateCertificate, getLastCertificateNumber, deleteCertificate, updateCertificate } from './certificate-service'
