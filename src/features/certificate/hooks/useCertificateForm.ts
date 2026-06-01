@@ -100,6 +100,9 @@ export const useCertificateForm = () => {
     const resetForm = () => {
         setTag("")
         setUser("")
+        setNewUser("")
+        setPreviousUser("")
+        setSelectedComputer(null)
         setModel("")
         setSelectedSoftware([])
         setObservations("")
@@ -120,10 +123,11 @@ export const useCertificateForm = () => {
             
             const reassignmentData: Reassignment = {
                 id: reassignmentId,
-                previousUser,
+                previousUser: selectedComputer?.assignedTo ?? '',
                 updated_at: new Timestamp(1775666075, 312000000),
                 updated_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
             }
+            
             if (!selectedComputer) {
                 alert('Selecciona un equipo')
                 return
@@ -142,6 +146,7 @@ export const useCertificateForm = () => {
 
             const certificateReassignmentData: Omit<Certificate, 'id' | 'certificateNumber' | 'software'> = {
                 observations,
+                type: 'reasignacion',
                 computer: computerData,
                 created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
                 created_at: new Timestamp(1775666075, 312000000),
@@ -154,7 +159,7 @@ export const useCertificateForm = () => {
                 certificateNumber: newNumber,
             }
 
-            //generatePDF(completeCertificate)
+            generatePDF(completeCertificate)
             resetForm()
             
         } catch ( error ) {
@@ -168,6 +173,8 @@ export const useCertificateForm = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+
+        const now = Timestamp.now()
 
         if (!user.trim() || !tag.trim() || !selectedDevice || !selectedBrand) {
             alert('Por favor completa todos los campos obligatorios')
@@ -189,6 +196,7 @@ export const useCertificateForm = () => {
             }
 
             const certificateData: Omit<Certificate, 'id' | 'certificateNumber'> = {
+                type: 'entrega',
                 observations,
                 software: softwareList,
                 computer: computerObject,
@@ -202,9 +210,10 @@ export const useCertificateForm = () => {
             const completeCertificate: Certificate = {
                 ...certificateData,
                 certificateNumber: newNumber,
+                created_at: now,
             }
 
-            // generatePDF(completeCertificate)  
+            generatePDF(completeCertificate)
             resetForm()
 
             setSelectedTagType(null)

@@ -3,7 +3,12 @@ import { useCertificateForm } from "../hooks/useCertificateForm"
 
 const ReassignmentForm = () => {
 
-    const { previewNumber, handleReassignment, loading, setSelectedComputer, previousUser, setPreviousUser, newUser, setNewUser, selectedComputer, computers, setObservations, observations } = useCertificateForm()
+    const { previewNumber, handleReassignment, loading, setSelectedComputer, setPreviousUser, newUser, setNewUser, selectedComputer, computers, setObservations, observations } = useCertificateForm()
+
+    const previousUsers = [
+        ...(selectedComputer?.reassignments?.map(r => r.previousUser) ?? []),
+        selectedComputer?.assignedTo ?? ''
+    ].filter(Boolean).join(' → ')
 
     return (
         <form onSubmit={handleReassignment}>
@@ -27,11 +32,16 @@ const ReassignmentForm = () => {
                     }}
                 >
                     <option value="">Etiqueta</option>
-                    {computers.map((computer, index) => (
-                        <option key={index} value={computer.internalTag}>{computer.internalTag}</option>
-                    ))}
+                    {computers
+                        .filter(computer => computer.internalTag?.startsWith('PC'))
+                        .sort((a, b) => a.internalTag.localeCompare(b.internalTag))  // 👈 orden alfabético bonus
+                        .map((computer, index) => (
+                            <option key={index} value={computer.internalTag}>
+                                {computer.internalTag}
+                            </option>
+                        ))
+                    }
                 </select>
-
             </div>
             <label>Nuevo Usuario:</label>
             <Input
@@ -55,10 +65,10 @@ const ReassignmentForm = () => {
             <label>Usuario previo:</label>
             <Input
                 id={'prev-user'}
-                value={previousUser}
+                value={previousUsers}
                 name={'prev-user'}
                 type={'text'}
-                required={true}
+                disabled={true}
                 placeholder={'Usuario previo'}
                 handleChange={(e) => setPreviousUser(e.target.value)}
             />

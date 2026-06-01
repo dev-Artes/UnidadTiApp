@@ -5,10 +5,10 @@ import { useCertificate } from "../hooks/useCertificate"
 import { headersTableConfig } from "../table.config"
 import CertificateEdit from "../components/CertificateEdit"
 import DatailItem from "../components/DetailItem"
+import { fullDateNumber } from "../../../utils/convertTimestamp"
 
 const CertificateView = () => {
-    const { certificates, handleDetail, setCertificates, handleEdit, detailItem, tagPrefixes, editingItem, setDetailItem, error, setActiveFilter, activeFilter, loading, setEditingItem } = useCertificate()
-
+    const { devices, certificates, handleDetail, setCertificates, handleEdit, detailItem, tagPrefixes, editingItem, setDetailItem, error, setActiveFilter, activeFilter, loading, setEditingItem, activeSubFilter, setActiveSubFilter } = useCertificate()
     const navigateTo = useNavigate()
     const newCertificateRedirect = () => navigateTo('/certificate/create')
     
@@ -30,22 +30,15 @@ const CertificateView = () => {
         if ( header.field === 'internalTag' ) {
             return `${item.computer?.internalTag ? item.computer?.internalTag : '-'}`
         }
-        if ( header.field === 'type') {
-            return item.computer?.type?.name  ?? '-'
-        }   
-        if ( header.field === 'serialNumber') {
-            return item.computer?.serialNumber ? item.computer?.serialNumber : '-'
-        }
-        if ( header.field === 'brand') {
-            return item.computer?.brand ? item.computer?.brand.name : '-'
-        }  
         if ( header.field === 'assignedTo') {
             return `${item.computer?.assignedTo}`
         }
-
-        // if ( header.field === 'date') {
-        //     return `${item.date ? fullDateNumber(item.date) : ''}`
-        // }
+        if (header.field === 'type') {
+            return item.type === 'reasignacion' ? 'Reasignación' : 'Entrega'
+        }
+        if ( header.field === 'date') {
+            return `${item.created_at ? fullDateNumber(item.created_at) : ''}`
+        }
         if ( header.field === 'actions' ) {
             return(
                 <TableActions
@@ -83,6 +76,25 @@ const CertificateView = () => {
                             {tabLabels[tab] ?? tab}
                         </button>
                     ))}
+                    {activeFilter === 'OTROS' && (
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {devices.map(type => (
+                                <button
+                                    key={type.id}
+                                    onClick={() => setActiveSubFilter(
+                                        activeSubFilter === type.name ? null : type.name
+                                    )}
+                                    className={`px-3 py-1 rounded-full text-xs border transition
+                                        ${activeSubFilter === type.name
+                                            ? 'bg-gray-700 text-white border-gray-700'
+                                            : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400'
+                                        }`}
+                                >
+                                    {type.name}
+                                </button>
+                            ))}
+                        </div>
+                    )}
                 </div>
                 
                 <div className="bg-white p-6 shadow rounded">

@@ -72,7 +72,8 @@ export const useCertificatePDF = () => {
                     }
                 ]
             ]
-
+            
+            let finalY = 60
             autoTable(doc, {
                 startY: 60,
                 head: [],
@@ -97,7 +98,7 @@ export const useCertificatePDF = () => {
                 },
             })
 
-            let finalY = (doc as any).autoTable.previous.finalY + 10
+            finalY = (doc as any).lastAutoTable.finalY + 10
 
             // SOFTWARE
             if (softwareNames.length > 0) {

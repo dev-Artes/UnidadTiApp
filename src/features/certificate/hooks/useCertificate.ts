@@ -1,15 +1,17 @@
 import { useEffect, useMemo, useState } from "react"
 
-import type { CertificateRecord } from "../../../types/entidades"
+import type { CertificateRecord, Device } from "../../../types/entidades"
 
-import { getCertificates } from "../../../services"
+import { getCertificates, getDevices } from "../../../services"
 import { getDocs, collection } from 'firebase/firestore'
 import { db } from "../../../firebase/firebase-config"
 
 export const useCertificate = () => {
     const [ loading, setLoading ] = useState(true)
     const [ error, setError ] = useState<string | null>(null)
-        
+    
+    const [ devices, setDevices ] = useState<Device[]>([])
+
     const [ searchText, setSearchText ] = useState("")
     const [ tagPrefixes, setTagPrefixes ] = useState<string[]>([])
     const [  activeFilter , setActiveFilter ] = useState<string>("ALL")    
@@ -17,6 +19,8 @@ export const useCertificate = () => {
     const [ certificates, setCertificates ] = useState<CertificateRecord[]>([])
     const [ detailItem, setDetailItem ] = useState<CertificateRecord | null>(null)
     const [ editingItem, setEditingItem ] = useState<CertificateRecord | null>(null)
+
+    const [ activeSubFilter, setActiveSubFilter ] = useState<string | null>(null)
 
     const handleEdit = (item: CertificateRecord) => setEditingItem(item)
     const handleDetail = (item: CertificateRecord) => setDetailItem(item)
@@ -49,14 +53,23 @@ export const useCertificate = () => {
         loadPrefixes()
     }, [])
 
+    useEffect(() => {
+        const loadDevices = async () => {
+            const data = await getDevices()
+            setDevices(data)
+        }
+        loadDevices()
+    }, [])
 
     const filteredCertificates = useMemo(() => {
         if (activeFilter === 'ALL') return certificates
 
         if (activeFilter === 'OTROS') {
-            return certificates.filter( c => {
+            return certificates.filter(c => {
                 const tag = c.computer?.internalTag ?? ''
-                return !tagPrefixes.some(prefix => tag.startsWith(prefix))
+                const matchesOtros = !tagPrefixes.some(prefix => tag.startsWith(prefix))
+                if (!activeSubFilter) return matchesOtros
+                return matchesOtros && c.computer?.type?.name === activeSubFilter
             })
         }
 
@@ -65,7 +78,13 @@ export const useCertificate = () => {
             
         )
 
-    }, [certificates, activeFilter, tagPrefixes])
+    }, [certificates, activeFilter, tagPrefixes, activeSubFilter])
+
+
+    const handleFilterChange = (filter: string) => {
+        setActiveFilter(filter)
+        setActiveSubFilter(null) 
+    }
 
     return {
         certificates: filteredCertificates,
@@ -73,6 +92,7 @@ export const useCertificate = () => {
         loading,
         error,
 
+        devices,
         searchText,
         setSearchText,
 
@@ -88,6 +108,10 @@ export const useCertificate = () => {
         setDetailItem,
         handleDetail,
         detailItem,
+        handleFilterChange,
+        
+        activeSubFilter,
+        setActiveSubFilter
     }
 }
 

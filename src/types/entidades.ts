@@ -69,12 +69,15 @@ export interface ComputerEmbedded {
     assignedTo: string
 }
 
+export type CertificateType = 'entrega' | 'reasignacion'
+
 export interface Certificate {
     id?: string
     certificateNumber: number
     observations: string
     computer: Computer
-    software?: SoftwareItem[]  
+    software?: SoftwareItem[]
+    type?: CertificateType 
     created_by: ActionBy
     created_at: Timestamp
 }
