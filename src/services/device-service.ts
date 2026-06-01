@@ -58,4 +58,13 @@ const deleteDevice = async (DeviceId: string): Promise<void> => {
   }
 }
 
-export { addDevice, getDevices, updateDevice, deleteDevice, getDevicesById }
+const migrateDevice = async (device: Device): Promise<void> => {
+    try {
+        await setDoc(doc(db, 'devices', device.id), device)  // 👈 mismo patrón
+    } catch (error) {
+        console.error('Error migrating device:', error)
+        throw error
+    }
+}
+
+export { addDevice, getDevices, updateDevice, deleteDevice, getDevicesById, migrateDevice }

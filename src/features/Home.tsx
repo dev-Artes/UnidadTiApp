@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Button, Layout } from '../components'
 import { migrateCertificate } from '../services'
-import { dataToPush } from '../utils/DataToMigrate'
+import { dataPCISUCH, dataPCLE, dataToPush } from '../utils/DataToMigrate'
 
 const Home = () => {
 
@@ -17,8 +17,11 @@ const Home = () => {
 
     const submitData = async () => {
 
-        for (const certificate of dataToPush) {
-            await migrateCertificate(certificate)
+        for (const certificate of dataPCLE) {
+            // await addBrand(certificate.computer.brand)
+            // await addDevice(certificate.computer.type)
+            // await addComputer(certificate.computer)
+            // await migrateCertificate(certificate)
         }
         alert(`${dataToPush.length} certificados migrados`)
     }

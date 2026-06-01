@@ -62,4 +62,13 @@ const deleteBrand = async (brandId: string): Promise<void> => {
   }
 }
 
-export { addBrand, getBrands, updateBrand, deleteBrand, getBrandById }
+const migrateBrand = async (brand: Brand): Promise<void> => {
+    try {
+        await setDoc(doc(db, 'brands', brand.id), brand)  // 👈 usa el id existente
+    } catch (error) {
+        console.error('Error migrating brand:', error)
+        throw error
+    }
+}
+
+export { addBrand, getBrands, updateBrand, deleteBrand, getBrandById, migrateBrand }

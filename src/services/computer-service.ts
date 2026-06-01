@@ -20,7 +20,7 @@ const addComputer = async (computer: Omit<Computer, 'id'>): Promise<void> => {
 const getComputerById = async (computerId: string): Promise<Computer | undefined> => {
   try {
     const computerDoc = doc(db, 'pc_tag', computerId)
-    const snapshot = await getDoc(computerDoc)  // 🐛 fix: era getDocs()
+    const snapshot = await getDoc(computerDoc)
     if (snapshot.exists()) return { id: snapshot.id, ...snapshot.data() } as Computer
   } catch (error) {
     console.error('Error getting computer by id:', error)

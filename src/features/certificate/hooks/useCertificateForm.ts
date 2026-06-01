@@ -3,13 +3,14 @@ import { collection, doc, getDocs, serverTimestamp, Timestamp } from "firebase/f
 
 import { useCertificatePDF } from "./useCertificatePDF"
 
-import { addCertificate, getBrands, getComputers, getDevices, getLastCertificateNumber, getNextTag, updateComputer } from "../../../services"
+import { addCertificate, addComputer, getBrands, getComputers, getDevices, getLastCertificateNumber, getNextTag, updateComputer } from "../../../services"
 
 import type { Brand, Certificate, Computer, Device, Reassignment, SoftwareItem, TagCounter, TagCounterType } from "../../../types/entidades"
 
 import { auth, db } from "../../../firebase/firebase-config"
 
 import { useSoftware } from "../../software/hooks/useSoftware"
+
 
 export const useCertificateForm = () => {
 
@@ -99,6 +100,8 @@ export const useCertificateForm = () => {
     const resetForm = () => {
         setTag("")
         setUser("")
+        setModel("")
+        setSelectedSoftware([])
         setObservations("")
         setSoftwareList([])
         setSerialNumber("")
@@ -118,11 +121,8 @@ export const useCertificateForm = () => {
             const reassignmentData: Reassignment = {
                 id: reassignmentId,
                 previousUser,
-                updated_at: serverTimestamp() as Timestamp,
-                updated_by: {
-                    uid: currentUser!.uid,
-                    name: currentUser!.displayName ?? 'Sin nombre',
-                },
+                updated_at: new Timestamp(1775666075, 312000000),
+                updated_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
             }
             if (!selectedComputer) {
                 alert('Selecciona un equipo')
@@ -143,11 +143,8 @@ export const useCertificateForm = () => {
             const certificateReassignmentData: Omit<Certificate, 'id' | 'certificateNumber' | 'software'> = {
                 observations,
                 computer: computerData,
-                created_by: {
-                    uid: currentUser!.uid,
-                    name: currentUser!.displayName ?? 'Sin nombre',
-                },
-                created_at: serverTimestamp() as Timestamp,
+                created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
+                created_at: new Timestamp(1775666075, 312000000),
 
             }
             const newNumber = await addCertificate(certificateReassignmentData)
@@ -157,7 +154,7 @@ export const useCertificateForm = () => {
                 certificateNumber: newNumber,
             }
 
-            generatePDF(completeCertificate)  
+            //generatePDF(completeCertificate)
             resetForm()
             
         } catch ( error ) {
@@ -180,10 +177,7 @@ export const useCertificateForm = () => {
         try {
             const { currentUser } = auth
 
-            const certificateData: Omit<Certificate, 'id' | 'certificateNumber'> = {
-                observations,
-                software: softwareList,
-                computer: {
+            const computerObject: Computer = {
                     internalTag: tag,
                     assignedTo: user,
                     brand: selectedBrand,
@@ -192,11 +186,17 @@ export const useCertificateForm = () => {
                     serialNumber,
                     created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
                     created_at: serverTimestamp() as Timestamp,
-                },
+            }
+
+            const certificateData: Omit<Certificate, 'id' | 'certificateNumber'> = {
+                observations,
+                software: softwareList,
+                computer: computerObject,
                 created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
                 created_at: serverTimestamp() as Timestamp,
             }
 
+            await addComputer(computerObject)
             const newNumber = await addCertificate(certificateData)
 
             const completeCertificate: Certificate = {

@@ -1,9 +1,9 @@
-import { Input } from "../../../components"
+import { Button, Input } from "../../../components"
 import { useCertificateForm } from "../hooks/useCertificateForm"
 
 const ReassignmentForm = () => {
 
-    const { previewNumber, handleReassignment, setSelectedComputer, previousUser, setPreviousUser, newUser, setNewUser, selectedComputer, computers, setObservations, observations } = useCertificateForm()
+    const { previewNumber, handleReassignment, loading, setSelectedComputer, previousUser, setPreviousUser, newUser, setNewUser, selectedComputer, computers, setObservations, observations } = useCertificateForm()
 
     return (
         <form onSubmit={handleReassignment}>
@@ -62,6 +62,10 @@ const ReassignmentForm = () => {
                 placeholder={'Usuario previo'}
                 handleChange={(e) => setPreviousUser(e.target.value)}
             />
+     
+            <Button type="submit" variant="green">
+                {loading ? 'Guardando...' : 'Guardar'}
+            </Button>
         </form>
     )
 
