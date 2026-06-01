@@ -13,6 +13,7 @@ const variants = {
     blue: 'bg-blue-500 hover:bg-blue-700 text-white',
     gray: 'bg-gray-500 hover:bg-gray-700 text-white',
     green: 'bg-green-500 hover:bg-green-700 text-white',
+    yellow: 'bg-yellow-500 hover:bg-yellow-700 text-white',
 }
 
 type Variant = keyof typeof variants

@@ -3,17 +3,20 @@ import { useEffect, useMemo, useState } from "react"
 import type { CertificateRecord } from "../../../types/entidades"
 
 import { getCertificates } from "../../../services"
+import { getDocs, collection } from 'firebase/firestore'
+import { db } from "../../../firebase/firebase-config"
 
 export const useCertificate = () => {
-    const [ certificates, setCertificates ] = useState<CertificateRecord[]>([])
     const [ loading, setLoading ] = useState(true)
     const [ error, setError ] = useState<string | null>(null)
-    
+        
     const [ searchText, setSearchText ] = useState("")
     const [ tagPrefixes, setTagPrefixes ] = useState<string[]>([])
-
-    const [editingItem, setEditingItem] = useState<CertificateRecord | null>(null)
-    const [detailItem, setDetailItem] = useState<CertificateRecord | null>(null)
+    const [  activeFilter , setActiveFilter ] = useState<string>("ALL")    
+    
+    const [ certificates, setCertificates ] = useState<CertificateRecord[]>([])
+    const [ detailItem, setDetailItem ] = useState<CertificateRecord | null>(null)
+    const [ editingItem, setEditingItem ] = useState<CertificateRecord | null>(null)
 
     const handleEdit = (item: CertificateRecord) => setEditingItem(item)
     const handleDetail = (item: CertificateRecord) => setDetailItem(item)
@@ -37,23 +40,32 @@ export const useCertificate = () => {
         fetchData()
     }, [])
 
-    const filteredCertificates = useMemo(()=>{
-        return certificates.filter( (certificate) => {
-            const search = searchText.toLowerCase()
-            const tag = certificate.computer?.internalTag?.toLowerCase() || ""
-            const assigned = certificate.computer?.assignedTo?.toLowerCase() || ""
+    useEffect( () => {
+        const loadPrefixes = async () => {
+            const snap = await getDocs(collection(db, 'tag_counters'))
+            const prefixes = snap.docs.map( d => d.id ).filter( id => id !== 'NO-APLICA')
+            setTagPrefixes(prefixes)
+        }
+        loadPrefixes()
+    }, [])
 
-            const matchesText = tag.includes(search) || assigned.includes(search)
 
-            const matchesPrefix = tagPrefixes.length === 0
-                ? true
-                : tagPrefixes.some(prefix =>
-                    tag.startsWith(prefix.toLowerCase())
-                )
+    const filteredCertificates = useMemo(() => {
+        if (activeFilter === 'ALL') return certificates
 
-            return matchesText && matchesPrefix
-        })
-    }, [certificates, searchText, tagPrefixes])
+        if (activeFilter === 'OTROS') {
+            return certificates.filter( c => {
+                const tag = c.computer?.internalTag ?? ''
+                return !tagPrefixes.some(prefix => tag.startsWith(prefix))
+            })
+        }
+
+        return certificates.filter( c => 
+            (c.computer?.internalTag ?? '').startsWith(activeFilter)
+            
+        )
+
+    }, [certificates, activeFilter, tagPrefixes])
 
     return {
         certificates: filteredCertificates,
@@ -65,7 +77,9 @@ export const useCertificate = () => {
         setSearchText,
 
         tagPrefixes,
+        activeFilter,
         setTagPrefixes,
+        setActiveFilter,
 
         setEditingItem,
         editingItem,

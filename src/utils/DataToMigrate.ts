@@ -342,41 +342,7 @@ const softwareList = {
     }
 }
 
-export const dataToPush: Certificate[] = [
-    {
-        "id": "2hk39mf06fuSYli6O3DE",
-        "certificateNumber": 171,
-        "observations": "Equipo configurado con programas institucionales \nse incluye cargador de equipo ",
-        computer: {
-            id: "2hk39mf06fuSYli6O3DE",
-            brand: brandsObject.hp,
-            model: "HP255 G10",
-            serialNumber: "1H84243M09",
-            internalTag: "PCART-0391",
-            type: devicesObject.notebook,
-            assignedTo: "Isidora Palma",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775048147, 294000000)
-        },
-        software: [softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775048147, 294000000)
-    },
-    {
-        "id": "3ZOlctOFCC8PIdmUy6SE",
-        "certificateNumber": 135,
-        "observations": "Notebook nuevo con su respectivo cargador eléctrico.",
-        computer: {
-            id: "3ZOlctOFCC8PIdmUy6SE",
-            brand: brandsObject.asus,
-            model: "ASUS EXPERTBOOK B3404CMA",
-            serialNumber: "S8NXCV14K026349",
-            internalTag: "PCART-0434",
-            type: devicesObject.notebook,
-            assignedTo: "Juan Pablo Espinoza",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1765394962, 306000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1765394962, 306000000)
-    },
+export const dataNoPC: Certificate[] = [
     {
         "id": "43ZpgeMLiQ9rTIgk95WH",
         "certificateNumber": 39,
@@ -449,23 +415,6 @@ export const dataToPush: Certificate[] = [
     },
     
     {
-        "id": "5yi8B9ksl2gVyasAF4nv",
-        "certificateNumber": 176,
-        "observations": "Se entrega Notebook con su respectivo cargador.",
-        computer: {
-            id: "5yi8B9ksl2gVyasAF4nv",
-            brand: brandsObject.asus,
-            model: "X1605Z",
-            serialNumber: "SCN0CV03A31749B",
-            internalTag: "PCART-0445",
-            type: devicesObject.notebook,
-            assignedTo: "Rolando Cori",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775492394, 362000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.chrome, softwareList.actualizaciones, softwareList.office21],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775492394, 362000000)
-    },
-    {
         "id": "5zKTgfohM7UwBasQyp0v",
         "certificateNumber": 29,
         "observations": "",
@@ -481,57 +430,6 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743783003, 976000000)
-    },
-    {
-        "id": "7ccS83AIucsPcwYgjUKC",
-        "certificateNumber": 25,
-        "observations": "Equipo será utilizado para impartir clases en la facultad de Artes de compañía en la carrera teoría de las artes.",
-        computer: {
-            id: "7ccS83AIucsPcwYgjUKC",
-            brand: brandsObject.lenovo,
-            model: "ThinBook 14 G6 ABP",
-            serialNumber: "PW0AA3M0",
-            internalTag: "PCART-0410",
-            type: devicesObject.notebook,
-            assignedTo: "Fernando Gonzalez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770288, 122000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770288, 122000000)
-    },
-    {
-        "id": "8Masi08o8ro5jzbqZwqa",
-        "certificateNumber": 159,
-        "observations": "Notebook HP estandarizado con cargador y cuenta de usuario Activo ",
-        computer: {
-            id: "8Masi08o8ro5jzbqZwqa",
-            brand: brandsObject.hp,
-            model: "HP Probook 445 G10",
-            serialNumber: "5CD403178T",
-            internalTag: "PCART-0386",
-            type: devicesObject.notebook,
-            assignedTo: "Erika Valdés",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773774539, 936000000)
-        },
-        software: [softwareList.vlc, softwareList.anydesk, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.forticlient, softwareList.auhonorarios, softwareList.actualizaciones, softwareList.rustdesk],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773774539, 936000000)
-    },
-    {
-        "id": "9L3BsBHWrrhPUCYGiNmS",
-        "certificateNumber": 26,
-        "observations": "Equipo será utilizado para impartir clases en la facultad de Artes de compañía en la carrera teoría de las artes.",
-        computer: {
-            id: "9L3BsBHWrrhPUCYGiNmS",
-            brand: brandsObject.lenovo,
-            model: "ThinBook 14 G6 ABP",
-            serialNumber: "PW0AA3NY",
-            internalTag: "PCART-0411",
-            type: devicesObject.notebook,
-            assignedTo: "Fernando Gonzalez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770447, 971000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770447, 971000000)
     },
     {
         "id": "9LUzgEabyGLzKR6WwXCO",
@@ -585,125 +483,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762458823, 597000000)
     },
     {
-        "id": "9vWUnkm1Y4WXSDL5sWah",
-        "certificateNumber": 195,
-        "observations": "Se hace entrega de equipo computacional ",
-        computer: {
-            id: "9vWUnkm1Y4WXSDL5sWah",
-            brand: brandsObject.asus,
-            model: "ASUS EXPERTCENTER P440VA_P440VA",
-            serialNumber: "T7PTCJ00M756296",
-            internalTag: "PCART-0447",
-            type: devicesObject.aio,
-            assignedTo: "Lucia Espinoza",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778075314, 712000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778075314, 712000000)
-    },
-    {
-        "id": "9wj5szCP5Xti9FHvUATX",
-        "certificateNumber": 186,
-        "observations": "Se realiza entrega en calidad de préstamo temporal para resolver requerimiento  TICKETSTC-1429",
-        computer: {
-            id: "9wj5szCP5Xti9FHvUATX",
-            brand: brandsObject.hp,
-            model: "HP ProBook 445 ",
-            serialNumber: "5CD403178T",
-            internalTag: "PCART-0386",
-            type: devicesObject.notebook,
-            assignedTo: "Ayleen Correa",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776182201, 892000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776182201, 892000000)
-    },
-    {
-        "id": "AGYX6EssviUp6q7OtXIr",
-        "certificateNumber": 96,
-        "observations": "Se realiza entrega de equipo portátil a la usuaria como cargo personal. ",
-        computer: {
-            id: "AGYX6EssviUp6q7OtXIr",
-            brand: brandsObject.hp,
-            model: "HP 255 G10 ",
-            serialNumber: "1H84243M09",
-            internalTag: "PCART-0391",
-            type: devicesObject.notebook,
-            assignedTo: "Ignacia Briceño",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758805362, 656000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758805362, 656000000)
-    },
-    {
-        "id": "Ag6zBTygurI5uaMPPkQX",
-        "certificateNumber": 114,
-        "observations": "",
-        computer: {
-            id: "Ag6zBTygurI5uaMPPkQX",
-            brand: brandsObject.asus,
-            model: "EXPERTBOOK B3404CMA",
-            serialNumber: "SBNXCV10990747C",
-            internalTag: "PCART-0425",
-            type: devicesObject.notebook,
-            assignedTo: "Francisco Gonzalez Stuardo",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763392916, 601000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763392916, 601000000)
-    },
-    {
-        "id": "AhgnHNaMYy56d5emZUCR",
-        "certificateNumber": 90,
-        "observations": "",
-        computer: {
-            id: "AhgnHNaMYy56d5emZUCR",
-            brand: brandsObject.apple,
-            model: "MacBook Pro M4",
-            serialNumber: "MR6F4R7L7W",
-            internalTag: "PCART-0431",
-            type: devicesObject.notebook,
-            assignedTo: "Luis Montes Rojas",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1757020286, 115000000)
-        },
-        software: [softwareList.office365, softwareList.adobe],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1757020286, 115000000)
-    },
-    {
-        "id": "AxydnT6on9LYVH0B5YQq",
-        "certificateNumber": 61,
-        "observations": "",
-        computer: {
-            id: "AxydnT6on9LYVH0B5YQq",
-            brand: brandsObject.asus,
-            model: "EXPERTBOOK P1403CVA",
-            serialNumber: "SCNXCV15X137526",
-            internalTag: "PCART-0418",
-            type: devicesObject.notebook,
-            assignedTo: "Luciano Rojas",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750351103, 380000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750351103, 380000000)
-    },
-    {
-        "id": "BIGzQzDplOkA9E4VrzP6",
-        "certificateNumber": 71,
-        "observations": "",
-        computer: {
-            id: "BIGzQzDplOkA9E4VrzP6",
-            brand: brandsObject.hp,
-            model: "PROBOOK 445 G8",
-            serialNumber: "5CD1514YZH",
-            internalTag: "PCART-0319",
-            type: devicesObject.notebook,
-            assignedTo: "Viviana Rondón",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1751552996, 258000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1751552996, 258000000)
-    },
-    {
         "id": "BTlODi1cU3paOGPfzkKa",
         "certificateNumber": 122,
         "observations": "",
@@ -720,7 +499,6 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763752726, 800000000)
     },
-    
     {
         "id": "Bb9yZc1UrspknV68Q9UX",
         "certificateNumber": 183,
@@ -789,7 +567,6 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1779119128, 446000000)
     },
-    
     {
         "id": "Cr1Sr6ebBfXtIoTAp6Pt",
         "certificateNumber": 101,
@@ -806,142 +583,6 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1759767909, 463000000)
-    },
-    {
-        "id": "CtDQmDKRC9u8hBDr9Mbp",
-        "certificateNumber": 148,
-        "observations": "Se hace entrega de equipamiento computacional a la usuaria identificada en ele documento.",
-        computer: {
-            id: "CtDQmDKRC9u8hBDr9Mbp",
-            brand: brandsObject.lenovo,
-            model: "21SG",
-            serialNumber: "PW0GTS75",
-            internalTag: "PCART-0438",
-            type: devicesObject.notebook,
-            assignedTo: "Isis Diaz",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769015303, 761000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769015303, 761000000)
-    },
-    {
-        "id": "DewV2HXgkOWNoJcfQqEv",
-        "certificateNumber": 81,
-        "observations": "",
-        computer: {
-            id: "DewV2HXgkOWNoJcfQqEv",
-            brand: brandsObject.hp,
-            model: "PROBOOK 445 G8",
-            serialNumber: "5CD1514XK3",
-            internalTag: "PCART-0321",
-            type: devicesObject.notebook,
-            assignedTo: "Paula Altamirano",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1754499493, 31000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1754499493, 31000000)
-    },
-    {
-        "id": "EXWEId3S0ydBWG1LrYlF",
-        "certificateNumber": 44,
-        "observations": "Equipo entregado a la Psicóloga DEA ",
-        computer: {
-            id: "EXWEId3S0ydBWG1LrYlF",
-            brand: brandsObject.lenovo,
-            model: "IdealPad Slim5 5 14IRH10",
-            serialNumber: "YX0E1H9C",
-            internalTag: "PCART-0414",
-            type: devicesObject.notebook,
-            assignedTo: "Constanza Bustamante",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747164419, 717000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747164419, 717000000)
-    },
-    {
-        "id": "FGxfpHaLokSCI2IRMitx",
-        "certificateNumber": 80,
-        "observations": "Pc se entrega con los programas requeridos e inventariado.",
-        computer: {
-            id: "FGxfpHaLokSCI2IRMitx",
-            brand: brandsObject.generico,
-            model: "Generico",
-            serialNumber: "BIPK67070",
-            internalTag: "PCART-0421",
-            type: devicesObject.pcescritorio,
-            assignedTo: "Francisco Miranda",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1754339307, 311000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1754339307, 311000000)
-    },
-    {
-        "id": "FOqmVdi74k1WKvypfWBa",
-        "certificateNumber": 170,
-        "observations": "Equipo nuevo con programas institucionales \nequipo actualizado se incluye cargador original ",
-        computer: {
-            id: "FOqmVdi74k1WKvypfWBa",
-            brand: brandsObject.asus,
-            model: "Asus expertbook",
-            serialNumber: "S8NXCV14K029344",
-            internalTag: "PCART-0443",
-            type: devicesObject.notebook,
-            assignedTo: "María Ignacia Amigo",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775047793, 437000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.actualizaciones, softwareList.office21],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775047793, 437000000)
-    },
-    {
-        "id": "FQUCoryrxNGZcenppzFS",
-        "certificateNumber": 98,
-        "observations": "Se entrega notebook con su respectivo cargador.",
-        computer: {
-            id: "FQUCoryrxNGZcenppzFS",
-            brand: brandsObject.asus,
-            model: "ExpertBook",
-            serialNumber: "S8NXCV14K030347",
-            internalTag: "PCART-0432",
-            type: devicesObject.notebook,
-            assignedTo: "Camila Briceño",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758891338, 761000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.sisper, softwareList.forticlient, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones, softwareList.auhonorarios],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758891338, 761000000)
-    },
-    {
-        "id": "FgJA9Md1JZ1R9yfV6Rm9",
-        "certificateNumber": 23,
-        "observations": "Equipo reasignado, le falta la tecla de \"flecha hacia arriba\".",
-        computer: {
-            id: "FgJA9Md1JZ1R9yfV6Rm9",
-            brand: brandsObject.dell,
-            model: "Inspiron 3505",
-            serialNumber: "GQ596C3",
-            internalTag: "PCART-0268",
-            type: devicesObject.notebook,
-            assignedTo: "Miguel Martinez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743683672, 646000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743683672, 646000000)
-    },
-    {
-        "id": "Fxupo0xKacdLGpowu7gR",
-        "certificateNumber": 184,
-        "observations": "Se entrega notebook con su respectivo cargador.",
-        computer: {
-            id: "Fxupo0xKacdLGpowu7gR",
-            brand: brandsObject.hp,
-            model: "Pro Book 445 G8",
-            serialNumber: "5CD202BXQK",
-            internalTag: "PCART-0283",
-            type: devicesObject.notebook,
-            assignedTo: "Javiera Soto",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775850035, 719000000)
-        },
-        software: [softwareList.izarc, softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.chrome, softwareList.adobe, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775850035, 719000000)
     },
     {
         "id": "G1wgZzfsLSV1jSEC34Q2",
@@ -993,23 +634,6 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775065609, 565000000)
-    },
-    {
-        "id": "H2DGWyBIAwr5OA1TBAtl",
-        "certificateNumber": 113,
-        "observations": "",
-        computer: {
-            id: "H2DGWyBIAwr5OA1TBAtl",
-            brand: brandsObject.asus,
-            model: "ExpertBook B3404CM",
-            serialNumber: "SBNXCV109924478",
-            internalTag: "PCART-0428",
-            type: devicesObject.notebook,
-            assignedTo: "Mario Labbé",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763392360, 214000000)
-        },
-        software: [softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763392360, 214000000)
     },
     {
         "id": "H4vn0dZGiwej3FwgmCzh",
@@ -1080,21 +704,157 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773064791, 644000000)
     },
     {
-        "id": "JhAzVNFRwYHPq4CYaFZM",
-        "certificateNumber": 73,
-        "observations": "Se entrega con su cargador",
+        "id": "NRT5mWtztCnT0SE4T2Un",
+        "certificateNumber": 150,
+        "observations": "Equipo nuevo con configuración de red sistema Wi-Fi UCHART",
         computer: {
-            id: "JhAzVNFRwYHPq4CYaFZM",
-            brand: brandsObject.dell,
-            model: "Vostro 3400",
-            serialNumber: "9LSB9L3",
-            internalTag: "PCART-0277",
-            type: devicesObject.notebook,
-            assignedTo: "Matias Machuca",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1752081106, 506000000)
+            id: "NRT5mWtztCnT0SE4T2Un",
+            brand: brandsObject.tplink,
+            model: "AX53",
+            serialNumber: "2256707013328",
+            internalTag: "-",
+            type: devicesObject.router,
+            assignedTo: "María Verónica Carrasco",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769545142, 533000000)
         },
-        software: [softwareList.chrome, softwareList.office365, softwareList.actualizaciones, softwareList.ocs, softwareList.forticlient, softwareList.oracle, softwareList.anydesk, softwareList.rustdesk, softwareList.izarc, softwareList.vlc, softwareList.adobe],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1752081106, 506000000)
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769545142, 533000000)
+    },
+    {
+        "id": "NZCwRC3CqTxVcBdoWIxQ",
+        "certificateNumber": 75,
+        "observations": "Router D-Link, modelo DIR-X1870",
+        computer: {
+            id: "NZCwRC3CqTxVcBdoWIxQ",
+            brand: brandsObject.generico,
+            model: "DIR-X1870",
+            serialNumber: "TR1D111001550",
+            internalTag: "-",
+            type: devicesObject.router,
+            assignedTo: "Margarita Filumil",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1753802956, 31000000)
+        },
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1753802956, 31000000)
+    },
+    {
+        "id": "O4xLQm3VDtkT0YqriA8y",
+        "certificateNumber": 125,
+        "observations": "Teclado Alámbrico Nuevo",
+        computer: {
+            id: "O4xLQm3VDtkT0YqriA8y",
+            brand: brandsObject.philco,
+            model: "K4500",
+            serialNumber: "-",
+            internalTag: "-",
+            type: devicesObject.teclado,
+            assignedTo: "Mauricio Astorga",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764166809, 466000000)
+        },
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764166809, 466000000)
+    },
+    {
+        "id": "OcQzZTc9h070DKAwzHUx",
+        "certificateNumber": 143,
+        "observations": "Teclado y mouse para practicante",
+        computer: {
+            id: "OcQzZTc9h070DKAwzHUx",
+            brand: brandsObject.philco,
+            model: "Generico",
+            serialNumber: "-",
+            internalTag: "-",
+            type: devicesObject.tecladoMouse,
+            assignedTo: "Danilo Lizana",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767791062, 799000000)
+        },
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767791062, 799000000)
+    },
+    {
+        "id": "QVikn3v13X82kRHHTaqJ",
+        "certificateNumber": 69,
+        "observations": "Cooling-pad para notebook de 12\"-17\"",
+        computer: {
+            id: "QVikn3v13X82kRHHTaqJ",
+            brand: brandsObject.generico,
+            model: "UT-NTC020",
+            serialNumber: "2106205502009",
+            internalTag: "-",
+            type: devicesObject.otro,
+            assignedTo: "Carlos Carrillo",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1751474700, 505000000)
+        },
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1751474700, 505000000)
+    },
+    {
+        "id": "QjxJDndgpJpMt8Z4ARDC",
+        "certificateNumber": 124,
+        "observations": "Pack teclado y mouse alámbricos nuevo.",
+        computer: {
+            id: "QjxJDndgpJpMt8Z4ARDC",
+            brand: brandsObject.philco,
+            model: "K4500",
+            serialNumber: "-",
+            internalTag: "-",
+            type: devicesObject.tecladoMouse,
+            assignedTo: "Oscar Diaz",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764166706, 223000000)
+        },
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764166706, 223000000)
+    }, 
+    {
+        "id": "QvmIdic3crAeeQasB5sE",
+        "certificateNumber": 180,
+        "observations": "Teléfono de préstamo desde Servicios Centrales, mientras se despacha equipamiento definitivo.",
+        computer: {
+            id: "QvmIdic3crAeeQasB5sE",
+            brand: brandsObject.cisco,
+            model: "CP-7962G",
+            serialNumber: "FCH143983E2",
+            internalTag: "-",
+            type: devicesObject.telefonoip,
+            assignedTo: "Orientación ISUCH",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775665704, 477000000)
+        },
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775665704, 477000000)
+    },
+    {
+        "id": "RmjukqnPh2Gb7NasNEHg",
+        "certificateNumber": 165,
+        "observations": "Equipo comprado por el departamento de sonido, se configura UCHART.",
+        computer: {
+            id: "RmjukqnPh2Gb7NasNEHg",
+            brand: brandsObject.tplink,
+            model: "Archer AX53",
+            serialNumber: "4897098683088",
+            internalTag: "-",
+            type: devicesObject.router,
+            assignedTo: "Pablo Andrés Gudiño Perez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1774461816, 361000000)
+        },
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1774461816, 361000000)
+    },
+    {
+        "id": "RnuLW3JeVhyFNcgcyjbN",
+        "certificateNumber": 87,
+        "observations": "",
+        computer: {
+            id: "RnuLW3JeVhyFNcgcyjbN",
+            brand: brandsObject.generico,
+            model: "Cisco IP Phone 7912",
+            serialNumber: "INM09191MYA",
+            internalTag: "-",
+            type: devicesObject.telefonoip,
+            assignedTo: "Mayordomia",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756759239, 548000000)
+        },
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756759239, 548000000)
     },
     {
         "id": "JtSBPz3Z9n3mR1rwen7l",
@@ -1218,299 +978,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775666075, 312000000)
     },
     {
-        "id": "M5lMMD1LnM5WP5eA7lLN",
-        "certificateNumber": 65,
-        "observations": "Entrega de equipo portátil a cargo.",
-        computer: {
-            id: "M5lMMD1LnM5WP5eA7lLN",
-            brand: brandsObject.lenovo,
-            model: "21KJ",
-            serialNumber: "PW0FC1DT",
-            internalTag: "PCART-0420",
-            type: devicesObject.notebook,
-            assignedTo: "Marcel Becerra",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750795166, 195000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.sisper, softwareList.ocs, softwareList.chrome, softwareList.office365, softwareList.actualizaciones, softwareList.oracle],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750795166, 195000000)
-    },
-    {
-        "id": "MJLsJVng06sAuCWtvi0W",
-        "certificateNumber": 142,
-        "observations": "PC para practicante",
-        computer: {
-            id: "MJLsJVng06sAuCWtvi0W",
-            brand: brandsObject.hp,
-            model: "ProBook 445 G8",
-            serialNumber: "SCD1514XGW",
-            internalTag: "PCART-0291",
-            type: devicesObject.notebook,
-            assignedTo: "Danilo Lizana",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767704392, 965000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767704392, 965000000)
-    },
-    {
-        "id": "N5VAwTqrjODaw7q3WI8x",
-        "certificateNumber": 169,
-        "observations": "Equipo de préstamo mientras unidad de inventarios adquiere un disco duro ",
-        computer: {
-            id: "N5VAwTqrjODaw7q3WI8x",
-            brand: brandsObject.dell,
-            model: "Latitude 3490",
-            serialNumber: "BBD6LR2",
-            internalTag: "PCART-0230",
-            type: devicesObject.notebook,
-            assignedTo: "Andrea Peñaloza",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775047076, 894000000)
-        },
-        software: [softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775047076, 894000000)
-    },
-    {
-        "id": "NRT5mWtztCnT0SE4T2Un",
-        "certificateNumber": 150,
-        "observations": "Equipo nuevo con configuración de red sistema Wi-Fi UCHART",
-        computer: {
-            id: "NRT5mWtztCnT0SE4T2Un",
-            brand: brandsObject.tplink,
-            model: "AX53",
-            serialNumber: "2256707013328",
-            internalTag: "-",
-            type: devicesObject.router,
-            assignedTo: "María Verónica Carrasco",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769545142, 533000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769545142, 533000000)
-    },
-    {
-        "id": "NZCwRC3CqTxVcBdoWIxQ",
-        "certificateNumber": 75,
-        "observations": "Router D-Link, modelo DIR-X1870",
-        computer: {
-            id: "NZCwRC3CqTxVcBdoWIxQ",
-            brand: brandsObject.generico,
-            model: "DIR-X1870",
-            serialNumber: "TR1D111001550",
-            internalTag: "-",
-            type: devicesObject.router,
-            assignedTo: "Margarita Filumil",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1753802956, 31000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1753802956, 31000000)
-    },
-    
-    {
-        "id": "O4xLQm3VDtkT0YqriA8y",
-        "certificateNumber": 125,
-        "observations": "Teclado Alámbrico Nuevo",
-        computer: {
-            id: "O4xLQm3VDtkT0YqriA8y",
-            brand: brandsObject.philco,
-            model: "K4500",
-            serialNumber: "-",
-            internalTag: "-",
-            type: devicesObject.teclado,
-            assignedTo: "Mauricio Astorga",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764166809, 466000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764166809, 466000000)
-    },
-    
-    {
-        "id": "OcQzZTc9h070DKAwzHUx",
-        "certificateNumber": 143,
-        "observations": "Teclado y mouse para practicante",
-        computer: {
-            id: "OcQzZTc9h070DKAwzHUx",
-            brand: brandsObject.philco,
-            model: "Generico",
-            serialNumber: "-",
-            internalTag: "-",
-            type: devicesObject.tecladoMouse,
-            assignedTo: "Danilo Lizana",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767791062, 799000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767791062, 799000000)
-    },
-    {
-        "id": "P1KyhHfKXNkNSiEsZZ1j",
-        "certificateNumber": 85,
-        "observations": "",
-        computer: {
-            id: "P1KyhHfKXNkNSiEsZZ1j",
-            brand: brandsObject.generico,
-            model: "Generico",
-            serialNumber: "7426151676",
-            internalTag: "PCART-0210",
-            type: devicesObject.pcescritorio,
-            assignedTo: "Guido Zamorano",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756131238, 334000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.actualizaciones, softwareList.office21],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756131238, 334000000)
-    },
-    {
-        "id": "PCrKbMqEOOMGgC1hM2G8",
-        "certificateNumber": 105,
-        "observations": "Equipo nuevo con cargador",
-        computer: {
-            id: "PCrKbMqEOOMGgC1hM2G8",
-            brand: brandsObject.asus,
-            model: "ExpertBook B3404CMA",
-            serialNumber: "SBNXCV109888479",
-            internalTag: "PCART-0433",
-            type: devicesObject.notebook,
-            assignedTo: "Guido Soto",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762375279, 374000000)
-        },
-        software: [softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762375279, 374000000)
-    },
-    {
-        "id": "PKjy5yscCXVKtUBPA81J",
-        "certificateNumber": 27,
-        "observations": "Equipo será utilizado para impartir clases en la facultad de Artes de compañía en la carrera teoría de las artes.",
-        computer: {
-            id: "PKjy5yscCXVKtUBPA81J",
-            brand: brandsObject.lenovo,
-            model: "ThinBook 14 G6 ABP",
-            serialNumber: "PW0AA3SS",
-            internalTag: "PCART-0412",
-            type: devicesObject.notebook,
-            assignedTo: "Fernando Gonzalez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770622, 36000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770622, 36000000)
-    },
-    {
-        "id": "QVikn3v13X82kRHHTaqJ",
-        "certificateNumber": 69,
-        "observations": "Cooling-pad para notebook de 12\"-17\"",
-        computer: {
-            id: "QVikn3v13X82kRHHTaqJ",
-            brand: brandsObject.generico,
-            model: "UT-NTC020",
-            serialNumber: "2106205502009",
-            internalTag: "-",
-            type: devicesObject.otro,
-            assignedTo: "Carlos Carrillo",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1751474700, 505000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1751474700, 505000000)
-    },
-    {
-        "id": "QjxJDndgpJpMt8Z4ARDC",
-        "certificateNumber": 124,
-        "observations": "Pack teclado y mouse alámbricos nuevo.",
-        computer: {
-            id: "QjxJDndgpJpMt8Z4ARDC",
-            brand: brandsObject.philco,
-            model: "K4500",
-            serialNumber: "-",
-            internalTag: "-",
-            type: devicesObject.tecladoMouse,
-            assignedTo: "Oscar Diaz",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764166706, 223000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764166706, 223000000)
-    },
-    
-    {
-        "id": "QvmIdic3crAeeQasB5sE",
-        "certificateNumber": 180,
-        "observations": "Teléfono de préstamo desde Servicios Centrales, mientras se despacha equipamiento definitivo.",
-        computer: {
-            id: "QvmIdic3crAeeQasB5sE",
-            brand: brandsObject.cisco,
-            model: "CP-7962G",
-            serialNumber: "FCH143983E2",
-            internalTag: "-",
-            type: devicesObject.telefonoip,
-            assignedTo: "Orientación ISUCH",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775665704, 477000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775665704, 477000000)
-    },
-    {
-        "id": "Rbxg7B6aJ9TSbrjejWSh",
-        "certificateNumber": 89,
-        "observations": "",
-        computer: {
-            id: "Rbxg7B6aJ9TSbrjejWSh",
-            brand: brandsObject.hp,
-            model: "ProBook 445 G9",
-            serialNumber: "5CD3062TP4",
-            internalTag: "PCART-0354",
-            type: devicesObject.notebook,
-            assignedTo: "Ayleen Correa",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756761896, 844000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756761896, 844000000)
-    },
-    {
-        "id": "RmjukqnPh2Gb7NasNEHg",
-        "certificateNumber": 165,
-        "observations": "Equipo comprado por el departamento de sonido, se configura UCHART.",
-        computer: {
-            id: "RmjukqnPh2Gb7NasNEHg",
-            brand: brandsObject.tplink,
-            model: "Archer AX53",
-            serialNumber: "4897098683088",
-            internalTag: "-",
-            type: devicesObject.router,
-            assignedTo: "Pablo Andrés Gudiño Perez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1774461816, 361000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1774461816, 361000000)
-    },
-    {
-        "id": "RnuLW3JeVhyFNcgcyjbN",
-        "certificateNumber": 87,
-        "observations": "",
-        computer: {
-            id: "RnuLW3JeVhyFNcgcyjbN",
-            brand: brandsObject.generico,
-            model: "Cisco IP Phone 7912",
-            serialNumber: "INM09191MYA",
-            internalTag: "-",
-            type: devicesObject.telefonoip,
-            assignedTo: "Mayordomia",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756759239, 548000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756759239, 548000000)
-    },
-    
-    {
-        "id": "T8l7Tutj22yeRUcuGPcZ",
-        "certificateNumber": 24,
-        "observations": "Equipo será utilizado para impartir clases en la facultad de Artes de compañía en la carrera teoría de las artes,",
-        computer: {
-            id: "T8l7Tutj22yeRUcuGPcZ",
-            brand: brandsObject.lenovo,
-            model: "ThinBook 14 G6 ABP",
-            serialNumber: "PW0AA3NL",
-            internalTag: "PCART-0409",
-            type: devicesObject.notebook,
-            assignedTo: "Fernando Gonzalez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770001, 480000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.chrome, softwareList.adobe, softwareList.ocs, softwareList.office365, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770001, 480000000)
-    },
-    {
         "id": "TYdZKk3j2PZ5A4bCiEht",
         "certificateNumber": 181,
         "observations": "Teléfono de préstamo desde Servicios Centrales, mientras se despacha equipamiento definitivo.",
@@ -1543,57 +1010,6 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1753803024, 132000000)
-    },
-    {
-        "id": "ToRy9e9BRY1sOeC2wWhU",
-        "certificateNumber": 107,
-        "observations": "",
-        computer: {
-            id: "ToRy9e9BRY1sOeC2wWhU",
-            brand: brandsObject.hp,
-            model: "Pro Book 445 G9",
-            serialNumber: "5CD1514XJ6",
-            internalTag: "PCART-0292",
-            type: devicesObject.notebook,
-            assignedTo: "Andrea Peñaloza",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762519227, 897000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762519227, 897000000)
-    },
-    {
-        "id": "Tzky0NgwSqy3Av3KzPKP",
-        "certificateNumber": 149,
-        "observations": "Se hace entrega de equipamiento computacional al usuario indicado en esta acta.",
-        computer: {
-            id: "Tzky0NgwSqy3Av3KzPKP",
-            brand: brandsObject.hp,
-            model: "HP All-in-One Desktop 27-cr0xxx",
-            serialNumber: "8CC5071FT7",
-            internalTag: "PCART-0439",
-            type: devicesObject.aio,
-            assignedTo: "Veronica Vargas",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769529103, 775000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769529103, 775000000)
-    },
-    {
-        "id": "UYsTn9V6cx0UY80j333x",
-        "certificateNumber": 45,
-        "observations": "El computador cuenta con los programas necesarios para su uso correspondiente.",
-        computer: {
-            id: "UYsTn9V6cx0UY80j333x",
-            brand: brandsObject.hp,
-            model: "ProOne 440 G9",
-            serialNumber: "8CN34302XW",
-            internalTag: "PCART-0415",
-            type: devicesObject.aio,
-            assignedTo: "Luis Corvalán",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747165947, 654000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747165947, 654000000)
     },
     {
         "id": "Ud318U8XCmYB1MTKSysm",
@@ -1630,24 +1046,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1765915150, 25000000)
     },
     {
-        "id": "UiphKvLe8uMi7WWmBXoA",
-        "certificateNumber": 166,
-        "observations": "Se entrega notebook con su cargador correspondiente.",
-        computer: {
-            id: "UiphKvLe8uMi7WWmBXoA",
-            brand: brandsObject.hp,
-            model: "Pro Book 445 G9",
-            serialNumber: "5CD3062SYP",
-            internalTag: "PCART-0372",
-            type: devicesObject.notebook,
-            assignedTo: "Rolando Cori",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1774893897, 770000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.chrome, softwareList.office21, softwareList.actualizaciones, softwareList.adobe],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1774893897, 770000000)
-    },
-    
-    {
         "id": "VH8ctXcIEbyv5UpX4M6t",
         "certificateNumber": 164,
         "observations": "Equipo comprado por el departamento de sonido, se configura red UCHART",
@@ -1664,7 +1062,6 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1774290616, 698000000)
     },
-    
     {
         "id": "WHYVm5xapHRAjMTArPqg",
         "certificateNumber": 70,
@@ -1683,75 +1080,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1751474937, 390000000)
     },
     {
-        "id": "WNc4S4dYbu2mEeN2RQP8",
-        "certificateNumber": 156,
-        "observations": "Se hace entrega de equipamiento computacional al usuario indicado en el acta.",
-        computer: {
-            id: "WNc4S4dYbu2mEeN2RQP8",
-            brand: brandsObject.hp,
-            model: "HP Laptop 15-fd0xxx",
-            serialNumber: "1H85140K3M",
-            internalTag: "PCART-0440",
-            type: devicesObject.notebook,
-            assignedTo: "Catalina Reyes",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773070906, 423000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773070906, 423000000)
-    },
-    {
-        "id": "Ws3AnQsXd2BX6U3DBcM3",
-        "certificateNumber": 22,
-        "observations": "",
-        computer: {
-            id: "Ws3AnQsXd2BX6U3DBcM3",
-            brand: brandsObject.hp,
-            model: "ProBook 445 G9",
-            serialNumber: "5CD3062TP4",
-            internalTag: "PCART-0354",
-            type: devicesObject.notebook,
-            assignedTo: "Miguel Martinez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1742998872, 442000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1742998872, 442000000)
-    },
-    {
-        "id": "XtxftwQELarLyymQGvma",
-        "certificateNumber": 110,
-        "observations": "Equipo asignado para uso laboral.",
-        computer: {
-            id: "XtxftwQELarLyymQGvma",
-            brand: brandsObject.asus,
-            model: "ASUS EXPERTBOOK",
-            serialNumber: "SBNXCV109900475",
-            internalTag: "PCART-0430",
-            type: devicesObject.notebook,
-            assignedTo: "Marcelo Torres",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762784571, 193000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762784571, 193000000)
-    },
-    
-    {
-        "id": "Xxi6s4iM8aVU5bGok09C",
-        "certificateNumber": 48,
-        "observations": "",
-        computer: {
-            id: "Xxi6s4iM8aVU5bGok09C",
-            brand: brandsObject.hp,
-            model: "ProOne 440 AiO",
-            serialNumber: "8CN34302W8",
-            internalTag: "PCART-0416",
-            type: devicesObject.pcescritorio,
-            assignedTo: "Mabel Urrutia",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747236616, 655000000)
-        },
-        software: [softwareList.vlc, softwareList.rustdesk, softwareList.izarc, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747236616, 655000000)
-    },
-    {
         "id": "Y3nkGcbjrqn7FlnkV82C",
         "certificateNumber": 194,
         "observations": "Ex Teléfono IP de Raúl Román, se reconfigura nombre de anexo 80801 a \"Adquisiciones y Proyectos\".",
@@ -1768,42 +1096,6 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1777483853, 173000000)
     },
-    
-    {
-        "id": "YUHAcKMj8dI4oRzkm5J3",
-        "certificateNumber": 139,
-        "observations": "Se hace entrega de tres equipos computacionales para escritorio para la sala de profesores de Danza",
-        computer: {
-            id: "YUHAcKMj8dI4oRzkm5J3",
-            brand: brandsObject.dell,
-            model: "OptiPlex 7010",
-            serialNumber: "",
-            internalTag: "PCART-0435/PCART-0436/PCART-0437",
-            type: devicesObject.pcescritorio,
-            assignedTo: "José Miguel Candela",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1766433634, 175000000)
-        },
-        software: [softwareList.vlc, softwareList.actualizaciones, softwareList.office21, softwareList.chrome, softwareList.adobe, softwareList.izarc],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1766433634, 175000000)
-    },
-    {
-        "id": "YVt0DMFkNucxhEjOxMBn",
-        "certificateNumber": 49,
-        "observations": "",
-        computer: {
-            id: "YVt0DMFkNucxhEjOxMBn",
-            brand: brandsObject.hp,
-            model: "ProBook 445 G9",
-            serialNumber: "5CD3062TP4",
-            internalTag: "PCART-0354",
-            type: devicesObject.notebook,
-            assignedTo: "Fernanda Nawrath",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747324709, 388000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.actualizaciones, softwareList.office21],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747324709, 388000000)
-    },
-    
     {
         "id": "ZvsQIOJVXuvqUpZZacFf",
         "certificateNumber": 140,
@@ -1837,40 +1129,6 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773927577, 371000000)
-    },
-    {
-        "id": "aSkukQNz2SUBfBzKaq4V",
-        "certificateNumber": 83,
-        "observations": "Se entrega con sus accesorios.",
-        computer: {
-            id: "aSkukQNz2SUBfBzKaq4V",
-            brand: brandsObject.hp,
-            model: "ProBook 445 G10",
-            serialNumber: "5CD33527B4",
-            internalTag: "PCART-0379",
-            type: devicesObject.notebook,
-            assignedTo: "Matías Díaz",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1755020881, 558000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1755020881, 558000000)
-    },
-    {
-        "id": "aWAc1ZvEDj40K391kPTj",
-        "certificateNumber": 63,
-        "observations": "",
-        computer: {
-            id: "aWAc1ZvEDj40K391kPTj",
-            brand: brandsObject.asus,
-            model: "P1403CVA",
-            serialNumber: "SCNXCV15X36852A",
-            internalTag: "PCART-0417",
-            type: devicesObject.notebook,
-            assignedTo: "Catalina König",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750696606, 680000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750696606, 680000000)
     },
     {
         "id": "b2mwTHDIVl4dY86vOYdN",
@@ -1958,40 +1216,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1757508380, 358000000)
     },
     {
-        "id": "cAGnXys6W0CIQXipPacE",
-        "certificateNumber": 47,
-        "observations": "",
-        computer: {
-            id: "cAGnXys6W0CIQXipPacE",
-            brand: brandsObject.lenovo,
-            model: "V14 G3",
-            serialNumber: "PF51DYD0",
-            internalTag: "PCART-0401",
-            type: devicesObject.notebook,
-            assignedTo: "Katalina Urra",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747234294, 127000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747234294, 127000000)
-    },
-    {
-        "id": "cCynCzHigiUV7vdrJsHS",
-        "certificateNumber": 54,
-        "observations": "Notebook se entrega con su cargador correspondiente",
-        computer: {
-            id: "cCynCzHigiUV7vdrJsHS",
-            brand: brandsObject.lenovo,
-            model: "Thinkpad E580",
-            serialNumber: "PF1HR1SQ",
-            internalTag: "PCART-0246",
-            type: devicesObject.notebook,
-            assignedTo: "Milena Viertel",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1749480764, 522000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.oracle, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1749480764, 522000000)
-    },
-    {
         "id": "cHQ50tTyuDNhFlvGufHI",
         "certificateNumber": 208,
         "observations": "Se hace entrega de Tablet Lenovo IMEI 867560071695022 a la unidad de operaciones e infraestructura",
@@ -2042,24 +1266,6 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762886253, 966000000)
     },
-    
-    {
-        "id": "d9NlZ1lRefAYaiXHIRQU",
-        "certificateNumber": 141,
-        "observations": "Notebook Prestamo.",
-        computer: {
-            id: "d9NlZ1lRefAYaiXHIRQU",
-            brand: brandsObject.hp,
-            model: "Pro Book 445 G9",
-            serialNumber: "5CD1514XGW",
-            internalTag: "PCART-0291",
-            type: devicesObject.notebook,
-            assignedTo: "Victor Lopez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767623786, 850000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.anydesk, softwareList.rustdesk, softwareList.ocs, softwareList.chrome, softwareList.office21, softwareList.actualizaciones, softwareList.adobe],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767623786, 850000000)
-    },
     {
         "id": "dLursTQiDQfux8tsUIuy",
         "certificateNumber": 201,
@@ -2095,23 +1301,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775587921, 688000000)
     },
     {
-        "id": "dWopTgLVZJHt6Wy3s5ur",
-        "certificateNumber": 109,
-        "observations": "",
-        computer: {
-            id: "dWopTgLVZJHt6Wy3s5ur",
-            brand: brandsObject.hp,
-            model: "Pro Book 445 G9",
-            serialNumber: "5CD3109N02",
-            internalTag: "PCART-0341",
-            type: devicesObject.notebook,
-            assignedTo: "Monica Zamora",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762783697, 178000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.chrome, softwareList.office365, softwareList.actualizaciones, softwareList.adobe],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762783697, 178000000)
-    },
-    {
         "id": "drFPZ1KejVaBq8wqvTCx",
         "certificateNumber": 40,
         "observations": "",
@@ -2128,7 +1317,6 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1746808320, 154000000)
     },
-    
     {
         "id": "eBFlDGVurZoXBbTmZHme",
         "certificateNumber": 190,
@@ -2147,26 +1335,9 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776697489, 563000000)
     },
     {
-        "id": "eLUjT3xA7JCBmqQo4cgF",
-        "certificateNumber": 154,
-        "observations": "Se hace entrega de equipamiento computacional a la usuaria indicada en el acta.",
-        computer: {
-            id: "eLUjT3xA7JCBmqQo4cgF",
-            brand: brandsObject.lenovo,
-            model: "21KJ",
-            serialNumber: "PW0FC1GH",
-            internalTag: "PCART-0442",
-            type: devicesObject.notebook,
-            assignedTo: "Claudia Vergara",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773069162, 827000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773069162, 827000000)
-    },
-    {
         "id": "eTwfNeNlqnRLRvipVX1m",
         "certificateNumber": 197,
-        "observations": "Equipo de préstamo VTi\nAnexo: 81327",
+        "observations": "Equipo de préstamo VTi Anexo: 81327",
         computer: {
             id: "eTwfNeNlqnRLRvipVX1m",
             brand: brandsObject.cisco,
@@ -2214,7 +1385,6 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764254298, 956000000)
     },
-    
     {
         "id": "gncAKFNL3n6jEhuj7CP3",
         "certificateNumber": 51,
@@ -2231,23 +1401,6 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747330235, 676000000)
-    },
-    {
-        "id": "gshvbyrUPRzdChPs5o5f",
-        "certificateNumber": 14,
-        "observations": "Se entrega el equipo al usuario individualizado en el documento, el cual será utilizado en la Unidad de Finanzas.",
-        computer: {
-            id: "gshvbyrUPRzdChPs5o5f",
-            brand: brandsObject.lenovo,
-            model: "V14 G3",
-            serialNumber: "PF51CZ2P",
-            internalTag: "PCART-0406",
-            type: devicesObject.notebook,
-            assignedTo: "Patricia Berrios",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1741032337, 401000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.anydesk, softwareList.rustdesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1741032337, 401000000)
     },
     {
         "id": "hozu4YXd22ZOJe4r9Ffk",
@@ -2284,57 +1437,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1745355548, 488000000)
     },
     {
-        "id": "kjsg6tXVS0OErLweQOf6",
-        "certificateNumber": 104,
-        "observations": "Se reasigna equipo computacional institucional el cual será  usado por el usuario en el acta descrito",
-        computer: {
-            id: "kjsg6tXVS0OErLweQOf6",
-            brand: brandsObject.lenovo,
-            model: "20YN",
-            serialNumber: "PF389KT5",
-            internalTag: "PCART-0273",
-            type: devicesObject.notebook,
-            assignedTo: "óscar Diaz",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762175437, 12000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762175437, 12000000)
-    },
-    {
-        "id": "lcF5Mp4P2mneMmbiPi0e",
-        "certificateNumber": 92,
-        "observations": "",
-        computer: {
-            id: "lcF5Mp4P2mneMmbiPi0e",
-            brand: brandsObject.asus,
-            model: "EXPERTBOOK B3404CMA",
-            serialNumber: "T2NXCV03D75307B",
-            internalTag: "PCART-0429",
-            type: devicesObject.notebook,
-            assignedTo: "Mauricio Toro",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1757595492, 510000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.anydesk, softwareList.rustdesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1757595492, 510000000)
-    },
-    {
-        "id": "lcGF8P6Bhil8f1mwpbFc",
-        "certificateNumber": 93,
-        "observations": "",
-        computer: {
-            id: "lcGF8P6Bhil8f1mwpbFc",
-            brand: brandsObject.asus,
-            model: "EXPERTBOOK B3404CMA",
-            serialNumber: "S8NXCV14K03934B",
-            internalTag: "PCART-0431",
-            type: devicesObject.notebook,
-            assignedTo: "Camila Reyes",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758567091, 636000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.guia, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758567091, 636000000)
-    },
-    {
         "id": "lhQXc0eISEswkzQqTpUW",
         "certificateNumber": 147,
         "observations": "Se hace entrega de Teclado y mouse a usuario detallado en el acta.",
@@ -2350,23 +1452,6 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1768226353, 466000000)
-    },
-    {
-        "id": "lopNwmcCt8hbkbwzOjFs",
-        "certificateNumber": 95,
-        "observations": "",
-        computer: {
-            id: "lopNwmcCt8hbkbwzOjFs",
-            brand: brandsObject.lenovo,
-            model: "ThinkCentre Neo 50A 24 Gen3",
-            serialNumber: "MP2AC2N4",
-            internalTag: "PCART-0378",
-            type: devicesObject.aio,
-            assignedTo: "José Neira",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758727784, 983000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758727784, 983000000)
     },
     {
         "id": "mlMXQqf6dsWUWBn8Fa94",
@@ -2386,58 +1471,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776804977, 635000000)
     },
     {
-        "id": "mr00bOwI5DaKwkxftMHr",
-        "certificateNumber": 188,
-        "observations": "Equipo de préstamo, se entrega con su respectivo cargador.",
-        computer: {
-            id: "mr00bOwI5DaKwkxftMHr",
-            brand: brandsObject.hp,
-            model: "Pro Book 445 G9",
-            serialNumber: "5CD3062SYP",
-            internalTag: "PCART-0372",
-            type: devicesObject.notebook,
-            assignedTo: "Rocio Guiñez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776349754, 27000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.actualizaciones, softwareList.office365],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776349754, 27000000)
-    },
-    
-    {
-        "id": "nLXE6TUWCgLAthccSvLX",
-        "certificateNumber": 30,
-        "observations": "",
-        computer: {
-            id: "nLXE6TUWCgLAthccSvLX",
-            brand: brandsObject.generico,
-            model: "Escritorio",
-            serialNumber: "H81MHV3",
-            internalTag: "PCART-0029",
-            type: devicesObject.pcescritorio,
-            assignedTo: "Isis Diaz Lopez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743794225, 798000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743794225, 798000000)
-    },
-    {
-        "id": "nR6SMMYM6JG6gnz4gKEo",
-        "certificateNumber": 88,
-        "observations": "",
-        computer: {
-            id: "nR6SMMYM6JG6gnz4gKEo",
-            brand: brandsObject.dell,
-            model: "Vostro 14 3400",
-            serialNumber: "9LSB9L3",
-            internalTag: "PCART-0277",
-            type: devicesObject.notebook,
-            assignedTo: "Dominique Marinkovic",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756761711, 254000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756761711, 254000000)
-    },
-    {
         "id": "nSdQ3U2qXL3YNCbM7q2c",
         "certificateNumber": 205,
         "observations": "Se hace entrega de teclados y mouse inalámbricos.",
@@ -2455,21 +1488,21 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1779220179, 779000000)
     },
     {
-        "id": "nbmCgEJUOAW3YPxkg4V8",
-        "certificateNumber": 108,
-        "observations": "",
+        "id": "oQ1bKCs9JgegavYAjkE4",
+        "certificateNumber": 160,
+        "observations": "Monitor nuevo sellado ",
         computer: {
-            id: "nbmCgEJUOAW3YPxkg4V8",
-            brand: brandsObject.asus,
-            model: "ExpertBook B3404CM",
-            serialNumber: "T2NXCV03D760077",
-            internalTag: "PCART-0426",
-            type: devicesObject.notebook,
-            assignedTo: "Cesar Mella",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762783279, 837000000)
+            id: "oQ1bKCs9JgegavYAjkE4",
+            brand: brandsObject.viewsonic,
+            model: "VS19971",
+            serialNumber: "XNE252920436",
+            internalTag: "-",
+            type: devicesObject.monitor,
+            assignedTo: "Erika Valdés",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773778972, 468000000)
         },
-        software: [softwareList.izarc, softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.office365, softwareList.actualizaciones, softwareList.chrome, softwareList.adobe, softwareList.ocs],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762783279, 837000000)
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773778972, 468000000)
     },
     {
         "id": "nzPKQFgwiuntaYgA1EIE",
@@ -2506,41 +1539,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773675504, 619000000)
     },
     {
-        "id": "oQ1bKCs9JgegavYAjkE4",
-        "certificateNumber": 160,
-        "observations": "Monitor nuevo sellado ",
-        computer: {
-            id: "oQ1bKCs9JgegavYAjkE4",
-            brand: brandsObject.viewsonic,
-            model: "VS19971",
-            serialNumber: "XNE252920436",
-            internalTag: "-",
-            type: devicesObject.monitor,
-            assignedTo: "Erika Valdés",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773778972, 468000000)
-        },
-        software: [],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773778972, 468000000)
-    },
-    {
-        "id": "oRmyz3BerkDiE84j9AeS",
-        "certificateNumber": 132,
-        "observations": "Se hace entrega con su respectivo cargador.",
-        computer: {
-            id: "oRmyz3BerkDiE84j9AeS",
-            brand: brandsObject.lenovo,
-            model: "V14 G3",
-            serialNumber: "PF51DYD0",
-            internalTag: "PCART-0401",
-            type: devicesObject.notebook,
-            assignedTo: "Oscar Díaz",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764792472, 486000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764792472, 486000000)
-    },
-    
-    {
         "id": "pCVibVb80tUj9pjnkLmw",
         "certificateNumber": 99,
         "observations": "Pack Teclado + Mouse nuevo.",
@@ -2556,23 +1554,6 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1759172515, 548000000)
-    },
-    {
-        "id": "pHPq8iawAoBtqFYAQRdb",
-        "certificateNumber": 15,
-        "observations": "Se entrega el equipo al usuario individualizado en el documento, el cual será utilizado en Decanato",
-        computer: {
-            id: "pHPq8iawAoBtqFYAQRdb",
-            brand: brandsObject.hp,
-            model: "15-eh0011la",
-            serialNumber: "5CD127KWQ1",
-            internalTag: "PCART-0270",
-            type: devicesObject.notebook,
-            assignedTo: "Oscar Nuñez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1741182769, 455000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.guia, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1741182769, 455000000)
     },
     {
         "id": "pNyvenSYUXA4VZAOpe8z",
@@ -2592,92 +1573,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775143561, 682000000)
     },
     {
-        "id": "pnxlYk15cInzk3yHk2K4",
-        "certificateNumber": 50,
-        "observations": "",
-        computer: {
-            id: "pnxlYk15cInzk3yHk2K4",
-            brand: brandsObject.lenovo,
-            model: "Thinkcentre Neo 50a 24 Gen3",
-            serialNumber: "MP2DLYZN",
-            internalTag: "PCART-0241",
-            type: devicesObject.aio,
-            assignedTo: "Miguel Martinez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747329733, 95000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747329733, 95000000)
-    },
-    {
-        "id": "qOIEGIsCzSQv1yY8u2CG",
-        "certificateNumber": 209,
-        "observations": "Se entrega con cargador",
-        computer: {
-            id: "qOIEGIsCzSQv1yY8u2CG",
-            brand: brandsObject.hp,
-            model: "ProBook G9",
-            serialNumber: "5CD3062SYP",
-            internalTag: "PCART-0372",
-            type: devicesObject.notebook,
-            assignedTo: "Ayleen Correa",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1779889100, 389000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1779889100, 389000000)
-    },
-    
-    {
-        "id": "quQwV5mpO2gDVYuj33IP",
-        "certificateNumber": 111,
-        "observations": "Se hace entrega de equipo portátil (notebook) para ser usado en ámbito laboral, tiene un detalle en el audio debido a la tarjeta de sonido que dejo de funcionar.",
-        computer: {
-            id: "quQwV5mpO2gDVYuj33IP",
-            brand: brandsObject.dell,
-            model: "Vostro 3400",
-            serialNumber: "FRGB9L3",
-            internalTag: "PCART-0285",
-            type: devicesObject.notebook,
-            assignedTo: "Karen Parodi",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762884538, 723000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762884538, 723000000)
-    },
-    {
-        "id": "r7AcKPOudJ8NZUh6Zzh7",
-        "certificateNumber": 199,
-        "observations": "Se hace entrega de equipamiento computacional",
-        computer: {
-            id: "r7AcKPOudJ8NZUh6Zzh7",
-            brand: brandsObject.asus,
-            model: "ASUS EXPERTBOOK B3405CCA",
-            serialNumber: "W1NXLP00309401C",
-            internalTag: "PCART-0449",
-            type: devicesObject.notebook,
-            assignedTo: "Rocio Guiñez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778690897, 857000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.augefinanza, softwareList.forticlient, softwareList.ocs, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778690897, 857000000)
-    },
-    {
-        "id": "rK6baPdsSw5kQYDXNtOK",
-        "certificateNumber": 82,
-        "observations": "Se entrega equipo con perfil de usuario creado junto a su respectivo cargador eléctrico",
-        computer: {
-            id: "rK6baPdsSw5kQYDXNtOK",
-            brand: brandsObject.hp,
-            model: "HP PROBOOK 445 G10",
-            serialNumber: "5CD33527B4",
-            internalTag: "PCART-0379",
-            type: devicesObject.notebook,
-            assignedTo: "Matías Machuca",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1755004392, 230000000)
-        },
-        software: [softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1755004392, 230000000)
-    },
-    {
         "id": "rahliLMSvPAlAFKgw0zj",
         "certificateNumber": 38,
         "observations": "Se facilita monitor en calidad de préstamo hasta que llegue el equipo que esta en proceso de compra.",
@@ -2693,24 +1588,6 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1745852119, 737000000)
-    },
-    
-    {
-        "id": "sLpdegRn2qhtgIp4glsH",
-        "certificateNumber": 155,
-        "observations": "Se hace entrega al usuario según ticket STC-1282 para ser usado por la unidad.",
-        computer: {
-            id: "sLpdegRn2qhtgIp4glsH",
-            brand: brandsObject.hp,
-            model: "HP Laptop 15-fd0xxx",
-            serialNumber: "1H85151L9H",
-            internalTag: "PCART-0441",
-            type: devicesObject.notebook,
-            assignedTo: "Equidad Inclusion",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773070596, 614000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.actualizaciones, softwareList.office21, softwareList.chrome, softwareList.adobe, softwareList.forticlient, softwareList.ocs],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773070596, 614000000)
     },
     {
         "id": "sMfl7RYLyDB47zMXEU9m",
@@ -2780,24 +1657,6 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769694489, 53000000)
     },
-    
-    {
-        "id": "tvXRSnpoUzYmGW2sv7DV",
-        "certificateNumber": 94,
-        "observations": "Se entrega con su respectivo cargador.",
-        computer: {
-            id: "tvXRSnpoUzYmGW2sv7DV",
-            brand: brandsObject.hp,
-            model: "Pro Book 445 G8",
-            serialNumber: "5CD2370R29",
-            internalTag: "PCART-0336",
-            type: devicesObject.notebook,
-            assignedTo: "Eduardo Gutiérrez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758727593, 137000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758727593, 137000000)
-    },
     {
         "id": "u6Qmzaaq0Qtor8ucuQL3",
         "certificateNumber": 187,
@@ -2833,24 +1692,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1751466206, 607000000)
     },
     {
-        "id": "vIG7QfmRokS3Lx6RQRSQ",
-        "certificateNumber": 28,
-        "observations": "Equipo será utilizado para impartir clases en la facultad de Artes de compañía en la carrera teoría de las artes.",
-        computer: {
-            id: "vIG7QfmRokS3Lx6RQRSQ",
-            brand: brandsObject.lenovo,
-            model: "ThinBook 14 G6 ABP",
-            serialNumber: "PW0AA3RW",
-            internalTag: "PCART-0413",
-            type: devicesObject.notebook,
-            assignedTo: "Fernando Gonzalez",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770748, 335000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770748, 335000000)
-    },
-    
-    {
         "id": "vx41ZNabkaiutL9jrfmd",
         "certificateNumber": 185,
         "observations": "",
@@ -2866,23 +1707,6 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776174003, 512000000)
-    },
-    {
-        "id": "xsm6RgGJygtcBNwvtFI2",
-        "certificateNumber": 196,
-        "observations": "Se hace entrega de equipamiento computacional",
-        computer: {
-            id: "xsm6RgGJygtcBNwvtFI2",
-            brand: brandsObject.asus,
-            model: "ASUSTeK COMPUTER INC.",
-            serialNumber: "T7PTCJ00M828299",
-            internalTag: "PCART-0446",
-            type: devicesObject.aio,
-            assignedTo: "Lucia Espinoza",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778075546, 540000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778075546, 540000000)
     },
     {
         "id": "xvEdi3EVzdOqoobpHeXn",
@@ -2902,23 +1726,6 @@ export const dataToPush: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1746809724, 358000000)
     },
     {
-        "id": "yL47U8vrZ5SMbxzBQf4S",
-        "certificateNumber": 198,
-        "observations": "Se entrega notebook con su respectivo cargador.",
-        computer: {
-            id: "yL47U8vrZ5SMbxzBQf4S",
-            brand: brandsObject.asus,
-            model: "ExpertBook PM1403CDA",
-            serialNumber: "TANXCV086255438",
-            internalTag: "PCART-0450",
-            type: devicesObject.notebook,
-            assignedTo: "Cristian Godoy",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778690149, 578000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778690149, 578000000)
-    },
-    {
         "id": "yP0CwzAlEmzQfRsKSywn",
         "certificateNumber": 179,
         "observations": "Teléfono de préstamo desde Servicios Centrales, mientras se despacha equipamiento definitivo.",
@@ -2934,24 +1741,7 @@ export const dataToPush: Certificate[] = [
         },
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775665589, 577000000)
-    },
-    {
-        "id": "yXtBQiADQnsU9mQ9FemX",
-        "certificateNumber": 52,
-        "observations": "Equipo cedido en calidad de préstamo a la usuaria mientras regulariza la garantía del Laptop original.",
-        computer: {
-            id: "yXtBQiADQnsU9mQ9FemX",
-            brand: brandsObject.dell,
-            model: "Latitude 3490",
-            serialNumber: "BBD6LR2",
-            internalTag: "PCART-0230",
-            type: devicesObject.notebook,
-            assignedTo: "Elizabeth Ortiz",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1748290079, 328000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.office365],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1748290079, 328000000)
-    },
+    },  
     {
         "id": "yiVR4AHFoCt5MB5gSVy6",
         "certificateNumber": 57,
@@ -2969,7 +1759,6 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1749497228, 245000000)
     },
-    
     {
         "id": "zF8J5USi098OFAjQngRn",
         "certificateNumber": 84,
@@ -3021,15 +1810,1201 @@ export const dataToPush: Certificate[] = [
         software: [],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776694684, 317000000)
     },
-    
 ]
 
+export const dataPCART: Certificate[] = [
+    {
+        "id": "5yi8B9ksl2gVyasAF4nv",
+        "certificateNumber": 176,
+        "observations": "Se entrega Notebook con su respectivo cargador.",
+        computer: {
+            id: "5yi8B9ksl2gVyasAF4nv",
+            brand: brandsObject.asus,
+            model: "X1605Z",
+            serialNumber: "SCN0CV03A31749B",
+            internalTag: "PCART-0445",
+            type: devicesObject.notebook,
+            assignedTo: "Rolando Cori",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775492394, 362000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.chrome, softwareList.actualizaciones, softwareList.office21],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775492394, 362000000)
+    },
+    {
+        "id": "7ccS83AIucsPcwYgjUKC",
+        "certificateNumber": 25,
+        "observations": "Equipo será utilizado para impartir clases en la facultad de Artes de compañía en la carrera teoría de las artes.",
+        computer: {
+            id: "7ccS83AIucsPcwYgjUKC",
+            brand: brandsObject.lenovo,
+            model: "ThinBook 14 G6 ABP",
+            serialNumber: "PW0AA3M0",
+            internalTag: "PCART-0410",
+            type: devicesObject.notebook,
+            assignedTo: "Fernando Gonzalez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770288, 122000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770288, 122000000)
+    },
+    {
+        "id": "8Masi08o8ro5jzbqZwqa",
+        "certificateNumber": 159,
+        "observations": "Notebook HP estandarizado con cargador y cuenta de usuario Activo ",
+        computer: {
+            id: "8Masi08o8ro5jzbqZwqa",
+            brand: brandsObject.hp,
+            model: "HP Probook 445 G10",
+            serialNumber: "5CD403178T",
+            internalTag: "PCART-0386",
+            type: devicesObject.notebook,
+            assignedTo: "Erika Valdés",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773774539, 936000000)
+        },
+        software: [softwareList.vlc, softwareList.anydesk, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.forticlient, softwareList.auhonorarios, softwareList.actualizaciones, softwareList.rustdesk],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773774539, 936000000)
+    },
+    {
+        "id": "9L3BsBHWrrhPUCYGiNmS",
+        "certificateNumber": 26,
+        "observations": "Equipo será utilizado para impartir clases en la facultad de Artes de compañía en la carrera teoría de las artes.",
+        computer: {
+            id: "9L3BsBHWrrhPUCYGiNmS",
+            brand: brandsObject.lenovo,
+            model: "ThinBook 14 G6 ABP",
+            serialNumber: "PW0AA3NY",
+            internalTag: "PCART-0411",
+            type: devicesObject.notebook,
+            assignedTo: "Fernando Gonzalez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770447, 971000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770447, 971000000)
+    },
+    {
+        "id": "9vWUnkm1Y4WXSDL5sWah",
+        "certificateNumber": 195,
+        "observations": "Se hace entrega de equipo computacional ",
+        computer: {
+            id: "9vWUnkm1Y4WXSDL5sWah",
+            brand: brandsObject.asus,
+            model: "ASUS EXPERTCENTER P440VA_P440VA",
+            serialNumber: "T7PTCJ00M756296",
+            internalTag: "PCART-0447",
+            type: devicesObject.aio,
+            assignedTo: "Lucia Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778075314, 712000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778075314, 712000000)
+    },
+    {
+        "id": "9wj5szCP5Xti9FHvUATX",
+        "certificateNumber": 186,
+        "observations": "Se realiza entrega en calidad de préstamo temporal para resolver requerimiento  TICKETSTC-1429",
+        computer: {
+            id: "9wj5szCP5Xti9FHvUATX",
+            brand: brandsObject.hp,
+            model: "HP ProBook 445 ",
+            serialNumber: "5CD403178T",
+            internalTag: "PCART-0386",
+            type: devicesObject.notebook,
+            assignedTo: "Ayleen Correa",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776182201, 892000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776182201, 892000000)
+    },
+    {
+        "id": "AGYX6EssviUp6q7OtXIr",
+        "certificateNumber": 96,
+        "observations": "Se realiza entrega de equipo portátil a la usuaria como cargo personal. ",
+        computer: {
+            id: "AGYX6EssviUp6q7OtXIr",
+            brand: brandsObject.hp,
+            model: "HP 255 G10 ",
+            serialNumber: "1H84243M09",
+            internalTag: "PCART-0391",
+            type: devicesObject.notebook,
+            assignedTo: "Ignacia Briceño",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758805362, 656000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758805362, 656000000)
+    },
+    {
+        "id": "Ag6zBTygurI5uaMPPkQX",
+        "certificateNumber": 114,
+        "observations": "",
+        computer: {
+            id: "Ag6zBTygurI5uaMPPkQX",
+            brand: brandsObject.asus,
+            model: "EXPERTBOOK B3404CMA",
+            serialNumber: "SBNXCV10990747C",
+            internalTag: "PCART-0425",
+            type: devicesObject.notebook,
+            assignedTo: "Francisco Gonzalez Stuardo",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763392916, 601000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763392916, 601000000)
+    },
+    {
+        "id": "AhgnHNaMYy56d5emZUCR",
+        "certificateNumber": 90,
+        "observations": "",
+        computer: {
+            id: "AhgnHNaMYy56d5emZUCR",
+            brand: brandsObject.apple,
+            model: "MacBook Pro M4",
+            serialNumber: "MR6F4R7L7W",
+            internalTag: "PCART-0431",
+            type: devicesObject.notebook,
+            assignedTo: "Luis Montes Rojas",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1757020286, 115000000)
+        },
+        software: [softwareList.office365, softwareList.adobe],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1757020286, 115000000)
+    },
+    {
+        "id": "AxydnT6on9LYVH0B5YQq",
+        "certificateNumber": 61,
+        "observations": "",
+        computer: {
+            id: "AxydnT6on9LYVH0B5YQq",
+            brand: brandsObject.asus,
+            model: "EXPERTBOOK P1403CVA",
+            serialNumber: "SCNXCV15X137526",
+            internalTag: "PCART-0418",
+            type: devicesObject.notebook,
+            assignedTo: "Luciano Rojas",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750351103, 380000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750351103, 380000000)
+    },
+    {
+        "id": "BIGzQzDplOkA9E4VrzP6",
+        "certificateNumber": 71,
+        "observations": "",
+        computer: {
+            id: "BIGzQzDplOkA9E4VrzP6",
+            brand: brandsObject.hp,
+            model: "PROBOOK 445 G8",
+            serialNumber: "5CD1514YZH",
+            internalTag: "PCART-0319",
+            type: devicesObject.notebook,
+            assignedTo: "Viviana Rondón",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1751552996, 258000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1751552996, 258000000)
+    },
+    {
+        "id": "CtDQmDKRC9u8hBDr9Mbp",
+        "certificateNumber": 148,
+        "observations": "Se hace entrega de equipamiento computacional a la usuaria identificada en ele documento.",
+        computer: {
+            id: "CtDQmDKRC9u8hBDr9Mbp",
+            brand: brandsObject.lenovo,
+            model: "21SG",
+            serialNumber: "PW0GTS75",
+            internalTag: "PCART-0438",
+            type: devicesObject.notebook,
+            assignedTo: "Isis Diaz",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769015303, 761000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769015303, 761000000)
+    },
+    {
+        "id": "DewV2HXgkOWNoJcfQqEv",
+        "certificateNumber": 81,
+        "observations": "",
+        computer: {
+            id: "DewV2HXgkOWNoJcfQqEv",
+            brand: brandsObject.hp,
+            model: "PROBOOK 445 G8",
+            serialNumber: "5CD1514XK3",
+            internalTag: "PCART-0321",
+            type: devicesObject.notebook,
+            assignedTo: "Paula Altamirano",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1754499493, 31000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1754499493, 31000000)
+    },
+    {
+        "id": "EXWEId3S0ydBWG1LrYlF",
+        "certificateNumber": 44,
+        "observations": "Equipo entregado a la Psicóloga DEA ",
+        computer: {
+            id: "EXWEId3S0ydBWG1LrYlF",
+            brand: brandsObject.lenovo,
+            model: "IdealPad Slim5 5 14IRH10",
+            serialNumber: "YX0E1H9C",
+            internalTag: "PCART-0414",
+            type: devicesObject.notebook,
+            assignedTo: "Constanza Bustamante",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747164419, 717000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747164419, 717000000)
+    },
+    {
+        "id": "FGxfpHaLokSCI2IRMitx",
+        "certificateNumber": 80,
+        "observations": "Pc se entrega con los programas requeridos e inventariado.",
+        computer: {
+            id: "FGxfpHaLokSCI2IRMitx",
+            brand: brandsObject.generico,
+            model: "Generico",
+            serialNumber: "BIPK67070",
+            internalTag: "PCART-0421",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Francisco Miranda",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1754339307, 311000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1754339307, 311000000)
+    },
+    {
+        "id": "FOqmVdi74k1WKvypfWBa",
+        "certificateNumber": 170,
+        "observations": "Equipo nuevo con programas institucionales \nequipo actualizado se incluye cargador original ",
+        computer: {
+            id: "FOqmVdi74k1WKvypfWBa",
+            brand: brandsObject.asus,
+            model: "Asus expertbook",
+            serialNumber: "S8NXCV14K029344",
+            internalTag: "PCART-0443",
+            type: devicesObject.notebook,
+            assignedTo: "María Ignacia Amigo",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775047793, 437000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.actualizaciones, softwareList.office21],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775047793, 437000000)
+    },
+    {
+        "id": "FQUCoryrxNGZcenppzFS",
+        "certificateNumber": 98,
+        "observations": "Se entrega notebook con su respectivo cargador.",
+        computer: {
+            id: "FQUCoryrxNGZcenppzFS",
+            brand: brandsObject.asus,
+            model: "ExpertBook",
+            serialNumber: "S8NXCV14K030347",
+            internalTag: "PCART-0432",
+            type: devicesObject.notebook,
+            assignedTo: "Camila Briceño",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758891338, 761000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.sisper, softwareList.forticlient, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones, softwareList.auhonorarios],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758891338, 761000000)
+    },
+    {
+        "id": "FgJA9Md1JZ1R9yfV6Rm9",
+        "certificateNumber": 23,
+        "observations": "Equipo reasignado, le falta la tecla de \"flecha hacia arriba\".",
+        computer: {
+            id: "FgJA9Md1JZ1R9yfV6Rm9",
+            brand: brandsObject.dell,
+            model: "Inspiron 3505",
+            serialNumber: "GQ596C3",
+            internalTag: "PCART-0268",
+            type: devicesObject.notebook,
+            assignedTo: "Miguel Martinez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743683672, 646000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743683672, 646000000)
+    },
+    {
+        "id": "H2DGWyBIAwr5OA1TBAtl",
+        "certificateNumber": 113,
+        "observations": "",
+        computer: {
+            id: "H2DGWyBIAwr5OA1TBAtl",
+            brand: brandsObject.asus,
+            model: "ExpertBook B3404CM",
+            serialNumber: "SBNXCV109924478",
+            internalTag: "PCART-0428",
+            type: devicesObject.notebook,
+            assignedTo: "Mario Labbé",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763392360, 214000000)
+        },
+        software: [softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763392360, 214000000)
+    },
+    {
+        "id": "Fxupo0xKacdLGpowu7gR",
+        "certificateNumber": 184,
+        "observations": "Se entrega notebook con su respectivo cargador.",
+        computer: {
+            id: "Fxupo0xKacdLGpowu7gR",
+            brand: brandsObject.hp,
+            model: "Pro Book 445 G8",
+            serialNumber: "5CD202BXQK",
+            internalTag: "PCART-0283",
+            type: devicesObject.notebook,
+            assignedTo: "Javiera Soto",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775850035, 719000000)
+        },
+        software: [softwareList.izarc, softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.chrome, softwareList.adobe, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775850035, 719000000)
+    },
+    {
+        "id": "JhAzVNFRwYHPq4CYaFZM",
+        "certificateNumber": 73,
+        "observations": "Se entrega con su cargador",
+        computer: {
+            id: "JhAzVNFRwYHPq4CYaFZM",
+            brand: brandsObject.dell,
+            model: "Vostro 3400",
+            serialNumber: "9LSB9L3",
+            internalTag: "PCART-0277",
+            type: devicesObject.notebook,
+            assignedTo: "Matias Machuca",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1752081106, 506000000)
+        },
+        software: [softwareList.chrome, softwareList.office365, softwareList.actualizaciones, softwareList.ocs, softwareList.forticlient, softwareList.oracle, softwareList.anydesk, softwareList.rustdesk, softwareList.izarc, softwareList.vlc, softwareList.adobe],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1752081106, 506000000)
+    },
+    {
+        "id": "M5lMMD1LnM5WP5eA7lLN",
+        "certificateNumber": 65,
+        "observations": "Entrega de equipo portátil a cargo.",
+        computer: {
+            id: "M5lMMD1LnM5WP5eA7lLN",
+            brand: brandsObject.lenovo,
+            model: "21KJ",
+            serialNumber: "PW0FC1DT",
+            internalTag: "PCART-0420",
+            type: devicesObject.notebook,
+            assignedTo: "Marcel Becerra",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750795166, 195000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.sisper, softwareList.ocs, softwareList.chrome, softwareList.office365, softwareList.actualizaciones, softwareList.oracle],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750795166, 195000000)
+    },
+    {
+        "id": "MJLsJVng06sAuCWtvi0W",
+        "certificateNumber": 142,
+        "observations": "PC para practicante",
+        computer: {
+            id: "MJLsJVng06sAuCWtvi0W",
+            brand: brandsObject.hp,
+            model: "ProBook 445 G8",
+            serialNumber: "SCD1514XGW",
+            internalTag: "PCART-0291",
+            type: devicesObject.notebook,
+            assignedTo: "Danilo Lizana",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767704392, 965000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767704392, 965000000)
+    },
+    {
+        "id": "N5VAwTqrjODaw7q3WI8x",
+        "certificateNumber": 169,
+        "observations": "Equipo de préstamo mientras unidad de inventarios adquiere un disco duro ",
+        computer: {
+            id: "N5VAwTqrjODaw7q3WI8x",
+            brand: brandsObject.dell,
+            model: "Latitude 3490",
+            serialNumber: "BBD6LR2",
+            internalTag: "PCART-0230",
+            type: devicesObject.notebook,
+            assignedTo: "Andrea Peñaloza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775047076, 894000000)
+        },
+        software: [softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775047076, 894000000)
+    },
+    {
+        "id": "P1KyhHfKXNkNSiEsZZ1j",
+        "certificateNumber": 85,
+        "observations": "",
+        computer: {
+            id: "P1KyhHfKXNkNSiEsZZ1j",
+            brand: brandsObject.generico,
+            model: "Generico",
+            serialNumber: "7426151676",
+            internalTag: "PCART-0210",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Guido Zamorano",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756131238, 334000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.actualizaciones, softwareList.office21],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756131238, 334000000)
+    },
+    {
+        "id": "PCrKbMqEOOMGgC1hM2G8",
+        "certificateNumber": 105,
+        "observations": "Equipo nuevo con cargador",
+        computer: {
+            id: "PCrKbMqEOOMGgC1hM2G8",
+            brand: brandsObject.asus,
+            model: "ExpertBook B3404CMA",
+            serialNumber: "SBNXCV109888479",
+            internalTag: "PCART-0433",
+            type: devicesObject.notebook,
+            assignedTo: "Guido Soto",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762375279, 374000000)
+        },
+        software: [softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762375279, 374000000)
+    },
+    {
+        "id": "Rbxg7B6aJ9TSbrjejWSh",
+        "certificateNumber": 89,
+        "observations": "",
+        computer: {
+            id: "Rbxg7B6aJ9TSbrjejWSh",
+            brand: brandsObject.hp,
+            model: "ProBook 445 G9",
+            serialNumber: "5CD3062TP4",
+            internalTag: "PCART-0354",
+            type: devicesObject.notebook,
+            assignedTo: "Ayleen Correa",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756761896, 844000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756761896, 844000000)
+    },
+    {
+        "id": "PKjy5yscCXVKtUBPA81J",
+        "certificateNumber": 27,
+        "observations": "Equipo será utilizado para impartir clases en la facultad de Artes de compañía en la carrera teoría de las artes.",
+        computer: {
+            id: "PKjy5yscCXVKtUBPA81J",
+            brand: brandsObject.lenovo,
+            model: "ThinBook 14 G6 ABP",
+            serialNumber: "PW0AA3SS",
+            internalTag: "PCART-0412",
+            type: devicesObject.notebook,
+            assignedTo: "Fernando Gonzalez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770622, 36000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770622, 36000000)
+    },
+    {
+        "id": "T8l7Tutj22yeRUcuGPcZ",
+        "certificateNumber": 24,
+        "observations": "Equipo será utilizado para impartir clases en la facultad de Artes de compañía en la carrera teoría de las artes,",
+        computer: {
+            id: "T8l7Tutj22yeRUcuGPcZ",
+            brand: brandsObject.lenovo,
+            model: "ThinBook 14 G6 ABP",
+            serialNumber: "PW0AA3NL",
+            internalTag: "PCART-0409",
+            type: devicesObject.notebook,
+            assignedTo: "Fernando Gonzalez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770001, 480000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.chrome, softwareList.adobe, softwareList.ocs, softwareList.office365, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770001, 480000000)
+    },
+    {
+        "id": "ToRy9e9BRY1sOeC2wWhU",
+        "certificateNumber": 107,
+        "observations": "",
+        computer: {
+            id: "ToRy9e9BRY1sOeC2wWhU",
+            brand: brandsObject.hp,
+            model: "Pro Book 445 G9",
+            serialNumber: "5CD1514XJ6",
+            internalTag: "PCART-0292",
+            type: devicesObject.notebook,
+            assignedTo: "Andrea Peñaloza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762519227, 897000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762519227, 897000000)
+    },
+    {
+        "id": "Tzky0NgwSqy3Av3KzPKP",
+        "certificateNumber": 149,
+        "observations": "Se hace entrega de equipamiento computacional al usuario indicado en esta acta.",
+        computer: {
+            id: "Tzky0NgwSqy3Av3KzPKP",
+            brand: brandsObject.hp,
+            model: "HP All-in-One Desktop 27-cr0xxx",
+            serialNumber: "8CC5071FT7",
+            internalTag: "PCART-0439",
+            type: devicesObject.aio,
+            assignedTo: "Veronica Vargas",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769529103, 775000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1769529103, 775000000)
+    },
+    {
+        "id": "UYsTn9V6cx0UY80j333x",
+        "certificateNumber": 45,
+        "observations": "El computador cuenta con los programas necesarios para su uso correspondiente.",
+        computer: {
+            id: "UYsTn9V6cx0UY80j333x",
+            brand: brandsObject.hp,
+            model: "ProOne 440 G9",
+            serialNumber: "8CN34302XW",
+            internalTag: "PCART-0415",
+            type: devicesObject.aio,
+            assignedTo: "Luis Corvalán",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747165947, 654000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747165947, 654000000)
+    },
+    {
+        "id": "UiphKvLe8uMi7WWmBXoA",
+        "certificateNumber": 166,
+        "observations": "Se entrega notebook con su cargador correspondiente.",
+        computer: {
+            id: "UiphKvLe8uMi7WWmBXoA",
+            brand: brandsObject.hp,
+            model: "Pro Book 445 G9",
+            serialNumber: "5CD3062SYP",
+            internalTag: "PCART-0372",
+            type: devicesObject.notebook,
+            assignedTo: "Rolando Cori",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1774893897, 770000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.chrome, softwareList.office21, softwareList.actualizaciones, softwareList.adobe],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1774893897, 770000000)
+    },
+    {
+        "id": "WNc4S4dYbu2mEeN2RQP8",
+        "certificateNumber": 156,
+        "observations": "Se hace entrega de equipamiento computacional al usuario indicado en el acta.",
+        computer: {
+            id: "WNc4S4dYbu2mEeN2RQP8",
+            brand: brandsObject.hp,
+            model: "HP Laptop 15-fd0xxx",
+            serialNumber: "1H85140K3M",
+            internalTag: "PCART-0440",
+            type: devicesObject.notebook,
+            assignedTo: "Catalina Reyes",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773070906, 423000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773070906, 423000000)
+    },
+    {
+        "id": "Ws3AnQsXd2BX6U3DBcM3",
+        "certificateNumber": 22,
+        "observations": "",
+        computer: {
+            id: "Ws3AnQsXd2BX6U3DBcM3",
+            brand: brandsObject.hp,
+            model: "ProBook 445 G9",
+            serialNumber: "5CD3062TP4",
+            internalTag: "PCART-0354",
+            type: devicesObject.notebook,
+            assignedTo: "Miguel Martinez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1742998872, 442000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1742998872, 442000000)
+    },
+    {
+        "id": "XtxftwQELarLyymQGvma",
+        "certificateNumber": 110,
+        "observations": "Equipo asignado para uso laboral.",
+        computer: {
+            id: "XtxftwQELarLyymQGvma",
+            brand: brandsObject.asus,
+            model: "ASUS EXPERTBOOK",
+            serialNumber: "SBNXCV109900475",
+            internalTag: "PCART-0430",
+            type: devicesObject.notebook,
+            assignedTo: "Marcelo Torres",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762784571, 193000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762784571, 193000000)
+    },
+    {
+        "id": "Xxi6s4iM8aVU5bGok09C",
+        "certificateNumber": 48,
+        "observations": "",
+        computer: {
+            id: "Xxi6s4iM8aVU5bGok09C",
+            brand: brandsObject.hp,
+            model: "ProOne 440 AiO",
+            serialNumber: "8CN34302W8",
+            internalTag: "PCART-0416",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Mabel Urrutia",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747236616, 655000000)
+        },
+        software: [softwareList.vlc, softwareList.rustdesk, softwareList.izarc, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747236616, 655000000)
+    },
+    {
+        "id": "YVt0DMFkNucxhEjOxMBn",
+        "certificateNumber": 49,
+        "observations": "",
+        computer: {
+            id: "YVt0DMFkNucxhEjOxMBn",
+            brand: brandsObject.hp,
+            model: "ProBook 445 G9",
+            serialNumber: "5CD3062TP4",
+            internalTag: "PCART-0354",
+            type: devicesObject.notebook,
+            assignedTo: "Fernanda Nawrath",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747324709, 388000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.actualizaciones, softwareList.office21],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747324709, 388000000)
+    }, 
+    {
+        "id": "aSkukQNz2SUBfBzKaq4V",
+        "certificateNumber": 83,
+        "observations": "Se entrega con sus accesorios.",
+        computer: {
+            id: "aSkukQNz2SUBfBzKaq4V",
+            brand: brandsObject.hp,
+            model: "ProBook 445 G10",
+            serialNumber: "5CD33527B4",
+            internalTag: "PCART-0379",
+            type: devicesObject.notebook,
+            assignedTo: "Matías Díaz",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1755020881, 558000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1755020881, 558000000)
+    },
+    {
+        "id": "aWAc1ZvEDj40K391kPTj",
+        "certificateNumber": 63,
+        "observations": "",
+        computer: {
+            id: "aWAc1ZvEDj40K391kPTj",
+            brand: brandsObject.asus,
+            model: "P1403CVA",
+            serialNumber: "SCNXCV15X36852A",
+            internalTag: "PCART-0417",
+            type: devicesObject.notebook,
+            assignedTo: "Catalina König",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750696606, 680000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1750696606, 680000000)
+    },
+    {
+        "id": "cAGnXys6W0CIQXipPacE",
+        "certificateNumber": 47,
+        "observations": "",
+        computer: {
+            id: "cAGnXys6W0CIQXipPacE",
+            brand: brandsObject.lenovo,
+            model: "V14 G3",
+            serialNumber: "PF51DYD0",
+            internalTag: "PCART-0401",
+            type: devicesObject.notebook,
+            assignedTo: "Katalina Urra",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747234294, 127000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747234294, 127000000)
+    },
+    {
+        "id": "cCynCzHigiUV7vdrJsHS",
+        "certificateNumber": 54,
+        "observations": "Notebook se entrega con su cargador correspondiente",
+        computer: {
+            id: "cCynCzHigiUV7vdrJsHS",
+            brand: brandsObject.lenovo,
+            model: "Thinkpad E580",
+            serialNumber: "PF1HR1SQ",
+            internalTag: "PCART-0246",
+            type: devicesObject.notebook,
+            assignedTo: "Milena Viertel",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1749480764, 522000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.oracle, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1749480764, 522000000)
+    },
+    {
+        "id": "d9NlZ1lRefAYaiXHIRQU",
+        "certificateNumber": 141,
+        "observations": "Notebook Prestamo.",
+        computer: {
+            id: "d9NlZ1lRefAYaiXHIRQU",
+            brand: brandsObject.hp,
+            model: "Pro Book 445 G9",
+            serialNumber: "5CD1514XGW",
+            internalTag: "PCART-0291",
+            type: devicesObject.notebook,
+            assignedTo: "Victor Lopez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767623786, 850000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.anydesk, softwareList.rustdesk, softwareList.ocs, softwareList.chrome, softwareList.office21, softwareList.actualizaciones, softwareList.adobe],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767623786, 850000000)
+    },
+    {
+        "id": "dWopTgLVZJHt6Wy3s5ur",
+        "certificateNumber": 109,
+        "observations": "",
+        computer: {
+            id: "dWopTgLVZJHt6Wy3s5ur",
+            brand: brandsObject.hp,
+            model: "Pro Book 445 G9",
+            serialNumber: "5CD3109N02",
+            internalTag: "PCART-0341",
+            type: devicesObject.notebook,
+            assignedTo: "Monica Zamora",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762783697, 178000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.chrome, softwareList.office365, softwareList.actualizaciones, softwareList.adobe],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762783697, 178000000)
+    },
+    {
+        "id": "eLUjT3xA7JCBmqQo4cgF",
+        "certificateNumber": 154,
+        "observations": "Se hace entrega de equipamiento computacional a la usuaria indicada en el acta.",
+        computer: {
+            id: "eLUjT3xA7JCBmqQo4cgF",
+            brand: brandsObject.lenovo,
+            model: "21KJ",
+            serialNumber: "PW0FC1GH",
+            internalTag: "PCART-0442",
+            type: devicesObject.notebook,
+            assignedTo: "Claudia Vergara",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773069162, 827000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773069162, 827000000)
+    },
+    {
+        "id": "gshvbyrUPRzdChPs5o5f",
+        "certificateNumber": 14,
+        "observations": "Se entrega el equipo al usuario individualizado en el documento, el cual será utilizado en la Unidad de Finanzas.",
+        computer: {
+            id: "gshvbyrUPRzdChPs5o5f",
+            brand: brandsObject.lenovo,
+            model: "V14 G3",
+            serialNumber: "PF51CZ2P",
+            internalTag: "PCART-0406",
+            type: devicesObject.notebook,
+            assignedTo: "Patricia Berrios",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1741032337, 401000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.anydesk, softwareList.rustdesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1741032337, 401000000)
+    },
+    {
+        "id": "kjsg6tXVS0OErLweQOf6",
+        "certificateNumber": 104,
+        "observations": "Se reasigna equipo computacional institucional el cual será  usado por el usuario en el acta descrito",
+        computer: {
+            id: "kjsg6tXVS0OErLweQOf6",
+            brand: brandsObject.lenovo,
+            model: "20YN",
+            serialNumber: "PF389KT5",
+            internalTag: "PCART-0273",
+            type: devicesObject.notebook,
+            assignedTo: "óscar Diaz",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762175437, 12000000)
+        },
+        software: [],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762175437, 12000000)
+    },
+    {
+        "id": "lcF5Mp4P2mneMmbiPi0e",
+        "certificateNumber": 92,
+        "observations": "",
+        computer: {
+            id: "lcF5Mp4P2mneMmbiPi0e",
+            brand: brandsObject.asus,
+            model: "EXPERTBOOK B3404CMA",
+            serialNumber: "T2NXCV03D75307B",
+            internalTag: "PCART-0429",
+            type: devicesObject.notebook,
+            assignedTo: "Mauricio Toro",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1757595492, 510000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.anydesk, softwareList.rustdesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1757595492, 510000000)
+    },
+    {
+        "id": "lcGF8P6Bhil8f1mwpbFc",
+        "certificateNumber": 93,
+        "observations": "",
+        computer: {
+            id: "lcGF8P6Bhil8f1mwpbFc",
+            brand: brandsObject.asus,
+            model: "EXPERTBOOK B3404CMA",
+            serialNumber: "S8NXCV14K03934B",
+            internalTag: "PCART-0431",
+            type: devicesObject.notebook,
+            assignedTo: "Camila Reyes",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758567091, 636000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.guia, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758567091, 636000000)
+    },
+    {
+        "id": "lopNwmcCt8hbkbwzOjFs",
+        "certificateNumber": 95,
+        "observations": "",
+        computer: {
+            id: "lopNwmcCt8hbkbwzOjFs",
+            brand: brandsObject.lenovo,
+            model: "ThinkCentre Neo 50A 24 Gen3",
+            serialNumber: "MP2AC2N4",
+            internalTag: "PCART-0378",
+            type: devicesObject.aio,
+            assignedTo: "José Neira",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758727784, 983000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758727784, 983000000)
+    },
+    {
+        "id": "mr00bOwI5DaKwkxftMHr",
+        "certificateNumber": 188,
+        "observations": "Equipo de préstamo, se entrega con su respectivo cargador.",
+        computer: {
+            id: "mr00bOwI5DaKwkxftMHr",
+            brand: brandsObject.hp,
+            model: "Pro Book 445 G9",
+            serialNumber: "5CD3062SYP",
+            internalTag: "PCART-0372",
+            type: devicesObject.notebook,
+            assignedTo: "Rocio Guiñez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776349754, 27000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.actualizaciones, softwareList.office365],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1776349754, 27000000)
+    }, 
+    {
+        "id": "nLXE6TUWCgLAthccSvLX",
+        "certificateNumber": 30,
+        "observations": "",
+        computer: {
+            id: "nLXE6TUWCgLAthccSvLX",
+            brand: brandsObject.generico,
+            model: "Escritorio",
+            serialNumber: "H81MHV3",
+            internalTag: "PCART-0029",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Isis Diaz Lopez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743794225, 798000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743794225, 798000000)
+    },
+    {
+        "id": "nR6SMMYM6JG6gnz4gKEo",
+        "certificateNumber": 88,
+        "observations": "",
+        computer: {
+            id: "nR6SMMYM6JG6gnz4gKEo",
+            brand: brandsObject.dell,
+            model: "Vostro 14 3400",
+            serialNumber: "9LSB9L3",
+            internalTag: "PCART-0277",
+            type: devicesObject.notebook,
+            assignedTo: "Dominique Marinkovic",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756761711, 254000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1756761711, 254000000)
+    },
+    {
+        "id": "nbmCgEJUOAW3YPxkg4V8",
+        "certificateNumber": 108,
+        "observations": "",
+        computer: {
+            id: "nbmCgEJUOAW3YPxkg4V8",
+            brand: brandsObject.asus,
+            model: "ExpertBook B3404CM",
+            serialNumber: "T2NXCV03D760077",
+            internalTag: "PCART-0426",
+            type: devicesObject.notebook,
+            assignedTo: "Cesar Mella",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762783279, 837000000)
+        },
+        software: [softwareList.izarc, softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.office365, softwareList.actualizaciones, softwareList.chrome, softwareList.adobe, softwareList.ocs],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762783279, 837000000)
+    },
+    {
+        "id": "oRmyz3BerkDiE84j9AeS",
+        "certificateNumber": 132,
+        "observations": "Se hace entrega con su respectivo cargador.",
+        computer: {
+            id: "oRmyz3BerkDiE84j9AeS",
+            brand: brandsObject.lenovo,
+            model: "V14 G3",
+            serialNumber: "PF51DYD0",
+            internalTag: "PCART-0401",
+            type: devicesObject.notebook,
+            assignedTo: "Oscar Díaz",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764792472, 486000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764792472, 486000000)
+    },
+    {
+        "id": "pHPq8iawAoBtqFYAQRdb",
+        "certificateNumber": 15,
+        "observations": "Se entrega el equipo al usuario individualizado en el documento, el cual será utilizado en Decanato",
+        computer: {
+            id: "pHPq8iawAoBtqFYAQRdb",
+            brand: brandsObject.hp,
+            model: "15-eh0011la",
+            serialNumber: "5CD127KWQ1",
+            internalTag: "PCART-0270",
+            type: devicesObject.notebook,
+            assignedTo: "Oscar Nuñez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1741182769, 455000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.ocs, softwareList.guia, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1741182769, 455000000)
+    },
+    {
+        "id": "pnxlYk15cInzk3yHk2K4",
+        "certificateNumber": 50,
+        "observations": "",
+        computer: {
+            id: "pnxlYk15cInzk3yHk2K4",
+            brand: brandsObject.lenovo,
+            model: "Thinkcentre Neo 50a 24 Gen3",
+            serialNumber: "MP2DLYZN",
+            internalTag: "PCART-0241",
+            type: devicesObject.aio,
+            assignedTo: "Miguel Martinez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747329733, 95000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1747329733, 95000000)
+    },
+    {
+        "id": "qOIEGIsCzSQv1yY8u2CG",
+        "certificateNumber": 209,
+        "observations": "Se entrega con cargador",
+        computer: {
+            id: "qOIEGIsCzSQv1yY8u2CG",
+            brand: brandsObject.hp,
+            model: "ProBook G9",
+            serialNumber: "5CD3062SYP",
+            internalTag: "PCART-0372",
+            type: devicesObject.notebook,
+            assignedTo: "Ayleen Correa",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1779889100, 389000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1779889100, 389000000)
+    },
+    {
+        "id": "quQwV5mpO2gDVYuj33IP",
+        "certificateNumber": 111,
+        "observations": "Se hace entrega de equipo portátil (notebook) para ser usado en ámbito laboral, tiene un detalle en el audio debido a la tarjeta de sonido que dejo de funcionar.",
+        computer: {
+            id: "quQwV5mpO2gDVYuj33IP",
+            brand: brandsObject.dell,
+            model: "Vostro 3400",
+            serialNumber: "FRGB9L3",
+            internalTag: "PCART-0285",
+            type: devicesObject.notebook,
+            assignedTo: "Karen Parodi",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762884538, 723000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1762884538, 723000000)
+    },
+    {
+        "id": "r7AcKPOudJ8NZUh6Zzh7",
+        "certificateNumber": 199,
+        "observations": "Se hace entrega de equipamiento computacional",
+        computer: {
+            id: "r7AcKPOudJ8NZUh6Zzh7",
+            brand: brandsObject.asus,
+            model: "ASUS EXPERTBOOK B3405CCA",
+            serialNumber: "W1NXLP00309401C",
+            internalTag: "PCART-0449",
+            type: devicesObject.notebook,
+            assignedTo: "Rocio Guiñez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778690897, 857000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.augefinanza, softwareList.forticlient, softwareList.ocs, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778690897, 857000000)
+    },
+    {
+        "id": "rK6baPdsSw5kQYDXNtOK",
+        "certificateNumber": 82,
+        "observations": "Se entrega equipo con perfil de usuario creado junto a su respectivo cargador eléctrico",
+        computer: {
+            id: "rK6baPdsSw5kQYDXNtOK",
+            brand: brandsObject.hp,
+            model: "HP PROBOOK 445 G10",
+            serialNumber: "5CD33527B4",
+            internalTag: "PCART-0379",
+            type: devicesObject.notebook,
+            assignedTo: "Matías Machuca",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1755004392, 230000000)
+        },
+        software: [softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1755004392, 230000000)
+    },    
+    {
+        "id": "sLpdegRn2qhtgIp4glsH",
+        "certificateNumber": 155,
+        "observations": "Se hace entrega al usuario según ticket STC-1282 para ser usado por la unidad.",
+        computer: {
+            id: "sLpdegRn2qhtgIp4glsH",
+            brand: brandsObject.hp,
+            model: "HP Laptop 15-fd0xxx",
+            serialNumber: "1H85151L9H",
+            internalTag: "PCART-0441",
+            type: devicesObject.notebook,
+            assignedTo: "Equidad Inclusion",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773070596, 614000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.actualizaciones, softwareList.office21, softwareList.chrome, softwareList.adobe, softwareList.forticlient, softwareList.ocs],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1773070596, 614000000)
+    },    
+    {
+        "id": "tvXRSnpoUzYmGW2sv7DV",
+        "certificateNumber": 94,
+        "observations": "Se entrega con su respectivo cargador.",
+        computer: {
+            id: "tvXRSnpoUzYmGW2sv7DV",
+            brand: brandsObject.hp,
+            model: "Pro Book 445 G8",
+            serialNumber: "5CD2370R29",
+            internalTag: "PCART-0336",
+            type: devicesObject.notebook,
+            assignedTo: "Eduardo Gutiérrez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758727593, 137000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1758727593, 137000000)
+    },
+    {
+        "id": "vIG7QfmRokS3Lx6RQRSQ",
+        "certificateNumber": 28,
+        "observations": "Equipo será utilizado para impartir clases en la facultad de Artes de compañía en la carrera teoría de las artes.",
+        computer: {
+            id: "vIG7QfmRokS3Lx6RQRSQ",
+            brand: brandsObject.lenovo,
+            model: "ThinBook 14 G6 ABP",
+            serialNumber: "PW0AA3RW",
+            internalTag: "PCART-0413",
+            type: devicesObject.notebook,
+            assignedTo: "Fernando Gonzalez",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770748, 335000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1743770748, 335000000)
+    },
 
-export const dataNoPC: Certificate[] = []
-
-export const dataPCART: Certificate[] = []
-
-
+    {
+        "id": "ds9mHvZlxmw9ARfp0mcv",
+        "certificateNumber": 118,
+        "observations": "",
+        computer: {
+            id: "ds9mHvZlxmw9ARfp0mcv",
+            brand: brandsObject.lenovo,
+            model: "20RV",
+            serialNumber: "LR0EXRD1",
+            internalTag: "PCART-0269",
+            type: devicesObject.notebook,
+            assignedTo: "Lucia Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763748465, 772000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.ocs, softwareList.adobe, softwareList.office21, softwareList.actualizaciones, softwareList.chrome],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763748465, 772000000)
+    },
+    {
+        "id": "2hk39mf06fuSYli6O3DE",
+        "certificateNumber": 171,
+        "observations": "Equipo configurado con programas institucionales \nse incluye cargador de equipo ",
+        computer: {
+            id: "2hk39mf06fuSYli6O3DE",
+            brand: brandsObject.hp,
+            model: "HP255 G10",
+            serialNumber: "1H84243M09",
+            internalTag: "PCART-0391",
+            type: devicesObject.notebook,
+            assignedTo: "Isidora Palma",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775048147, 294000000)
+        },
+        software: [softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1775048147, 294000000)
+    },
+    {
+        "id": "3ZOlctOFCC8PIdmUy6SE",
+        "certificateNumber": 135,
+        "observations": "Notebook nuevo con su respectivo cargador eléctrico.",
+        computer: {
+            id: "3ZOlctOFCC8PIdmUy6SE",
+            brand: brandsObject.asus,
+            model: "ASUS EXPERTBOOK B3404CMA",
+            serialNumber: "S8NXCV14K026349",
+            internalTag: "PCART-0434",
+            type: devicesObject.notebook,
+            assignedTo: "Juan Pablo Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1765394962, 306000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.forticlient, softwareList.sisper, softwareList.augefinanza, softwareList.ocs, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.auhonorarios, softwareList.office365, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1765394962, 306000000)
+    },
+    {
+        "id": "yXtBQiADQnsU9mQ9FemX",
+        "certificateNumber": 52,
+        "observations": "Equipo cedido en calidad de préstamo a la usuaria mientras regulariza la garantía del Laptop original.",
+        computer: {
+            id: "yXtBQiADQnsU9mQ9FemX",
+            brand: brandsObject.dell,
+            model: "Latitude 3490",
+            serialNumber: "BBD6LR2",
+            internalTag: "PCART-0230",
+            type: devicesObject.notebook,
+            assignedTo: "Elizabeth Ortiz",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1748290079, 328000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.oracle, softwareList.guia, softwareList.adobe, softwareList.chrome, softwareList.office365],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1748290079, 328000000)
+    },
+    {
+        "id": "yL47U8vrZ5SMbxzBQf4S",
+        "certificateNumber": 198,
+        "observations": "Se entrega notebook con su respectivo cargador.",
+        computer: {
+            id: "yL47U8vrZ5SMbxzBQf4S",
+            brand: brandsObject.asus,
+            model: "ExpertBook PM1403CDA",
+            serialNumber: "TANXCV086255438",
+            internalTag: "PCART-0450",
+            type: devicesObject.notebook,
+            assignedTo: "Cristian Godoy",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778690149, 578000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778690149, 578000000)
+    },
+    {
+        "id": "xsm6RgGJygtcBNwvtFI2",
+        "certificateNumber": 196,
+        "observations": "Se hace entrega de equipamiento computacional",
+        computer: {
+            id: "xsm6RgGJygtcBNwvtFI2",
+            brand: brandsObject.asus,
+            model: "ASUSTeK COMPUTER INC.",
+            serialNumber: "T7PTCJ00M828299",
+            internalTag: "PCART-0446",
+            type: devicesObject.aio,
+            assignedTo: "Lucia Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778075546, 540000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1778075546, 540000000)
+    },
+]
 
 export const dataPCISUCH: Certificate[] = [
     {
@@ -3328,23 +3303,6 @@ export const dataPCLE: Certificate[] = [
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1774974506, 692000000)
     },
     {
-        "id": "ds9mHvZlxmw9ARfp0mcv",
-        "certificateNumber": 118,
-        "observations": "GN1F9Y1/GMQC9Y1",
-        computer: {
-            id: "ds9mHvZlxmw9ARfp0mcv",
-            brand: brandsObject.dell,
-            model: "OptiPlex 7010",
-            serialNumber: "",
-            internalTag: "PCART-0269/PC-LE270",
-            type: devicesObject.pcescritorio,
-            assignedTo: "Lucia Espinoza",
-            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763748465, 772000000)
-        },
-        software: [softwareList.vlc, softwareList.izarc, softwareList.ocs, softwareList.adobe, softwareList.office21, softwareList.actualizaciones, softwareList.chrome],
-        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763748465, 772000000)
-    },
-    {
         "id": "gU87UR48Mrs887i1sHXl",
         "certificateNumber": 136,
         "observations": "Se hace entrega de equipo computacional ",
@@ -3463,23 +3421,101 @@ export const dataPCLE: Certificate[] = [
         software: [softwareList.izarc, softwareList.vlc, softwareList.rustdesk, softwareList.anydesk, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1767904866, 84000000)
     },
-
-
-
-]
-
-
-const checkPcLE = [
     {
         "id": "tuXHhIFUr17LYuCseHsY",
         "certificateNumber": 116,
-        "observations": "GN0H9Y1/GMNB9Y1/F5DK9Y1/F5GK9Y1/F51K9Y1/GMZH9Y1",
+        "observations": "",
         computer: {
             id: "tuXHhIFUr17LYuCseHsY",
             brand: brandsObject.dell,
             model: "OptiPlex 7010",
-            serialNumber: "",
-            internalTag: "PC-LE263/PC-LE264/PC-LE265/PC-LE266/PC-LE267/PC-LE268",
+            serialNumber: "GN0H9Y1",
+            internalTag: "PC-LE263",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Lucia Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.oracle, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
+    },
+    {
+        "id": "XtuHhIFUr17LYuCseHsY",
+        "certificateNumber": 116,
+        "observations": "",
+        computer: {
+            id: "tuXHhIFUr17LYuCseHsY",
+            brand: brandsObject.dell,
+            model: "OptiPlex 7010",
+            serialNumber: "GMNB9Y1",
+            internalTag: "PC-LE264",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Lucia Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.oracle, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
+    },
+    {
+        "id": "tuXHhIFUr17LYuCseHsY",
+        "certificateNumber": 116,
+        "observations": "",
+        computer: {
+            id: "tuXHhIFUr17LYuCseHsY",
+            brand: brandsObject.dell,
+            model: "OptiPlex 7010",
+            serialNumber: "F5DK9Y1",
+            internalTag: "PC-LE265",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Lucia Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.oracle, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
+    },
+    {
+        "id": "tuXHhIFUr17LYuCseHsY",
+        "certificateNumber": 116,
+        "observations": "",
+        computer: {
+            id: "tuXHhIFUr17LYuCseHsY",
+            brand: brandsObject.dell,
+            model: "OptiPlex 7010",
+            serialNumber: "F5GK9Y1",
+            internalTag: "PC-LE266",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Lucia Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.oracle, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
+    },
+    {
+        "id": "tuXHhIFUr17LYuCseHsY",
+        "certificateNumber": 116,
+        "observations": "",
+        computer: {
+            id: "tuXHhIFUr17LYuCseHsY",
+            brand: brandsObject.dell,
+            model: "OptiPlex 7010",
+            serialNumber: "F51K9Y1",
+            internalTag: "PC-LE267",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Lucia Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.rustdesk, softwareList.anydesk, softwareList.forticlient, softwareList.oracle, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
+    },
+    {
+        "id": "tuXHhIFUr17LYuCseHsY",
+        "certificateNumber": 116,
+        "observations": "",
+        computer: {
+            id: "tuXHhIFUr17LYuCseHsY",
+            brand: brandsObject.dell,
+            model: "OptiPlex 7010",
+            serialNumber: "GMZH9Y1",
+            internalTag: "PC-LE268",
             type: devicesObject.pcescritorio,
             assignedTo: "Lucia Espinoza",
             created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1763473231, 983000000)
@@ -3490,18 +3526,107 @@ const checkPcLE = [
     {
         "id": "vpTUIaqtfhKc89wmvxad",
         "certificateNumber": 131,
-        "observations": "GN1F9Y1 / GMQC9Y1 / GN0G9Y1 ",
+        "observations": "",
         computer: {
             id: "vpTUIaqtfhKc89wmvxad",
             brand: brandsObject.dell,
             model: "Optiflex 7010",
-            serialNumber: "",
-            internalTag: "PC-LE269/PC-LE270/PC-LE271",
+            serialNumber: "GN1F9Y1",
+            internalTag: "PC-LE269",
             type: devicesObject.pcescritorio,
             assignedTo: "Lucia Espinoza",
             created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764687419, 389000000)
         },
         software: [softwareList.vlc, softwareList.izarc, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
         created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764687419, 389000000)
+    },
+    {
+        "id": "vpTUIaqtfhKc89wmvxad",
+        "certificateNumber": 131,
+        "observations": "",
+        computer: {
+            id: "vpTUIaqtfhKc89wmvxad",
+            brand: brandsObject.dell,
+            model: "Optiflex 7010",
+            serialNumber: "GMQC9Y1",
+            internalTag: "PC-LE270",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Lucia Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764687419, 389000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764687419, 389000000)
+    },
+    {
+        "id": "vpTUIaqtfhKc89wmvxad",
+        "certificateNumber": 131,
+        "observations": "",
+        computer: {
+            id: "vpTUIaqtfhKc89wmvxad",
+            brand: brandsObject.dell,
+            model: "Optiflex 7010",
+            serialNumber: "GN0G9Y1",
+            internalTag: "PC-LE271",
+            type: devicesObject.pcescritorio,
+            assignedTo: "Lucia Espinoza",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764687419, 389000000)
+        },
+        software: [softwareList.vlc, softwareList.izarc, softwareList.ocs, softwareList.adobe, softwareList.chrome, softwareList.office21, softwareList.actualizaciones],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1764687419, 389000000)
+    },
+
+
+
+]
+
+export const newData: Certificate[] = [
+    {
+        "id": "KMj8dIYUHAc4oRzkm5J3",
+        "certificateNumber": 139,
+        "observations": "Se hace entrega de tres equipos computacionales para escritorio para la sala de profesores de Danza",
+        computer: {
+            id: "dI4oRzkm5YUHAcKMj8J3",
+            brand: brandsObject.dell,
+            model: "OptiPlex 7010",
+            serialNumber: "GN1J9Y1",
+            internalTag: "PCART-0435",
+            type: devicesObject.pcescritorio,
+            assignedTo: "José Miguel Candela",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1766433634, 175000000)
+        },
+        software: [softwareList.vlc, softwareList.actualizaciones, softwareList.office21, softwareList.chrome, softwareList.adobe, softwareList.izarc],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1766433634, 175000000)
+    },{
+        "id": "Mj8dIYUHAcK4oRzkm5J3",
+        "certificateNumber": 139,
+        "observations": "Se hace entrega de tres equipos computacionales para escritorio para la sala de profesores de Danza",
+        computer: {
+            id: "KMj8YUHAcdI4oRzkm5J3",
+            brand: brandsObject.dell,
+            model: "OptiPlex 7010",
+            serialNumber: "F5CK9Y1",
+            internalTag: "PCART-0436",
+            type: devicesObject.pcescritorio,
+            assignedTo: "José Miguel Candela",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1766433634, 175000000)
+        },
+        software: [softwareList.vlc, softwareList.actualizaciones, softwareList.office21, softwareList.chrome, softwareList.adobe, softwareList.izarc],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1766433634, 175000000)
+    },{
+        "id": "dI4oRzkmYUHAcKMj85J3",
+        "certificateNumber": 139,
+        "observations": "Se hace entrega de tres equipos computacionales para escritorio para la sala de profesores de Danza",
+        computer: {
+            id: "8dI4oRYUHAcKMjzkm5J3",
+            brand: brandsObject.dell,
+            model: "OptiPlex 7010",
+            serialNumber: "F5JK9Y1",
+            internalTag: "PCART-0437",
+            type: devicesObject.pcescritorio,
+            assignedTo: "José Miguel Candela",
+            created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1766433634, 175000000)
+        },
+        software: [softwareList.vlc, softwareList.actualizaciones, softwareList.office21, softwareList.chrome, softwareList.adobe, softwareList.izarc],
+        created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" }, created_at: new Timestamp(1766433634, 175000000)
     },
 ]

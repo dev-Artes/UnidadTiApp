@@ -4,14 +4,18 @@ import type { CertificateRecord } from "../../../types/entidades"
 import { useCertificate } from "../hooks/useCertificate"
 import { headersTableConfig } from "../table.config"
 import CertificateEdit from "../components/CertificateEdit"
-
+import DatailItem from "../components/DetailItem"
 
 const CertificateView = () => {
-    const { certificates, handleDetail, setCertificates, handleEdit, detailItem, editingItem, error, setDetailItem, loading, setEditingItem } = useCertificate()
+    const { certificates, handleDetail, setCertificates, handleEdit, detailItem, tagPrefixes, editingItem, setDetailItem, error, setActiveFilter, activeFilter, loading, setEditingItem } = useCertificate()
 
     const navigateTo = useNavigate()
-    const newCertificateRedirect = () => {
-        navigateTo('/certificate/create')
+    const newCertificateRedirect = () => navigateTo('/certificate/create')
+    
+    const tabs = ['ALL', ...tagPrefixes.sort(), 'OTROS']
+    const tabLabels: Record<string, string> = {
+        ALL: 'Todos',
+        OTROS: 'Otros',
     }
     
     const renderCell = ( item: CertificateRecord, header: {
@@ -57,7 +61,7 @@ const CertificateView = () => {
         <Layout>
             <div className="container mx-auto">
                 <div className='flex justify-between items-center'>
-                    <h2 className="text-2xl font-bold mb-4">Computadores</h2>
+                    <h2 className="text-2xl font-bold mb-4">Registros</h2>
                     <div className="flex items-center">
                         <Button variant="green" type="submit" onClick={newCertificateRedirect}>
                             {'Nueva Acta'}
@@ -65,14 +69,21 @@ const CertificateView = () => {
                     </div>
                 </div>
 
-                {/* {TAG_TABS.map(tab => (
-                    <button
-                        key={tab}
-                        className={`px-3 py-1 bg-white rounded border transition`}
-                    >
-                        {tab}
-                    </button>
-                ))} */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                    {tabs.map(tab => (
+                        <button
+                            key={tab}
+                            onClick={() => setActiveFilter(tab)}
+                            className={`px-4 py-1.5 rounded-full text-sm font-medium border transition
+                                ${activeFilter === tab
+                                    ? 'bg-blue-600 text-white border-blue-600'
+                                    : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400'
+                                }`}
+                        >
+                            {tabLabels[tab] ?? tab}
+                        </button>
+                    ))}
+                </div>
                 
                 <div className="bg-white p-6 shadow rounded">
                     <StateHandler
@@ -97,14 +108,14 @@ const CertificateView = () => {
                                 />
                             )
                         }
-                        {/*  {
+                        {
                             detailItem && (
-                                <DetailItem
+                                <DatailItem
                                     item={ detailItem }
-                                    onClose={() => setDetailITem( null )}
+                                    onClose={() => setDetailItem( null )}
                                 />
                             )
-                        } */}
+                        }
                     </StateHandler>
                 </div>
             </div>

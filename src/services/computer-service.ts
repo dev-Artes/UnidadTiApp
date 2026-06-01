@@ -9,7 +9,7 @@ import type { ActionBy, Computer, Reassignment } from '../types/entidades'
 
 const addComputer = async (computer: Omit<Computer, 'id'>): Promise<void> => {
   try {
-    const docRef = await addDoc(collection(db, 'pc_tag'), computer)
+    const docRef = await addDoc(collection(db, 'computers'), computer)
     console.log(`Computer created with id: ${docRef.id}`)
   } catch (error) {
     console.error('Error creating computer:', error)
@@ -19,7 +19,7 @@ const addComputer = async (computer: Omit<Computer, 'id'>): Promise<void> => {
 
 const getComputerById = async (computerId: string): Promise<Computer | undefined> => {
   try {
-    const computerDoc = doc(db, 'pc_tag', computerId)
+    const computerDoc = doc(db, 'computers', computerId)
     const snapshot = await getDoc(computerDoc)
     if (snapshot.exists()) return { id: snapshot.id, ...snapshot.data() } as Computer
   } catch (error) {
@@ -30,7 +30,7 @@ const getComputerById = async (computerId: string): Promise<Computer | undefined
 
 const getComputers = async (): Promise<Computer[]> => {
   try {
-    const snapshot = await getDocs(collection(db, 'pc_tag'))
+    const snapshot = await getDocs(collection(db, 'computers'))
     return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Computer))
   } catch (error) {
     console.error('Error getting computers:', error)
@@ -40,7 +40,7 @@ const getComputers = async (): Promise<Computer[]> => {
 
 const updateComputer = async (computerId: string, updatedComputer: Partial<Computer>): Promise<void> => {
   try {
-    await updateDoc(doc(db, 'pc_tag', computerId), updatedComputer)
+    await updateDoc(doc(db, 'computers', computerId), updatedComputer)
   } catch (error) {
     console.error('Error updating computer:', error)
     throw error
@@ -49,7 +49,7 @@ const updateComputer = async (computerId: string, updatedComputer: Partial<Compu
 
 const deleteComputer = async (computerId: string): Promise<void> => {
   try {
-    await deleteDoc(doc(db, 'pc_tag', computerId))
+    await deleteDoc(doc(db, 'computers', computerId))
   } catch (error) {
     console.error('Error deleting computer:', error)
     throw error

@@ -27,10 +27,10 @@ const TableActions = ({
       
       {onDetail && (
         <button
-          className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
-          onClick={onDelete}
+          className="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-600"
+          onClick={onDetail}
         >
-          Eliminar
+          Detalle
         </button>
       )}
 
