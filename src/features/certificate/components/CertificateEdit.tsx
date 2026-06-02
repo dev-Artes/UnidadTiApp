@@ -4,7 +4,7 @@ import { Button, Input, } from '../../../components'
 
 import { updateCertificate } from '../../../services'
 
-import { useCertificateForm } from '../hooks/useCertificateForm'
+import { useCertificateForm } from '../hooks/'
 import type { CertificateRecord, SoftwareItem } from '../../../types/entidades'
 
 

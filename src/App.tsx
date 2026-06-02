@@ -3,17 +3,12 @@ import useRouterTitle from './hooks/useRouterTitle'
 
 import { 
   Home,
-  CreateUser,
-  CreateBrand,
-  CreateDevice,
-  CreateSoftware,
-  CreateCertificate,
-  UserView,
-  BrandView,
-  DeviceView,
-  SoftwareView,
-  CertificateView,
-  ReassignmentCertificate
+  UserView, CreateUser,
+  BrandView, CreateBrand,
+  DeviceView, CreateDevice,
+  SoftwareView, CreateSoftware,
+  CertificateView, CreateCertificate,
+  ReassignmentCertificate,
 } from './features'
 
 

@@ -1,21 +1,18 @@
-import { useNavigate } from "react-router-dom"
-import { Button, Layout } from "../../../components"
 import UserForm from "../components/UserForm"
+import { Button, Layout } from "../../../components"
+
+import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 const CreateUser = () => {
     
-    const navigateTo = useNavigate()
+    const { toAllUsers } = useNavigateTo()
     
-    const newUserRedirect = () => {
-        navigateTo('/users')
-    }
-
     return (
         <Layout>
             <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     <h2 className="text 2xl font-bold mb-4">Nuevo Usuario</h2>
-                    <Button variant='green' type='submit' onClick={newUserRedirect}>
+                    <Button variant='green' type='submit' onClick={toAllUsers}>
                         {'Usuarios'}
                     </Button>
                 </div>

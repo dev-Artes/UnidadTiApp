@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react"
-import { collection, doc, getDocs, serverTimestamp, Timestamp } from "firebase/firestore"
-
-import { useCertificatePDF } from "./useCertificatePDF"
-
-import { addCertificate, addComputer, getBrands, getComputers, getDevices, getLastCertificateNumber, getNextTag, updateComputer } from "../../../services"
-
-import type { Brand, Certificate, Computer, Device, Reassignment, SoftwareItem, TagCounter, TagCounterType } from "../../../types/entidades"
 
 import { auth, db } from "../../../firebase/firebase-config"
+import { collection, doc, getDocs, serverTimestamp, Timestamp } from "firebase/firestore"
 
+import { useCertificatePDF } from "./"
 import { useSoftware } from "../../software/hooks/useSoftware"
 
+import type { Brand, Certificate, Computer, Device, Reassignment, SoftwareItem, TagCounter, TagCounterType } from "../../../types/entidades"
+import { addCertificate, addComputer, getBrands, getComputers, getDevices, getLastCertificateNumber, getNextTag, updateComputer } from "../../../services"
 
 export const useCertificateForm = () => {
 

@@ -1,7 +1,7 @@
 // Components
 import { Button, Input } from '../../../components'
 
-import { useUserForm } from '../hooks/useUserForm'
+import { useUserForm } from '../hooks/'
 
 const UserForm = () => {
   const { handleSubmit, name, email, setName, loading, setEmail, } = useUserForm()

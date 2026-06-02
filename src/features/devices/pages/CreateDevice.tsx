@@ -1,18 +1,15 @@
-import { useNavigate } from "react-router-dom"
 import { Button, Layout } from "../../../components"
 import DeviceForm from "../components/DeviceForm"
+import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 const CreateDevice = () =>{
-    const navigateTo = useNavigate()
-    const equipmentTypeRedirect = () => {
-        navigateTo('/devices')
-    }
+    const { toAllDevices } = useNavigateTo()
     return (
         <Layout>
             <div className="container mx-auto">
                 <div className='flex justify-between items-center'>
                     <h2 className="text-2xl font-bold mb-4">Nuevo equipo</h2>
-                    <Button variant='green' type='submit' onClick={equipmentTypeRedirect}>
+                    <Button variant='green' type='submit' onClick={toAllDevices}>
                         {'Equipos'}
                     </Button>
                 </div>

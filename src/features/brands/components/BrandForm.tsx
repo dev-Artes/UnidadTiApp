@@ -1,5 +1,6 @@
 import { Button, Input } from "../../../components"
-import { useBrandForm } from "../hooks/useBrandForm"
+
+import { useBrandForm } from "../hooks/"
 
 
 const BrandForm = () => {

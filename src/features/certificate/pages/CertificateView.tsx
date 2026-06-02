@@ -1,16 +1,19 @@
-import { useNavigate } from "react-router-dom"
 import { Button, Layout, StateHandler, Table, TableActions } from "../../../components"
-import type { CertificateRecord } from "../../../types/entidades"
-import { useCertificate } from "../hooks/useCertificate"
+
+import { useCertificate } from "../hooks/"
+import { useNavigateTo } from "../../../hooks/useNavigateTo"
+
 import { headersTableConfig } from "../table.config"
-import CertificateEdit from "../components/CertificateEdit"
-import DatailItem from "../components/DetailItem"
+
+import { CertificateEdit, DatailItem } from "../components/"
 import { fullDateNumber } from "../../../utils/convertTimestamp"
+import type { CertificateRecord } from "../../../types/entidades"
 
 const CertificateView = () => {
-    const { devices, certificates, handleDetail, setCertificates, handleEdit, detailItem, tagPrefixes, editingItem, setDetailItem, error, setActiveFilter, activeFilter, loading, setEditingItem, activeSubFilter, setActiveSubFilter } = useCertificate()
-    const navigateTo = useNavigate()
-    const newCertificateRedirect = () => navigateTo('/certificate/create')
+    
+    const { toNewCertificate } = useNavigateTo()
+    
+    const { devices, certificates, handleDetail, setCertificates, handleEdit, detailItem, tagPrefixes, editingItem, setDetailItem, error, setActiveFilter, activeFilter, loading, setEditingItem, activeSubFilter, setActiveSubFilter } = useCertificate()  
     
     const tabs = ['ALL', ...tagPrefixes.sort(), 'OTROS']
     const tabLabels: Record<string, string> = {
@@ -56,7 +59,7 @@ const CertificateView = () => {
                 <div className='flex justify-between items-center'>
                     <h2 className="text-2xl font-bold mb-4">Registros</h2>
                     <div className="flex items-center">
-                        <Button variant="green" type="submit" onClick={newCertificateRedirect}>
+                        <Button variant="green" type="submit" onClick={toNewCertificate}>
                             {'Nueva Acta'}
                         </Button>
                     </div>

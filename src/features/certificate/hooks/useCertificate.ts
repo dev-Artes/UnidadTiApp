@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from "react"
 
-import type { CertificateRecord, Device } from "../../../types/entidades"
+import { db } from "../../../firebase/firebase-config"
+import { getDocs, collection } from 'firebase/firestore'
 
 import { getCertificates, getDevices } from "../../../services"
-import { getDocs, collection } from 'firebase/firestore'
-import { db } from "../../../firebase/firebase-config"
+
+import type { CertificateRecord, Device } from "../../../types/entidades"
+
 
 export const useCertificate = () => {
     const [ loading, setLoading ] = useState(true)

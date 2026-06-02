@@ -1,6 +1,6 @@
 import { Button, Input } from "../../../components"
 
-import { useDeviceForm } from "../hooks/useDeviceForm"
+import { useDeviceForm } from "../hooks/"
 
 
 const DeviceForm = () => {

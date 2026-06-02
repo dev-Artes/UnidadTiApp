@@ -5,7 +5,7 @@ const Footer = () => {
       <div className="container mx-auto text-center">
         Unidad TI - Facultad de Artes - U. de Chile.
         <br/>
-        v1.3.0
+        v2.0.0
       </div>
     </footer>
   )

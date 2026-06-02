@@ -1,17 +1,14 @@
-import { useNavigate } from "react-router-dom"
 
-import { useSoftware } from "../hooks/useSoftware"
+import { useSoftware } from "../hooks/"
+import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 import { Button, Layout, StateHandler, Table, TableActions } from "../../../components"
 
 import { headersTableConfig } from "../table.config"
 import type { Software } from "../../../types/entidades"
 
-
-
 const SoftwareView = () => {
-    const navigateTo = useNavigate()
-    const newSoftwareRedirect = () => navigateTo('/software/create')
+    const { toNewSoftware } = useNavigateTo()
 
     const { error, loading, softwareList, handleDelete, handleToggleActive } = useSoftware()
 
@@ -39,7 +36,7 @@ const SoftwareView = () => {
             <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     <h2 className="text-2xl font-bold mb-4">Equipos registrados</h2>
-                    <Button variant="green" type="submit" onClick={newSoftwareRedirect}>
+                    <Button variant="green" type="submit" onClick={toNewSoftware}>
                         {'Nuevo registro'}
                     </Button>
                 </div>

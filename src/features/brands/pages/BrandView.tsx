@@ -1,18 +1,18 @@
-import { useNavigate } from "react-router-dom"
 import { Button, Layout, Table, StateHandler, TableActions } from "../../../components"
-import { useBrand } from "../hooks/useBrand"
-import { headersTableConfig } from "../table.config"
+
+import { useBrand } from "../hooks/"
+import { useNavigateTo } from "../../../hooks/useNavigateTo"
+
 import type { Brand } from "../../../types/entidades"
+
+import { headersTableConfig } from "../table.config"
 
 const BrandView = () => {
 
     const { error, loading, brands, deleteBrandById } = useBrand()
 
-    const navigateTo = useNavigate()
+    const { toNewBrand } = useNavigateTo()
 
-    const newBrandRedirect = () => {
-        navigateTo('brand/create')
-    }
 
     const renderCell = ( item: Brand, header: {
         id: string
@@ -38,7 +38,7 @@ const BrandView = () => {
             <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     <h2 className="text-2xl font-bold mb-4">Marcas registradas</h2>
-                    <Button variant="green" type="submit" onClick={newBrandRedirect}>
+                    <Button variant="green" type="submit" onClick={toNewBrand}>
                         {'Nueva marca'}
                     </Button>
                 </div>

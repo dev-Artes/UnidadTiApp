@@ -1,20 +1,16 @@
-import { useNavigate } from 'react-router-dom'
-
-// components
-import { Button, Layout, Table, StateHandler, TableActions } from '../../../components/'
-
-import { useUser } from '../hooks/useUser'
-import { userTableConfig } from '../table.config'
 import type { User } from '../../../types/entidades'
 
+import { Button, Layout, Table, StateHandler, TableActions } from '../../../components/'
+
+import { useUser } from '../hooks/'
+import { useNavigateTo } from '../../../hooks/useNavigateTo'
+
+import { userTableConfig } from '../table.config'
+
 const UserViews = () =>  {
-    const navigateTo = useNavigate()
+    const { toNewUser } = useNavigateTo()
 
     const { error, users, loading, deleteUserById } = useUser()
-
-    const newUserRedirect = () => {
-        navigateTo('/user/create')
-    }
 
     const renderCell = ( item: User, header: {
         id: string
@@ -34,14 +30,12 @@ const UserViews = () =>  {
         return String(item[header.field as keyof User])
     }
 
-    
-    
     return (
         <Layout>
             <div className="container mx-auto">
                 <div className='flex justify-between items-center'>
                     <h2 className="text-2xl font-bold mb-4">Usuarios registrados</h2>
-                    <Button variant='green' type='submit' onClick={newUserRedirect}>
+                    <Button variant='green' type='submit' onClick={toNewUser}>
                         {'Nuevo Usuario'}
                     </Button>
                 </div>

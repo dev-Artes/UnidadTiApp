@@ -1,5 +1,6 @@
 import { Button, Input } from "../../../components"
-import { useCertificateForm } from "../hooks/useCertificateForm"
+
+import { useCertificateForm } from "../hooks/"
 
 
 const CertificateForm = () => {

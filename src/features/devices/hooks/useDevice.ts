@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
+
 import type { Device } from "../../../types/entidades"
+
 import { getDevices, deleteDevice } from "../../../services"
 
 

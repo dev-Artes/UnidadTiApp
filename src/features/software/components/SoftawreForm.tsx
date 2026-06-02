@@ -1,6 +1,5 @@
+import { useSoftwareForm } from "../hooks/"
 import { Button, Input } from "../../../components"
-import { useSoftwareForm } from "../hooks/useSoftwareForm"
-
 
 const SoftwareForm = () => {
 
