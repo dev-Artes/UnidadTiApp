@@ -5,13 +5,13 @@ import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 
 const CreateBrand = () => {
-    const { toNewBrand } = useNavigateTo()
+    const { toAllBrands } = useNavigateTo()
     return (
         <Layout>
             <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     <h2 className="text 2xl font-bold mb-4">Registrar nueva marca</h2>
-                    <Button variant='green' type='submit' onClick={toNewBrand}>
+                    <Button variant='green' type='submit' onClick={toAllBrands}>
                         {'Marcas'}
                     </Button>
                 </div>

@@ -1,7 +1,8 @@
 import {
   doc, addDoc, getDoc, getDocs,
   updateDoc, deleteDoc, collection,
-  Timestamp
+  Timestamp,
+  setDoc
 } from 'firebase/firestore'
 
 import { db } from '../firebase/firebase-config'
@@ -15,6 +16,21 @@ const addComputer = async (computer: Omit<Computer, 'id'>): Promise<void> => {
     console.error('Error creating computer:', error)
     throw error
   }
+}
+
+// en computer-service.ts
+const migrateComputer = async (computer: Computer): Promise<void> => {
+    try {
+        const { id, ...rest } = computer
+        const docRef = doc(collection(db, 'computers'))
+        await setDoc(docRef, {
+          id:docRef.id,
+          ...rest
+        })
+    } catch (error) {
+        console.error('Error migrating computer:', error)
+        throw error
+    }
 }
 
 const getComputerById = async (computerId: string): Promise<Computer | undefined> => {
@@ -82,4 +98,4 @@ const reassignComputer = async (
     }
 }
 
-export { addComputer, getComputers, updateComputer, deleteComputer, getComputerById, reassignComputer }
+export { addComputer, getComputers, updateComputer, deleteComputer, getComputerById, reassignComputer, migrateComputer }

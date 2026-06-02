@@ -22,7 +22,10 @@ const UserViews = () =>  {
         if (header.field === 'actions') {
             return (
                 <TableActions
-                    onDelete={() => deleteUserById(item.id)}
+                    onDelete={() => {
+                        const confirmed = window.confirm(`¿Está seguro de eliminar la marca "${item.name}"?`)
+                        if (confirmed) deleteUserById(item.id)
+                    }}
                 />
             )
         }

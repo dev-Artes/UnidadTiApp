@@ -8,8 +8,10 @@ import { useSoftware } from "../../software/hooks/useSoftware"
 
 import type { Brand, Certificate, Computer, Device, Reassignment, SoftwareItem, TagCounter, TagCounterType } from "../../../types/entidades"
 import { addCertificate, addComputer, getBrands, getComputers, getDevices, getLastCertificateNumber, getNextTag, updateComputer } from "../../../services"
+import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 export const useCertificateForm = () => {
+    const { toAllCertificates } = useNavigateTo()
 
     const { generatePDF } = useCertificatePDF()
 
@@ -158,6 +160,8 @@ export const useCertificateForm = () => {
 
             generatePDF(completeCertificate)
             resetForm()
+
+            toAllCertificates()
             
         } catch ( error ) {
             console.error( error )
@@ -212,8 +216,8 @@ export const useCertificateForm = () => {
 
             generatePDF(completeCertificate)
             resetForm()
-
             setSelectedTagType(null)
+            toAllCertificates()
 
         } catch (error) {
             console.error('Error al guardar certificado:', error)

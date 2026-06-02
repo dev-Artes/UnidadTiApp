@@ -10,7 +10,7 @@ import type { Software } from "../../../types/entidades"
 const SoftwareView = () => {
     const { toNewSoftware } = useNavigateTo()
 
-    const { error, loading, softwareList, handleDelete, handleToggleActive } = useSoftware()
+    const { error, loading, softwareList, handleToggleActive } = useSoftware()
 
     const renderCell = ( item: Software, header: {
         id: string
@@ -23,7 +23,7 @@ const SoftwareView = () => {
         if ( header.field === 'actions' ) { 
             return (
                 <TableActions
-                    onDelete={() => handleDelete(item.id)}
+                    // onDelete={() => handleDelete(item.id)}
                     onActive={() => handleToggleActive(item)} 
                     isActive={item.active}    
                 />

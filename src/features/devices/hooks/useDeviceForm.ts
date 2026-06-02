@@ -3,9 +3,11 @@ import { useState } from "react"
 import { addDevice } from "../../../services"
 
 import { Timestamp } from "firebase/firestore"
+import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 
 export const useDeviceForm = () => {
+    const { toAllDevices } = useNavigateTo()
     const [ device, setDevice ] = useState('')
     const [ loading, setLoading ] = useState(false)
 
@@ -31,6 +33,7 @@ export const useDeviceForm = () => {
             })
 
             setDevice('')
+            toAllDevices()
         } catch ( error ) {
             console.error(`Error creando marca: ${error}`)
             alert('Hubo un error creando la marca, intente nuevamente')

@@ -11,7 +11,7 @@ import type { CertificateRecord } from "../../../types/entidades"
 
 const CertificateView = () => {
     
-    const { toNewCertificate } = useNavigateTo()
+    const { toNewCertificate, toNewReassignment} = useNavigateTo()
     
     const { devices, certificates, handleDetail, setCertificates, handleEdit, detailItem, tagPrefixes, editingItem, setDetailItem, error, setActiveFilter, activeFilter, loading, setEditingItem, activeSubFilter, setActiveSubFilter } = useCertificate()  
     
@@ -58,10 +58,13 @@ const CertificateView = () => {
             <div className="container mx-auto">
                 <div className='flex justify-between items-center'>
                     <h2 className="text-2xl font-bold mb-4">Registros</h2>
-                    <div className="flex items-center">
-                        <Button variant="green" type="submit" onClick={toNewCertificate}>
-                            {'Nueva Acta'}
-                        </Button>
+                    <div className="flex justify-center space-x-4">
+                            <Button variant="green" type="submit" onClick={toNewCertificate}>
+                                {'Nueva Acta'}
+                            </Button>
+                            <Button variant="yellow" type="submit" onClick={toNewReassignment}>
+                                {'Reasignación'}
+                            </Button>
                     </div>
                 </div>
 

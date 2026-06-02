@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import { addSoftware } from "../../../services"
 import { Timestamp } from "firebase/firestore"
+import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 
 export const useSoftwareForm = () => {
+    const { toAllSoftware } = useNavigateTo()
     const [ software , setSoftware ] = useState('')
     const [ loading, setLoading ] = useState(false)
 
@@ -29,6 +31,7 @@ export const useSoftwareForm = () => {
                 created_at: Timestamp.now()
             })
             setSoftware('')
+            toAllSoftware()
         } catch ( error ) {
             console.error( error )
             alert('Error en la creación')

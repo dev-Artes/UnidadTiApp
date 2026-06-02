@@ -1,9 +1,20 @@
 import { Button, Layout } from '../components'
 import { useNavigateTo } from '../hooks/useNavigateTo'
+// import { migrateCertificate } from '../services'
+// import { migrateComputer } from '../services/computer-service'
+// import { dataPCART, } from '../utils/DataToMigrate'
 
 const Home = () => {
 
-    const { toAllDevices, toAllBransds, toAllSoftware, toNewCertificate, toNewReassignment } = useNavigateTo()
+    const { toAllDevices, toAllBrands, toAllSoftware, toNewCertificate, toNewReassignment } = useNavigateTo()
+
+    
+    // const pushData = async  () => {
+    //     for ( const certificate of dataPCART ) {
+    //         await migrateComputer(certificate.computer)
+    //         await migrateCertificate(certificate)
+    //     }
+    // }
 
     return (
         <Layout>
@@ -17,7 +28,7 @@ const Home = () => {
                     <Button variant='yellow' type='submit' onClick={toNewReassignment} >
                         {'Reasignacion de equipos'}
                     </Button>
-                    <Button variant='blue' type='submit' onClick={toAllBransds} >
+                    <Button variant='blue' type='submit' onClick={toAllBrands} >
                         {'Marcas'}
                     </Button>
                     <Button variant='blue' type='submit' onClick={toAllDevices} >
@@ -26,6 +37,9 @@ const Home = () => {
                     <Button variant='blue' type='submit' onClick={toAllSoftware} >
                         {'Software'}
                     </Button>
+                    {/* <Button variant='red' type='submit' onClick={pushData} >
+                        {'PUSH'}
+                    </Button> */}
 
                 </div>
                 </div>

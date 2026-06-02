@@ -26,9 +26,13 @@ const BrandView = () => {
         if ( header.field === 'actions' ) {
             return(
                 <TableActions
-                    onDelete={() => deleteBrandById(item.id)}
+                    onDelete={() => {
+                        const confirmed = window.confirm(`¿Está seguro de eliminar la marca "${item.name}"?`)
+                        if (confirmed) deleteBrandById(item.id)
+                    }}
                 />
             )
+
         }
 
     }

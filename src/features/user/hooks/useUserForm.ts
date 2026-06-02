@@ -1,9 +1,12 @@
 import { useState } from "react"
 import { checkUserExists } from "../../../utils"
 import { addUser } from "../../../services"
+import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 
 export const useUserForm = () => {
+    const { toAllUsers } = useNavigateTo()
+
     const [ name, setName ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ loading, setLoading ] = useState( false )
@@ -40,6 +43,7 @@ export const useUserForm = () => {
             })
             
             resetForm()
+            toAllUsers()
         } catch ( error ) {
             console.error(error )
             alert('Hubo un error creando el usuario, intente nuevamente')

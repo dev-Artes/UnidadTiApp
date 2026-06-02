@@ -3,8 +3,11 @@ import { useState } from "react"
 import { addBrand } from "../../../services"
 
 import { Timestamp } from "firebase/firestore"
+import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 export const useBrandForm = () => {
+    const { toAllBrands } = useNavigateTo()
+
     const [ brand, setBrand ] = useState('')
     const [ loading, setLoading ] = useState(false)
 
@@ -30,6 +33,7 @@ export const useBrandForm = () => {
             })
 
             setBrand('')
+            toAllBrands()
         } catch ( error ) {
             console.error(`Error creando marca: ${error}`)
             alert('Hubo un error creando la marca, intente nuevamente')

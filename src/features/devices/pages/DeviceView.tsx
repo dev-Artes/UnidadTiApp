@@ -23,7 +23,10 @@ const DeviceView = () => {
         if ( header.field === 'actions' ) { 
             return (
                 <TableActions
-                    onDelete={() => deleteDeviceById(item.id)}
+                    onDelete={() => {
+                        const confirmed = window.confirm(`¿Está seguro de eliminar la marca "${item.name}"?`)
+                        if (confirmed) deleteDeviceById(item.id)
+                    }}
                 />
             )
         }

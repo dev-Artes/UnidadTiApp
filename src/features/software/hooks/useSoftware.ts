@@ -21,24 +21,6 @@ export const useSoftware = () => {
         fetchData()
     }, [])
 
-    // const handleAdd = async (name: string) => {
-    //     const { currentUser } = auth
-    //     if (!currentUser) return
-
-    //     await addSoftware({
-    //         name,
-    //         active: true,
-    //         created_at: Timestamp.now(),
-    //         created_by: {
-    //             uid: currentUser.uid,
-    //             name: currentUser.displayName ?? 'Sin nombre',
-    //         }
-    //     })
-
-    //     const updated = await getSoftware()
-    //     setSoftwareList(updated.filter(s => s.active))
-    // }
-
     const handleToggleActive = async (software: Software) => {
         await updateSoftware(software.id, { active: !software.active })
         setSoftwareList(prev =>
