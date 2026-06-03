@@ -27,6 +27,21 @@ export const useCertificate = () => {
     const handleEdit = (item: CertificateRecord) => setEditingItem(item)
     const handleDetail = (item: CertificateRecord) => setDetailItem(item)
 
+    const [ typeFilter, setTypeFilter ] = useState<'all' | 'reasignacion'>('all')
+
+    const [isTypeMenuOpen, setIsTypeMenuOpen] = useState(false)
+
+    const typeOptions = [
+        { value: 'all', label: 'Todos' },
+        { value: 'reasignacion', label: 'Reasignaciones' }
+    ]
+
+    const excludedDevices = [
+        'Notebook',
+        'PC de Escritorio',
+        'PC de Escritorio AIO'
+    ]
+
     useEffect( () => {
         const fetchData = async () => {
             try {
@@ -63,57 +78,85 @@ export const useCertificate = () => {
         loadDevices()
     }, [])
 
-    const filteredCertificates = useMemo(() => {
-        if (activeFilter === 'ALL') return certificates
+    // const filteredCertificates = useMemo(() => {
+    //     if (activeFilter === 'ALL') return certificates
 
-        if (activeFilter === 'OTROS') {
-            return certificates.filter(c => {
-                const tag = c.computer?.internalTag ?? ''
-                const matchesOtros = !tagPrefixes.some(prefix => tag.startsWith(prefix))
-                if (!activeSubFilter) return matchesOtros
-                return matchesOtros && c.computer?.type?.name === activeSubFilter
-            })
-        }
+    //     if (activeFilter === 'OTROS') {
+    //         return certificates.filter(c => {
+    //             const tag = c.computer?.internalTag ?? ''
+    //             const matchesOtros = !tagPrefixes.some(prefix => tag.startsWith(prefix))
+    //             if (!activeSubFilter) return matchesOtros
+    //             return matchesOtros && c.computer?.type?.name === activeSubFilter
+    //         })
+    //     }
 
-        return certificates.filter( c => 
-            (c.computer?.internalTag ?? '').startsWith(activeFilter)
+    //     return certificates.filter( c => 
+    //         (c.computer?.internalTag ?? '').startsWith(activeFilter)
             
-        )
+    //     )
 
-    }, [certificates, activeFilter, tagPrefixes, activeSubFilter])
+    // }, [certificates, activeFilter, tagPrefixes, activeSubFilter])
 
+    const filteredCertificates = useMemo(() => {
+        return certificates.filter( c => {
+            const tag = c.computer?.internalTag ?? ''
+            const deviceType = c.computer?.type?.name ?? ''
+
+            const matchType = typeFilter === 'all' || c.type === typeFilter
+            const matchSearch = searchText === '' || tag.toLowerCase().includes(searchText.toLocaleLowerCase())
+
+            if ( !matchSearch ) return false
+            if ( !matchType ) return false
+
+            if ( activeFilter === 'ALL' ) return true
+
+            if ( activeFilter === 'OTROS' ) {
+                const matchesOtros = !tagPrefixes.some(prefix => tag.startsWith(prefix))
+
+                if ( !matchesOtros ) return false
+
+                if ( !activeSubFilter ) return !excludedDevices.includes(deviceType)
+                
+                return deviceType === activeSubFilter
+            }
+
+            return tag.startsWith( activeFilter )
+        })
+    }, [ certificates, searchText, activeFilter, tagPrefixes, activeSubFilter, typeFilter ])
 
     const handleFilterChange = (filter: string) => {
         setActiveFilter(filter)
         setActiveSubFilter(null) 
     }
 
+    const otherDevices = useMemo(
+        () =>
+            devices.filter( d => !excludedDevices.includes(d.name) ),
+            [devices]
+    )
+
     return {
-        certificates: filteredCertificates,
-        setCertificates,
-        loading,
-        error,
+        certificates: filteredCertificates, setCertificates,
+        error, loading,
 
-        devices,
-        searchText,
-        setSearchText,
+        devices, otherDevices,
+        searchText, setSearchText,
 
-        tagPrefixes,
-        activeFilter,
-        setTagPrefixes,
-        setActiveFilter,
+        tagPrefixes, setTagPrefixes, 
+        activeFilter, setActiveFilter,
 
-        setEditingItem,
-        editingItem,
+        editingItem, setEditingItem,
+        
         handleEdit,
         
-        setDetailItem,
-        handleDetail,
-        detailItem,
+        detailItem, setDetailItem, handleDetail,
         handleFilterChange,
+
+        typeFilter, setTypeFilter,
+
+        typeOptions, isTypeMenuOpen, setIsTypeMenuOpen,
         
-        activeSubFilter,
-        setActiveSubFilter
+        activeSubFilter, setActiveSubFilter
     }
 }
 

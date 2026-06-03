@@ -13,14 +13,14 @@ const CertificateView = () => {
     
     const { toNewCertificate, toNewReassignment} = useNavigateTo()
     
-    const { devices, certificates, handleDetail, setCertificates, handleEdit, detailItem, tagPrefixes, editingItem, setDetailItem, error, setActiveFilter, activeFilter, loading, setEditingItem, activeSubFilter, setActiveSubFilter } = useCertificate()  
+    const { isTypeMenuOpen, setIsTypeMenuOpen, typeOptions, otherDevices, certificates, handleDetail, typeFilter, setTypeFilter, searchText, handleFilterChange, setSearchText, setCertificates, handleEdit, detailItem, tagPrefixes, editingItem, setDetailItem, error,  activeFilter, loading, setEditingItem, activeSubFilter, setActiveSubFilter } = useCertificate()  
     
     const tabs = ['ALL', ...tagPrefixes.sort(), 'OTROS']
     const tabLabels: Record<string, string> = {
         ALL: 'Todos',
         OTROS: 'Otros',
     }
-    
+
     const renderCell = ( item: CertificateRecord, header: {
         id: string
         label: string
@@ -59,6 +59,51 @@ const CertificateView = () => {
                 <div className='flex justify-between items-center'>
                     <h2 className="text-2xl font-bold mb-4">Registros</h2>
                     <div className="flex justify-center space-x-4">
+                        <div className="relative">
+                            <button
+                                type="button"
+                                onClick={() => setIsTypeMenuOpen(prev => !prev)}
+                                className="px-4 py-2 border rounded bg-white min-w-56 text-left"
+                            >
+                                {
+                                    typeOptions.find(t => t.value === typeFilter)?.label ??
+                                    'Tipo de entrega'
+                                }
+                            </button>
+                            
+                            {isTypeMenuOpen && (
+                                <div className="absolute z-10 mt-1 w-full bg-white border rounded shadow-lg">
+                                    {typeOptions.map(option => (
+                                        <button
+                                            key={option.value}
+                                            type="button"
+                                            onClick={() => {
+                                                setTypeFilter(
+                                                    option.value as 'all' | 'reasignacion'
+                                                )
+                                                setIsTypeMenuOpen(false)
+                                            }}
+                                            className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                checked={typeFilter === option.value}
+                                                readOnly
+                                            />
+
+                                            <span>{option.label}</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        <input
+                            type="text"
+                            placeholder="PCART-XXYY"
+                            value={searchText}
+                            onChange={(e) => setSearchText(e.target.value)}
+                            className="w-full md:w-80 px-3 py-2 border rounded"
+                        />
                             <Button variant="green" type="submit" onClick={toNewCertificate}>
                                 {'Nueva Acta'}
                             </Button>
@@ -67,12 +112,11 @@ const CertificateView = () => {
                             </Button>
                     </div>
                 </div>
-
                 <div className="flex flex-wrap gap-2 mb-4">
                     {tabs.map(tab => (
                         <button
                             key={tab}
-                            onClick={() => setActiveFilter(tab)}
+                            onClick={() => handleFilterChange(tab)}
                             className={`px-4 py-1.5 rounded-full text-sm font-medium border transition
                                 ${activeFilter === tab
                                     ? 'bg-blue-600 text-white border-blue-600'
@@ -82,19 +126,22 @@ const CertificateView = () => {
                             {tabLabels[tab] ?? tab}
                         </button>
                     ))}
+                    
                     {activeFilter === 'OTROS' && (
                         <div className="flex flex-wrap gap-2 mb-4">
-                            {devices.map(type => (
+                            {otherDevices.map(type => (
                                 <button
                                     key={type.id}
-                                    onClick={() => setActiveSubFilter(
-                                        activeSubFilter === type.name ? null : type.name
-                                    )}
+                                    onClick={() =>
+                                        setActiveSubFilter(
+                                            activeSubFilter === type.name ? null : type.name
+                                        )
+                                    }
                                     className={`px-3 py-1 rounded-full text-xs border transition
                                         ${activeSubFilter === type.name
                                             ? 'bg-gray-700 text-white border-gray-700'
                                             : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400'
-                                        }`}
+                                    }`}
                                 >
                                     {type.name}
                                 </button>

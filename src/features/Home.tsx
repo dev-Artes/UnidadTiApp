@@ -1,5 +1,8 @@
 import { Button, Layout } from '../components'
 import { useNavigateTo } from '../hooks/useNavigateTo'
+import { getCertificates, migrateCertificate } from '../services'
+import { migrateComputer } from '../services/computer-service'
+import { dataNoPC, dataPCART, dataPCISUCH, dataPCLE, dataPCTNCH, newData, reassignmentData } from '../utils/DataToMigrate'
 // import { migrateCertificate } from '../services'
 // import { migrateComputer } from '../services/computer-service'
 // import { dataPCART, } from '../utils/DataToMigrate'
@@ -9,12 +12,20 @@ const Home = () => {
     const { toAllDevices, toAllBrands, toAllSoftware, toNewCertificate, toNewReassignment } = useNavigateTo()
 
     
-    // const pushData = async  () => {
-    //     for ( const certificate of dataPCART ) {
-    //         await migrateComputer(certificate.computer)
-    //         await migrateCertificate(certificate)
-    //     }
+    // const getFata = async () => {
+        // const data = await getCertificates()
+        // console.log(data)
     // }
+// 
+    // getFata()
+
+
+    const pushData = async  () => {
+        for ( const certificate of reassignmentData ) {
+            await migrateComputer(certificate.computer)
+            await migrateCertificate(certificate)
+        }
+    }
 
     return (
         <Layout>
@@ -37,9 +48,9 @@ const Home = () => {
                     <Button variant='blue' type='submit' onClick={toAllSoftware} >
                         {'Software'}
                     </Button>
-                    {/* <Button variant='red' type='submit' onClick={pushData} >
+                    <Button variant='red' type='submit' onClick={pushData} >
                         {'PUSH'}
-                    </Button> */}
+                    </Button>
 
                 </div>
                 </div>
