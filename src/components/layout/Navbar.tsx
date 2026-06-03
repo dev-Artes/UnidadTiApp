@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-blue-600 text-white p-4 shadow">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/">
           <h1 className="text-xl font-bold">Unidad Ti</h1>
         </Link>
