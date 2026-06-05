@@ -24,9 +24,8 @@ export const useCertificatePDF = () => {
             }
             return '-'
         }
-
         const softwareNames = Array.isArray(software)
-            ? software.map(s => s.name)  // 👈 software es SoftwareItem[], extraemos el nombre
+            ? software.map(s => s.name) 
             : []
 
         const observationText = observations || '-'

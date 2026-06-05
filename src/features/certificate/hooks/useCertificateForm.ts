@@ -131,7 +131,6 @@ export const useCertificateForm = () => {
                 alert('Selecciona un equipo')
                 return
             }
-            
             const computerData: Computer = {
                 ...selectedComputer,
                 assignedTo: newUser,
@@ -143,12 +142,13 @@ export const useCertificateForm = () => {
 
             await updateComputer(selectedComputer?.id!, computerData)
 
-            const certificateReassignmentData: Omit<Certificate, 'id' | 'certificateNumber' | 'software'> = {
+            const certificateReassignmentData: Omit<Certificate, 'id' | 'certificateNumber' > = {
                 observations,
+                software: selectedSoftware,
                 type: 'reasignacion',
                 computer: computerData,
                 created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
-                created_at: new Timestamp(1775666075, 312000000),
+                created_at: Timestamp.now(),
 
             }
             const newNumber = await addCertificate(certificateReassignmentData)
@@ -157,7 +157,6 @@ export const useCertificateForm = () => {
                 ...certificateReassignmentData,
                 certificateNumber: newNumber,
             }
-
             generatePDF(completeCertificate)
             resetForm()
 
@@ -199,7 +198,7 @@ export const useCertificateForm = () => {
             const certificateData: Omit<Certificate, 'id' | 'certificateNumber'> = {
                 type: 'entrega',
                 observations,
-                software: softwareList,
+                software: selectedSoftware,
                 computer: computerObject,
                 created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
                 created_at: serverTimestamp() as Timestamp,

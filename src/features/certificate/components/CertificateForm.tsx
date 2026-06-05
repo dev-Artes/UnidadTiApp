@@ -20,7 +20,7 @@ const CertificateForm = () => {
                 id={'certificateNumber'}
                 type={'text'}
                 disabled={true}
-                value={previewNumber?.toString() ?? ""}  // 👈
+                value={previewNumber?.toString() ?? ""} 
                 name={'certificateNumber'}
             />
 

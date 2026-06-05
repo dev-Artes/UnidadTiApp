@@ -81,7 +81,7 @@ const getCertificates = async (): Promise<CertificateRecord[]> => {
 const getCertificateById = async (certificateId: string): Promise<Certificate | undefined> => {
   try {
     const certDoc = doc(db, 'certificates', certificateId)
-    const snapshot = await getDoc(certDoc)         // 🐛 fix: era getDocs()
+    const snapshot = await getDoc(certDoc)
     if (snapshot.exists()) return { id: snapshot.id, ...snapshot.data() } as Certificate
   } catch (error) {
     console.error('Error getting certificate by id:', error)

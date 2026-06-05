@@ -4,7 +4,7 @@ import { useCertificateForm } from "../hooks/"
 
 const ReassignmentForm = () => {
 
-    const { previewNumber, handleReassignment, loading, setSelectedComputer, setPreviousUser, newUser, setNewUser, selectedComputer, computers, setObservations, observations } = useCertificateForm()
+    const { previewNumber, handleReassignment, loading, availableSoftware, selectedSoftware, handleSoftwareChange, setSelectedComputer, setPreviousUser, newUser, setNewUser, selectedComputer, computers, setObservations, observations } = useCertificateForm()
 
     const previousUsers = [
         ...(selectedComputer?.reassignments?.map(r => r.previousUser) ?? []),
@@ -73,6 +73,23 @@ const ReassignmentForm = () => {
                 placeholder={'Usuario previo'}
                 handleChange={(e) => setPreviousUser(e.target.value)}
             />
+            <label>Software Instalado:</label>
+            <div className="rounded p-2 w-full mb-4">
+                {availableSoftware.map((software) => (
+                    <div key={software.id}>
+                        <label>
+                            <input
+                                type="checkbox"
+                                value={software.id}
+                                data-name={software.name}
+                                checked={selectedSoftware.some(s => s.id === software.id)}
+                                onChange={handleSoftwareChange}
+                            />
+                            {software.name}
+                        </label>
+                    </div>
+                ))}
+            </div>
      
             <Button type="submit" variant="green">
                 {loading ? 'Guardando...' : 'Guardar'}
