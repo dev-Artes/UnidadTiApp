@@ -7,7 +7,7 @@ import {
     registerUser,
     logout,
     onAuthChange
-} from '../services/auth-service'  // 👈 todo viene del service, el provider solo orquesta
+} from '../services/auth-service' 
 
 interface AuthProviderProps {
     children: React.ReactNode
@@ -55,3 +55,4 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 }
 
 export default AuthProvider
+

@@ -4,20 +4,25 @@ import {
     createUserWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
-    type User as FirebaseUser
+    updateProfile,
+    type User as FirebaseUser,
 } from 'firebase/auth'
-import { setDoc, doc, Timestamp } from 'firebase/firestore'
+import { setDoc, doc, Timestamp, getDoc } from 'firebase/firestore'
 import { auth, googleProvider, db } from '../firebase/firebase-config'
 
 
-const registerUser = async (email: string, password: string, name: string): Promise<FirebaseUser> => {
+const registerUser = async ( email: string, password: string, name: string ): Promise<FirebaseUser> => {
     try {
-        const { user } = await createUserWithEmailAndPassword(auth, email, password)
+        const { user } = await createUserWithEmailAndPassword( auth, email, password )
+
+        await updateProfile(user, { displayName: name })
 
         await setDoc(doc(db, 'users', user.uid), {
             name,
             email,
+            provider: 'local',
             created_at: Timestamp.now(),
+            last_login: Timestamp.now(),
         })
 
         return user
@@ -40,10 +45,28 @@ const loginWithEmail = async (email: string, password: string): Promise<Firebase
 const loginWithGoogle = async (): Promise<FirebaseUser> => {
     try {
         const { user } = await signInWithPopup(auth, googleProvider)
+
+        const userRef = doc(db, 'users', user.uid)
+        const userSnap = await getDoc(userRef)
+
+        if(!userSnap.exists()) {
+            await setDoc(userRef, {
+                name: user.displayName,
+                email: user.email,
+                provider: 'google',
+                created_at: Timestamp.now(),
+                last_login: Timestamp.now(),
+            })
+        } else {
+            await setDoc(userRef, { last_login: Timestamp.now() }, { merge: true })
+        }
+
         await setDoc(doc(db, 'users', user.uid), {
             name: user.displayName,
             email: user.email,
+            provider: 'google',
             created_at: Timestamp.now(),
+            last_login: Timestamp.now(),
         }, { merge: true })
 
         return user
