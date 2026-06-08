@@ -11,7 +11,6 @@ interface CertificateDetailProps {
 const DatailItem = ({ item, onClose }: CertificateDetailProps) => {
 
     const [ showAllSoftware, setShowAllSoftware ] = useState(false)
-    // const { generatePDF } = useReports()
 
     const maxSoftware = 4
 
@@ -22,7 +21,6 @@ const DatailItem = ({ item, onClose }: CertificateDetailProps) => {
         return item.software.slice( 0, maxSoftware )
     }
 
-    // const handleGeneratePDF = ( item ) => generatePDF(item)
 
     return (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
@@ -88,13 +86,6 @@ const DatailItem = ({ item, onClose }: CertificateDetailProps) => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="flex items-center justify-center">
-                <Button variant="green"
-                    onClick={ () => handleGenerate( item ) }
-                >
-                    {'Descargar PDF'}
-                </Button>
-                </div> */}
             </div>
         </div>
     )

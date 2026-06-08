@@ -1,8 +1,11 @@
+import Button from "../Button"
+
 interface TableActionsProps {
   onDelete?: () => void
   onEdit?: () => void
   onDetail?: () => void
   onActive?: () => void
+  onPDF?: () => void
   isActive?: boolean
 }
 
@@ -11,6 +14,7 @@ const TableActions = ({
   onDetail,
   onEdit,
   onActive,
+  onPDF,
   isActive
 }: TableActionsProps) => {
   return (
@@ -54,6 +58,12 @@ const TableActions = ({
               ${isActive ? 'translate-x-6' : 'translate-x-1'}`}
           />
         </button>
+      )}
+
+      {onPDF && (
+        <Button variant="green" onClick={onPDF} >
+          {'PDF'}
+        </Button>
       )}
 
     </div>

@@ -71,13 +71,13 @@ const CertificateForm = () => {
                     <select
                         value={selectedDevice ? selectedDevice.name : ""}
                         onChange={(e) => {
-                            const type = devices.find(t => t.name === e.target.value)  // 👈 devices
+                            const type = devices.find(t => t.name === e.target.value)
                             setSelectedDevice(type ?? null)
                         }}
                         className="border rounded p-2 w-full mb-4"
                     >
                         <option value="">Selecciona tipo</option>
-                        {devices.map((type, index) => (   // 👈 devices
+                        {devices.map((type, index) => (  
                             <option key={index} value={type.name}>{type.name}</option>
                         ))}
                     </select>
@@ -88,13 +88,13 @@ const CertificateForm = () => {
                     <select
                         value={selectedBrand ? selectedBrand.name : ""}
                         onChange={(e) => {
-                            const brand = brands.find(b => b.name === e.target.value)  // 👈 brands
+                            const brand = brands.find(b => b.name === e.target.value) 
                             setSelectedBrand(brand ?? null)
                         }}
                         className="border rounded p-2 w-full mb-4"
                     >
                         <option value="">Selecciona marca</option>
-                        {brands.map((brand, index) => (   // 👈 brands
+                        {brands.map((brand, index) => (   
                             <option key={index} value={brand.name}>{brand.name}</option>
                         ))}
                     </select>

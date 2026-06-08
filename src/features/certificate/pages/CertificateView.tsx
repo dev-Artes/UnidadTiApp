@@ -1,13 +1,13 @@
 import { Button, Layout, StateHandler, Table, TableActions } from "../../../components"
 
-import { useCertificate } from "../hooks/"
+import { useCertificate, useCertificatePDF } from "../hooks/"
 import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 import { headersTableConfig } from "../table.config"
 
 import { CertificateEdit, DatailItem } from "../components/"
 import { fullDateNumber } from "../../../utils/convertTimestamp"
-import type { CertificateRecord } from "../../../types/entidades"
+import type { Certificate, CertificateRecord } from "../../../types/entidades"
 
 const CertificateView = () => {
     
@@ -15,6 +15,9 @@ const CertificateView = () => {
     
     const { isTypeMenuOpen, setIsTypeMenuOpen, typeOptions, otherDevices, certificates, handleDetail, typeFilter, setTypeFilter, searchText, handleFilterChange, setSearchText, setCertificates, handleEdit, detailItem, tagPrefixes, editingItem, setDetailItem, error,  activeFilter, loading, setEditingItem, activeSubFilter, setActiveSubFilter } = useCertificate()  
     
+    const { generatePDF } = useCertificatePDF()
+    const handleGeneratePDF = ( item: Certificate ) => generatePDF( item )
+
     const tabs = ['ALL', ...tagPrefixes.sort(), 'OTROS']
     const tabLabels: Record<string, string> = {
         ALL: 'Todos',
@@ -47,6 +50,7 @@ const CertificateView = () => {
                 <TableActions
                     onEdit={() => handleEdit(item)}
                     onDetail={() => handleDetail(item)}
+                    onPDF={ () => handleGeneratePDF(item)}
                 />
             )
         }
