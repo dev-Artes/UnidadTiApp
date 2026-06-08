@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-import { auth, db } from "../../../firebase/firebase-config"
+import { db } from "../../../firebase/firebase-config"
 import { collection, doc, getDocs, serverTimestamp, Timestamp } from "firebase/firestore"
 
 import { useCertificatePDF } from "./"
@@ -43,9 +43,6 @@ export const useCertificateForm = () => {
     const [previousUser, setPreviousUser] = useState('')
 
     const [ loading, setLoading ] = useState(false)
-
-    const { currentUser } = auth
-
 
     useEffect( () => {
         const loadData = async () => {
@@ -182,7 +179,6 @@ export const useCertificateForm = () => {
         }
 
         try {
-            const { currentUser } = auth
 
             const computerObject: Computer = {
                     internalTag: tag,
