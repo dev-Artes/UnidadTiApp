@@ -7,7 +7,7 @@ import { useCertificatePDF } from "./"
 import { useSoftware } from "../../software/hooks/useSoftware"
 
 import type { Brand, Certificate, Computer, Device, Reassignment, SoftwareItem, TagCounter, TagCounterType } from "../../../types/entidades"
-import { addCertificate, addComputer, getBrands, getComputers, getDevices, getLastCertificateNumber, getNextTag, updateComputer } from "../../../services"
+import { addCertificate, addComputer, getBrands, getComputers, getDevices, getLastCertificateNumber, getNextTag, peekNextTag, updateComputer } from "../../../services"
 import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 export const useCertificateForm = () => {
@@ -89,8 +89,8 @@ export const useCertificateForm = () => {
 
     const handleTagTypeChange = async (type: TagCounter) => {
         setSelectedTagCounter(type)
-        const newTag = await getNextTag(type.id as TagCounterType)
-        setTag(newTag)
+        const previewTag = await peekNextTag(type.id as TagCounterType) 
+        setTag(previewTag)
     }
 
     const resetForm = () => {
@@ -173,22 +173,23 @@ export const useCertificateForm = () => {
 
         const now = Timestamp.now()
 
-        if (!user.trim() || !tag.trim() || !selectedDevice || !selectedBrand) {
+        if (!user.trim() || !tag.trim() || !selectedDevice || !selectedBrand || !selectedTagCounter) {
             alert('Por favor completa todos los campos obligatorios')
             return
         }
 
         try {
+            const confirmedTag = await getNextTag(selectedTagCounter!.id as TagCounterType)
 
             const computerObject: Computer = {
-                    internalTag: tag,
-                    assignedTo: user,
-                    brand: selectedBrand,
-                    type: selectedDevice,
-                    model,
-                    serialNumber,
-                    created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
-                    created_at: serverTimestamp() as Timestamp,
+                internalTag: confirmedTag,
+                assignedTo: user,
+                brand: selectedBrand,
+                type: selectedDevice,
+                model,
+                serialNumber,
+                created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
+                created_at: serverTimestamp() as Timestamp,
             }
 
             const certificateData: Omit<Certificate, 'id' | 'certificateNumber'> = {

@@ -1,4 +1,4 @@
-export { getNextTag } from './tag-counter'
+export { getNextTag, peekNextTag } from './tag-counter'
 export { loginWithEmail, loginWithGoogle, logout, onAuthChange } from './auth-service'
 export { addUser, getUsers, updateUser, deleteUser, getUserById } from './users-service'
 export { addSoftware, getSoftware, updateSoftware, deleteSoftware } from './software-service'

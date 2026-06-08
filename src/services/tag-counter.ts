@@ -1,4 +1,4 @@
-import { doc, runTransaction } from 'firebase/firestore'
+import { doc, getDoc, runTransaction } from 'firebase/firestore'
 import { db } from '../firebase/firebase-config'
 import type { TagCounterType } from '../types/entidades'
 
@@ -27,4 +27,15 @@ export const getNextTag = async (type: TagCounterType): Promise<string> => {
       : `${type}-${String(next).padStart(4, '0')}`
   })
 }
-
+export const peekNextTag = async (type: TagCounterType): Promise<string> => {
+    const counterRef = doc(db, 'tag_counters', type)
+    const snap = await getDoc(counterRef)
+    if (!snap.exists()) return `${type}-0001`
+    
+    const isSpecial = type === 'PC-LE'
+    const current = snap.data().lastNumber as number
+    
+    return isSpecial
+        ? `${type}${String(current + 1).padStart(4, '0')}`
+        : `${type}-${String(current + 1).padStart(4, '0')}`
+}
