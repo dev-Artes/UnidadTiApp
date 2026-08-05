@@ -4,6 +4,7 @@ export const userTableConfig = {
     headers: [
         {id: 'name', label: 'Nombre', field: 'name'},
         {id: 'email', label: 'Correo', field: 'email'},
-        {id: "actions", label: 'Acciones', field: 'actions'},
+        {id: 'role', label: 'Rol', field: 'role'},
+        {id: 'active', label: 'Estado', field: 'active'},
     ],
 }

@@ -4,17 +4,14 @@ import { addBrand } from "../../../services"
 
 import { Timestamp } from "firebase/firestore"
 import { useNavigateTo } from "../../../hooks/useNavigateTo"
+import { useAuth } from "../../../hooks/useAut"
 
 export const useBrandForm = () => {
     const { toAllBrands } = useNavigateTo()
+    const { user } = useAuth()
 
     const [ brand, setBrand ] = useState('')
     const [ loading, setLoading ] = useState(false)
-
-    const currentUser = {
-        uid: 'Vfog3tRIC4QWPfHSRAGR',
-        name: 'Mario Labbé',
-    }
 
     const handleSubmit = async ( e: React.FormEvent<HTMLFormElement> ) => {
         e.preventDefault()
@@ -28,7 +25,10 @@ export const useBrandForm = () => {
             setLoading(true)
             await addBrand({ 
                 name: brand,
-                created_by: currentUser,
+                created_by: {
+                    uid: user?.uid ?? '',
+                    name: user?.displayName ?? '',
+                },
                 created_at: Timestamp.now()
             })
 

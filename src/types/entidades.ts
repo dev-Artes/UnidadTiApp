@@ -1,10 +1,15 @@
 import type { Timestamp } from "firebase/firestore"
 
+export type Role = 'admin' | 'jefe_ti' | 'analista'
+
 export interface User {
     id: string
     name: string
     email: string
+    role: Role
+    active: boolean
     created_by: ActionBy
+    updated_by?: ActionBy
 }
 
 export type NewUser = Omit<User, 'id'>
@@ -14,6 +19,7 @@ export interface Brand {
     name: string
     created_at: Timestamp
     created_by: ActionBy
+    updated_by?: ActionBy
 }
 
 export type CheckUserExistsPayload = {
@@ -28,6 +34,7 @@ export interface Device {
     name: string
     created_at: Timestamp
     created_by: ActionBy
+    updated_by?: ActionBy
 }
 
 export type NewDevice= Omit<Device, 'id'>
@@ -87,7 +94,8 @@ export type CertificateRecord = Certificate & { id: string }
 export type RealTagCounterType =
     | 'PCART'
     | 'PC-LE'
-    | 'PCMAC'
+    | 'PCMACF'
+    | 'PCMACQ'
     | 'PCMAPA'
     | 'PCTNCH'
     | 'PCISUCH'
@@ -111,6 +119,7 @@ export interface Software {
     created_at: Timestamp
 
     created_by: ActionBy
+    updated_by?: ActionBy
 }
 
 export interface SoftwareItem {

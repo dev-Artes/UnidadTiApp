@@ -1,6 +1,6 @@
 export { getNextTag, peekNextTag } from './tag-counter'
-export { loginWithEmail, loginWithGoogle, logout, onAuthChange } from './auth-service'
-export { addUser, getUsers, updateUser, deleteUser, getUserById } from './users-service'
+export { loginWithEmail, loginWithGoogle, logout, onAuthChange, createUserByAdmin } from './auth-service'
+export { addUser, getUsers, updateUser, deleteUser, getUserById, updateUserRole, toggleUserActive } from './users-service'
 export { addSoftware, getSoftware, updateSoftware, deleteSoftware } from './software-service'
 export { addBrand, getBrands, updateBrand, deleteBrand, getBrandById, migrateBrand } from './brands-service'
 export { addDevice, getDevices, deleteDevice, getDevicesById, updateDevice, migrateDevice } from './device-service'

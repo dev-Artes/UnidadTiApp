@@ -1,11 +1,18 @@
 import { useEffect, useState } from 'react'
 import {  getSoftware, updateSoftware, deleteSoftware } from '../../../services/'
 import type { Software } from '../../../types/entidades'
+import { useAuth } from '../../../hooks/useAut'
 
 export const useSoftware = () => {
+    const { user } = useAuth()
     const [softwareList, setSoftwareList] = useState<Software[]>([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
+
+    const updatedBy = {
+        uid: user?.uid ?? '',
+        name: user?.displayName ?? '',
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,9 +29,9 @@ export const useSoftware = () => {
     }, [])
 
     const handleToggleActive = async (software: Software) => {
-        await updateSoftware(software.id, { active: !software.active })
+        await updateSoftware(software.id, { active: !software.active, updated_by: updatedBy })
         setSoftwareList(prev =>
-            prev.map(s => s.id === software.id ? { ...s, active: !s.active } : s)
+            prev.map(s => s.id === software.id ? { ...s, active: !s.active, updated_by: updatedBy } : s)
         )
     }
 

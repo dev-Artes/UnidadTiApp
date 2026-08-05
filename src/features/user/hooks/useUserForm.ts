@@ -1,23 +1,23 @@
 import { useState } from "react"
-import { checkUserExists } from "../../../utils"
-import { addUser } from "../../../services"
-import { useNavigateTo } from "../../../hooks/useNavigateTo"
+import { useNavigate } from "react-router-dom"
+import { createUserByAdmin } from "../../../services"
+import { useAuth } from "../../../hooks/useAut"
+import type { Role } from "../../../types/entidades"
 
 
 export const useUserForm = () => {
-    const { toAllUsers } = useNavigateTo()
+    const navigate = useNavigate()
+    const { user, logout } = useAuth()
 
     const [ name, setName ] = useState('')
     const [ email, setEmail ] = useState('')
+    const [ role, setRole ] = useState<Role>('analista')
     const [ loading, setLoading ] = useState( false )
 
     const resetForm = () => {
         setName('')
         setEmail('')
-    }
-    const currentUser = {
-        uid: 'Vfog3tRIC4QWPfHSRAGR',
-        name: 'Mario Labbé',
+        setRole('analista')
     }
 
     const handleSubmit = async ( e: React.FormEvent<HTMLFormElement> ) => {
@@ -30,20 +30,15 @@ export const useUserForm = () => {
 
         try {
             setLoading(true)
-            const exists = await checkUserExists({ email })
-            
-            if ( exists ) {
-                throw new Error('User already exists')
-            } 
-            
-            await addUser({
-                name: name,
-                email: email,
-                created_by: currentUser
+
+            await createUserByAdmin(email, name, role, {
+                uid: user?.uid ?? '',
+                name: user?.displayName ?? '',
             })
             
             resetForm()
-            toAllUsers()
+            await logout()
+            navigate('/login', { state: { message: 'Usuario creado correctamente. Inicie sesión nuevamente.' } })
         } catch ( error ) {
             console.error(error )
             alert('Hubo un error creando el usuario, intente nuevamente')
@@ -56,8 +51,10 @@ export const useUserForm = () => {
         handleSubmit,
         name,
         email,
+        role,
         setName,
-        loading,
         setEmail,
+        setRole,
+        loading,
     }
 }

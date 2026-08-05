@@ -2,17 +2,14 @@ import React, { useState } from "react"
 import { addSoftware } from "../../../services"
 import { Timestamp } from "firebase/firestore"
 import { useNavigateTo } from "../../../hooks/useNavigateTo"
+import { useAuth } from "../../../hooks/useAut"
 
 
 export const useSoftwareForm = () => {
     const { toAllSoftware } = useNavigateTo()
+    const { user } = useAuth()
     const [ software , setSoftware ] = useState('')
     const [ loading, setLoading ] = useState(false)
-
-    const currentUser = {
-        uid: 'Vfog3tRIC4QWPfHSRAGR',
-        name: 'Mario Labbé',
-    }
 
     const handleSubmit = async ( e: React.FormEvent<HTMLFormElement> ) => {
         e.preventDefault()
@@ -27,7 +24,10 @@ export const useSoftwareForm = () => {
             await addSoftware({
                 name: software,
                 active: true,
-                created_by: currentUser,
+                created_by: {
+                    uid: user?.uid ?? '',
+                    name: user?.displayName ?? '',
+                },
                 created_at: Timestamp.now()
             })
             setSoftware('')

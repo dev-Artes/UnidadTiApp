@@ -2,7 +2,7 @@ import { doc, getDoc, getDocs, updateDoc, deleteDoc, collection, setDoc } from '
 
 import { db } from '../firebase/firebase-config'
 
-import type { User, NewUser } from '../types/entidades'
+import type { User, NewUser, Role, ActionBy } from '../types/entidades'
 
 const addUser = async (user: NewUser): Promise<void> => {
   try {
@@ -74,10 +74,30 @@ const deleteUser = async ( userId: string ): Promise<void> => {
   }
 }
 
+const updateUserRole = async (userId: string, role: Role, updatedBy: ActionBy): Promise<void> => {
+  try {
+    await updateDoc(doc(db, 'users', userId), { role, updated_by: updatedBy })
+  } catch (error) {
+    console.error(`Error updating role for user ${userId}:`, error)
+    throw error
+  }
+}
+
+const toggleUserActive = async (userId: string, active: boolean, updatedBy: ActionBy): Promise<void> => {
+  try {
+    await updateDoc(doc(db, 'users', userId), { active, updated_by: updatedBy })
+  } catch (error) {
+    console.error(`Error toggling active for user ${userId}:`, error)
+    throw error
+  }
+}
+
 export {
   addUser,
   getUsers,
   updateUser,
   deleteUser,
-  getUserById
+  getUserById,
+  updateUserRole,
+  toggleUserActive
 }
