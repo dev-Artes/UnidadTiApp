@@ -6,3 +6,4 @@ export { addBrand, getBrands, updateBrand, deleteBrand, getBrandById, migrateBra
 export { addDevice, getDevices, deleteDevice, getDevicesById, updateDevice, migrateDevice } from './device-service'
 export { addComputer, getComputers, updateComputer, deleteComputer, getComputerById, reassignComputer } from './computer-service'
 export { addCertificate, getCertificateNumber, getCertificates, getCertificateById, migrateCertificate, getLastCertificateNumber, deleteCertificate, updateCertificate } from './certificate-service'
+export { addPrestamo, getPrestamos, deletePrestamo, updatePrestamoStatus } from './prestamos-service'
