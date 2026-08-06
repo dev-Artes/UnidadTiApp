@@ -2,7 +2,7 @@ import { Timestamp } from "firebase/firestore";
 import { useState } from "react";
 import { useAuth } from "../../../hooks/useAut";
 import { useNavigateTo } from "../../../hooks/useNavigateTo";
-import { addPrestamo } from "../../../services";
+import { addPrestamo, setAvailability } from "../../../services";
 import type { Computer } from "../../../types/entidades";
 
 export const usePrestamoForm = () => {
@@ -43,6 +43,13 @@ export const usePrestamoForm = () => {
 				},
 				created_at: Timestamp.now(),
 			});
+
+			if (user) {
+				await setAvailability(computer.internalTag, "prestado", {
+					uid: user.uid,
+					name: user.displayName ?? "",
+				});
+			}
 
 			setComputer(null);
 			setAssignedTo("");

@@ -1,35 +1,48 @@
 import { Timestamp } from "firebase/firestore";
 import { useState } from "react";
 import { Button, Layout, StateHandler, Table } from "../../../components";
+import { useAuth } from "../../../hooks/useAut";
 import { useNavigateTo } from "../../../hooks/useNavigateTo";
-import { updatePrestamoStatus } from "../../../services";
+import { updatePrestamoStatus, setAvailability } from "../../../services";
 import type { Prestamo } from "../../../types/entidades";
 import { usePrestamo } from "../hooks/";
 import { headersTableConfig } from "../table.config";
 
+const formatDate = (timestamp?: Timestamp) => {
+	if (!timestamp) return "—";
+	const date = timestamp.toDate();
+	return date.toLocaleDateString("es-AR", {
+		day: "2-digit",
+		month: "2-digit",
+		year: "numeric",
+	});
+};
+
 const PrestamoView = () => {
 	const { error, loading, prestamos, deletePrestamoById } = usePrestamo();
 	const { toNewLoan } = useNavigateTo();
+	const { user } = useAuth();
 	const [updatingId, setUpdatingId] = useState<string | null>(null);
 
-	const handleStatusToggle = async (prestamo: Prestamo) => {
-		const newStatus =
-			prestamo.status === "disponible" ? "prestado" : "disponible";
-		const confirmMsg =
-			newStatus === "prestado"
-				? `¿Marcar como prestado el equipo "${prestamo.computer?.brand?.name} ${prestamo.computer?.model}"?`
-				: `¿Devolver el equipo "${prestamo.computer?.brand?.name} ${prestamo.computer?.model}"?`;
-
-		const confirmed = window.confirm(confirmMsg);
+	const handleReturn = async (prestamo: Prestamo) => {
+		const confirmed = window.confirm(
+			`¿Devolver el equipo "${prestamo.computer?.brand?.name} ${prestamo.computer?.model}"?`,
+		);
 		if (!confirmed) return;
 
 		try {
 			setUpdatingId(prestamo.id);
-			const extra =
-				newStatus === "prestado"
-					? { loanDate: Timestamp.now().toDate() }
-					: { returnDate: Timestamp.now().toDate() };
-			await updatePrestamoStatus(prestamo.id, newStatus, extra);
+			await updatePrestamoStatus(prestamo.id, "disponible", {
+				returnDate: Timestamp.now().toDate(),
+			});
+
+			if (user && prestamo.computer?.internalTag) {
+				await setAvailability(prestamo.computer.internalTag, "disponible", {
+					uid: user.uid,
+					name: user.displayName ?? "",
+				});
+			}
+
 			window.location.reload();
 		} catch (err) {
 			console.error("Error updating status:", err);
@@ -45,15 +58,11 @@ const PrestamoView = () => {
 	) => {
 		if (header.field === "internalTag") return item.internalTag;
 
-		if (header.field === "computer") {
-			return (
-				<span>
-					{item.computer?.brand?.name} {item.computer?.model}
-				</span>
-			);
-		}
-
 		if (header.field === "assignedTo") return item.assignedTo;
+
+		if (header.field === "created_at") {
+			return formatDate(item.created_at);
+		}
 
 		if (header.field === "status") {
 			const isAvailable = item.status === "disponible";
@@ -73,22 +82,16 @@ const PrestamoView = () => {
 		if (header.field === "actions") {
 			return (
 				<div className="flex justify-center gap-2">
-					<button
-						type="button"
-						onClick={() => handleStatusToggle(item)}
-						disabled={updatingId === item.id}
-						className={`px-2 py-1 rounded text-white text-sm ${
-							item.status === "disponible"
-								? "bg-yellow-500 hover:bg-yellow-600"
-								: "bg-green-500 hover:bg-green-600"
-						} disabled:opacity-50`}
-					>
-						{updatingId === item.id
-							? "..."
-							: item.status === "disponible"
-								? "Prestar"
-								: "Devolver"}
-					</button>
+					{item.status === "prestado" && (
+						<button
+							type="button"
+							onClick={() => handleReturn(item)}
+							disabled={updatingId === item.id}
+							className="px-2 py-1 rounded bg-green-500 hover:bg-green-600 text-white text-sm disabled:opacity-50"
+						>
+							{updatingId === item.id ? "..." : "Devolver"}
+						</button>
+					)}
 					<button
 						type="button"
 						onClick={() => {

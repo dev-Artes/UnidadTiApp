@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
 import { Button, Input } from "../../../components";
-import { getBrands } from "../../../services";
-import type { Brand } from "../../../types/entidades";
+import { getBrands, getDevices } from "../../../services";
+import type { Brand, Device } from "../../../types/entidades";
 import { useEquipoForm } from "../hooks/";
-
-const DEVICE_TYPES = ["AiO", "Notebook", "MacBook Pro/Air", "PC Escritorio"];
 
 const EquipoForm = () => {
 	const {
 		loading,
 		brand,
 		setBrand,
-		deviceType,
-		setDeviceType,
+		device,
+		setDevice,
 		model,
 		setModel,
 		serialNumber,
@@ -25,13 +23,17 @@ const EquipoForm = () => {
 	} = useEquipoForm();
 
 	const [brands, setBrands] = useState<Brand[]>([]);
+	const [devices, setDevices] = useState<Device[]>([]);
+
+	const ALLOWED_DEVICE_NAMES = ["pc de escritorio", "pc de escritorio aio", "notebook"];
 
 	useEffect(() => {
-		const loadBrands = async () => {
-			const b = await getBrands();
+		const loadData = async () => {
+			const [b, d] = await Promise.all([getBrands(), getDevices()]);
 			setBrands(b);
+			setDevices(d.filter((dev) => ALLOWED_DEVICE_NAMES.includes(dev.name.toLowerCase())));
 		};
-		loadBrands();
+		loadData();
 	}, []);
 
 	return (
@@ -69,13 +71,16 @@ const EquipoForm = () => {
 			<select
 				className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg bg-white mb-4
 					focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-				value={deviceType}
-				onChange={(e) => setDeviceType(e.target.value)}
+				value={device?.id ?? ""}
+				onChange={(e) => {
+					const found = devices.find((d) => d.id === e.target.value);
+					setDevice(found ?? null);
+				}}
 			>
 				<option value="">Seleccionar tipo</option>
-				{DEVICE_TYPES.map((dt) => (
-					<option key={dt} value={dt}>
-						{dt}
+				{devices.map((d) => (
+					<option key={d.id} value={d.id}>
+						{d.name}
 					</option>
 				))}
 			</select>

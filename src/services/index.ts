@@ -7,3 +7,4 @@ export { addDevice, getDevices, deleteDevice, getDevicesById, updateDevice, migr
 export { addComputer, getComputers, updateComputer, deleteComputer, getComputerById, reassignComputer } from './computer-service'
 export { addCertificate, getCertificateNumber, getCertificates, getCertificateById, migrateCertificate, getLastCertificateNumber, deleteCertificate, updateCertificate } from './certificate-service'
 export { addPrestamo, getPrestamos, deletePrestamo, updatePrestamoStatus } from './prestamos-service'
+export { getAvailability, getAllAvailability, setAvailability } from './equipment-availability-service'

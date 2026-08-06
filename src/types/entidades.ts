@@ -146,3 +146,12 @@ export interface Prestamo {
 }
 
 export type NewPrestamo = Omit<Prestamo, "id">;
+
+export type EquipmentStatus = "disponible" | "prestado" | "no_disponible";
+
+export interface EquipmentAvailability {
+	internalTag: string;
+	status: EquipmentStatus;
+	updatedAt: Timestamp;
+	updatedBy: ActionBy;
+}

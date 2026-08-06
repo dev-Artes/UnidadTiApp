@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { getCertificates } from "../../../services";
+import { getComputers } from "../../../services";
 import type { Computer } from "../../../types/entidades";
+
+const ALLOWED_DEVICE_NAMES = ["notebook", "pc de escritorio", "pc de escritorio aio"];
 
 export const useEquipo = () => {
 	const [equipos, setEquipos] = useState<Computer[]>([]);
@@ -10,19 +12,16 @@ export const useEquipo = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const certificates = await getCertificates();
-				const map = new Map<string, Computer>();
-				for (const cert of certificates) {
-					const tag = cert.computer?.internalTag;
-					if (tag) {
-						map.set(tag, {
-							...cert.computer,
-							registrationType:
-								cert.type === "reasignacion" ? "reasignacion" : "entrega",
-						});
-					}
-				}
-				setEquipos(Array.from(map.values()));
+				const computers = await getComputers();
+				const filtered = computers.filter((c) => {
+					const typeName =
+						typeof c.type === "string" ? c.type : c.type?.name;
+					return (
+						typeName &&
+						ALLOWED_DEVICE_NAMES.includes(typeName.toLowerCase())
+					);
+				});
+				setEquipos(filtered);
 			} catch (_err) {
 				setError("Error loading equipos");
 			} finally {

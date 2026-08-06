@@ -3,14 +3,14 @@ import { useState } from "react";
 import { useAuth } from "../../../hooks/useAut";
 import { useNavigateTo } from "../../../hooks/useNavigateTo";
 import { addComputer } from "../../../services";
-import type { Brand } from "../../../types/entidades";
+import type { Brand, Device } from "../../../types/entidades";
 
 export const useEquipoForm = () => {
 	const { toAllEquipos } = useNavigateTo();
 	const { user } = useAuth();
 
 	const [brand, setBrand] = useState<Brand | null>(null);
-	const [deviceType, setDeviceType] = useState("");
+	const [device, setDevice] = useState<Device | null>(null);
 	const [model, setModel] = useState("");
 	const [serialNumber, setSerialNumber] = useState("");
 	const [internalTag, setInternalTag] = useState("");
@@ -26,7 +26,7 @@ export const useEquipoForm = () => {
 			alert("Debe seleccionar una marca");
 			return;
 		}
-		if (!deviceType) {
+		if (!device) {
 			alert("Debe seleccionar un tipo de periférico");
 			return;
 		}
@@ -47,12 +47,7 @@ export const useEquipoForm = () => {
 			setLoading(true);
 			await addComputer({
 				brand,
-				type: {
-					id: "",
-					name: deviceType,
-					created_at: Timestamp.now(),
-					created_by: { uid: "", name: "" },
-				},
+				type: device,
 				model: model.trim(),
 				serialNumber: serialNumber.trim(),
 				internalTag: internalTag.trim(),
@@ -66,7 +61,7 @@ export const useEquipoForm = () => {
 			});
 
 			setBrand(null);
-			setDeviceType("");
+			setDevice(null);
 			setModel("");
 			setSerialNumber("");
 			setInternalTag("");
@@ -84,8 +79,8 @@ export const useEquipoForm = () => {
 		loading,
 		brand,
 		setBrand,
-		deviceType,
-		setDeviceType,
+		device,
+		setDevice,
 		model,
 		setModel,
 		serialNumber,

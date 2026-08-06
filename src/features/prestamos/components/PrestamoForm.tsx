@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Input } from "../../../components";
-import { getComputers } from "../../../services";
+import { getComputers, getAllAvailability } from "../../../services";
 import type { Computer } from "../../../types/entidades";
 import { usePrestamoForm } from "../hooks/";
 
@@ -21,7 +21,12 @@ const PrestamoForm = () => {
 	useEffect(() => {
 		const loadComputers = async () => {
 			const data = await getComputers();
-			const filtered = data.filter((c) => c.registrationType === "prestamo");
+			const availabilityMap = await getAllAvailability();
+			const filtered = data.filter((c) => {
+				if (c.registrationType !== "prestamo") return false;
+				const status = availabilityMap.get(c.internalTag) ?? "disponible";
+				return status === "disponible";
+			});
 			setComputers(filtered);
 		};
 		loadComputers();
@@ -53,7 +58,7 @@ const PrestamoForm = () => {
 				<option value="">Seleccionar equipo</option>
 				{computers.map((c) => (
 					<option key={c.id} value={c.id}>
-						{c.brand?.name} {c.model} - {c.internalTag}
+						{c.internalTag} - {c.brand?.name} {c.model}
 					</option>
 				))}
 			</select>
