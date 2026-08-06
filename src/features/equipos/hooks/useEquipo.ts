@@ -21,7 +21,22 @@ export const useEquipo = () => {
 						ALLOWED_DEVICE_NAMES.includes(typeName.toLowerCase())
 					);
 				});
-				setEquipos(filtered);
+
+				const map = new Map<string, Computer>();
+				for (const c of filtered) {
+					const existing = map.get(c.internalTag);
+					if (!existing) {
+						map.set(c.internalTag, c);
+					} else {
+						const dateNew = c.created_at?.toMillis() ?? 0;
+						const dateOld = existing.created_at?.toMillis() ?? 0;
+						if (dateNew > dateOld) {
+							map.set(c.internalTag, c);
+						}
+					}
+				}
+
+				setEquipos(Array.from(map.values()));
 			} catch (_err) {
 				setError("Error loading equipos");
 			} finally {

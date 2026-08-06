@@ -5,6 +5,7 @@ interface Header<T> {
 	id: string;
 	label: string;
 	field: keyof T | string;
+	sortable?: boolean;
 }
 
 interface TableProps<T> {
@@ -12,6 +13,9 @@ interface TableProps<T> {
 	headers: Header<T>[];
 	renderCellContent?: (item: T, header: Header<T>) => React.ReactNode;
 	itemsPerPage?: number;
+	sortField?: string;
+	sortDirection?: "asc" | "desc";
+	onSort?: (field: string) => void;
 }
 
 const Table = <T extends { id: string }>({
@@ -19,6 +23,9 @@ const Table = <T extends { id: string }>({
 	headers,
 	renderCellContent,
 	itemsPerPage = 10,
+	sortField,
+	sortDirection,
+	onSort,
 }: TableProps<T>) => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -36,8 +43,23 @@ const Table = <T extends { id: string }>({
 					<thead className="bg-gray-100 sticky top-0">
 						<tr>
 							{headers.map((header) => (
-								<th key={header.id} className="px-4 py-2 text-center">
+								<th
+									key={header.id}
+									onClick={() =>
+										header.sortable && onSort?.(header.field as string)
+									}
+									className={`px-4 py-2 text-center ${
+										header.sortable
+											? "cursor-pointer select-none hover:bg-gray-200"
+											: ""
+									}`}
+								>
 									{header.label}
+									{sortField === header.field && (
+										<span className="ml-1">
+											{sortDirection === "asc" ? "▲" : "▼"}
+										</span>
+									)}
 								</th>
 							))}
 						</tr>

@@ -50,6 +50,10 @@ const EquipoView = () => {
 	const [filterBrand, setFilterBrand] = useState("");
 	const [filterTag, setFilterTag] = useState("");
 	const [filterRegistration, setFilterRegistration] = useState("");
+	const [filterSearch, setFilterSearch] = useState("");
+
+	const [sortField, setSortField] = useState<string>("");
+	const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
 	useEffect(() => {
 		const loadAvailability = async () => {
@@ -61,7 +65,7 @@ const EquipoView = () => {
 
 	useEffect(() => {
 		setCurrentPage(1);
-	}, [filterBrand, filterTag, filterRegistration, filterAvailability]);
+	}, [filterBrand, filterTag, filterRegistration, filterAvailability, filterSearch]);
 
 	const uniqueBrands = useMemo(() => {
 		const brands = new Set<string>();
@@ -72,6 +76,9 @@ const EquipoView = () => {
 	}, [equipos]);
 
 	const filteredEquipos = equipos.filter((e) => {
+		const matchSearch =
+			!filterSearch ||
+			e.internalTag.toLowerCase().includes(filterSearch.toLowerCase());
 		const matchBrand = !filterBrand || e.brand?.name === filterBrand;
 		const matchTag =
 			!filterTag || getTagPrefix(e.internalTag) === filterTag;
@@ -80,11 +87,31 @@ const EquipoView = () => {
 		const equipoStatus = availabilityMap.get(e.internalTag) ?? "disponible";
 		const matchAvailability =
 			!filterAvailability || equipoStatus === filterAvailability;
-		return matchBrand && matchTag && matchRegistration && matchAvailability;
+		return matchSearch && matchBrand && matchTag && matchRegistration && matchAvailability;
 	});
 
-	const totalPages = Math.ceil(filteredEquipos.length / ITEMS_PER_PAGE);
-	const paginatedEquipos = filteredEquipos.slice(
+	const handleSort = (field: string) => {
+		if (sortField === field) {
+			setSortDirection((d) => (d === "asc" ? "desc" : "asc"));
+		} else {
+			setSortField(field);
+			setSortDirection("asc");
+		}
+	};
+
+	const sortedEquipos = useMemo(() => {
+		if (!sortField) return filteredEquipos;
+		return [...filteredEquipos].sort((a, b) => {
+			const valA = String(a[sortField as keyof Computer] ?? "").toLowerCase();
+			const valB = String(b[sortField as keyof Computer] ?? "").toLowerCase();
+			return sortDirection === "asc"
+				? valA.localeCompare(valB)
+				: valB.localeCompare(valA);
+		});
+	}, [filteredEquipos, sortField, sortDirection]);
+
+	const totalPages = Math.ceil(sortedEquipos.length / ITEMS_PER_PAGE);
+	const paginatedEquipos = sortedEquipos.slice(
 		(currentPage - 1) * ITEMS_PER_PAGE,
 		currentPage * ITEMS_PER_PAGE,
 	);
@@ -101,9 +128,10 @@ const EquipoView = () => {
 	};
 
 	const activeFilterCount =
-		(filterBrand ? 1 : 0) + (filterTag ? 1 : 0) + (filterRegistration ? 1 : 0) + (filterAvailability ? 1 : 0);
+		(filterSearch ? 1 : 0) + (filterBrand ? 1 : 0) + (filterTag ? 1 : 0) + (filterRegistration ? 1 : 0) + (filterAvailability ? 1 : 0);
 
 	const clearFilters = () => {
+		setFilterSearch("");
 		setFilterBrand("");
 		setFilterTag("");
 		setFilterRegistration("");
@@ -176,6 +204,15 @@ const EquipoView = () => {
 
 				<div className="bg-white p-5 shadow rounded mb-4 space-y-4">
 					<div className="flex items-center gap-3 flex-wrap">
+						<input
+							type="text"
+							value={filterSearch}
+							onChange={(e) => setFilterSearch(e.target.value)}
+							placeholder="Buscar por etiqueta..."
+							className="px-3 py-2 text-sm border border-gray-300 rounded-lg bg-white
+								focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+						/>
+
 						<div className="relative">
 							<select
 								value={filterBrand}
@@ -299,9 +336,12 @@ const EquipoView = () => {
 						</>
 					) : (
 						<Table
-							data={filteredEquipos}
+							data={sortedEquipos}
 							headers={headersTableConfig.headers}
 							renderCellContent={renderCell}
+							sortField={sortField}
+							sortDirection={sortDirection}
+							onSort={handleSort}
 						/>
 					)}
 				</StateHandler>
@@ -312,6 +352,7 @@ const EquipoView = () => {
 				<EquipoDetail
 					item={detailEquipo}
 					onClose={() => setDetailEquipo(null)}
+					onUpdate={() => window.location.reload()}
 				/>
 			)}
 		</Layout>
