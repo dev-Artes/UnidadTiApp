@@ -45,27 +45,6 @@ const EquipoView = () => {
 		if (header.field === "model") return item.model;
 		if (header.field === "serialNumber") return item.serialNumber;
 		if (header.field === "type") return item.type?.name;
-		if (header.field === "registrationType") {
-			const isPrestamo = item.registrationType === "prestamo";
-			const isReasignacion = item.registrationType === "reasignacion";
-			return (
-				<span
-					className={`px-2 py-1 rounded text-xs font-medium ${
-						isPrestamo
-							? "bg-yellow-100 text-yellow-700"
-							: isReasignacion
-								? "bg-purple-100 text-purple-700"
-								: "bg-blue-100 text-blue-700"
-					}`}
-				>
-					{isPrestamo
-						? "Préstamo"
-						: isReasignacion
-							? "Reasignación"
-							: "Entrega"}
-				</span>
-			);
-		}
 	};
 
 	return (
