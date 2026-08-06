@@ -6,8 +6,10 @@ import {
 	Layout,
 	StateHandler,
 } from "../../../components";
+import { softwareIcons } from "../../../assets/icons/software";
 import { useAuth } from "../../../hooks/useAut";
 import { useNavigateTo } from "../../../hooks/useNavigateTo";
+import { resolveIcon } from "../../../utils/iconResolver";
 import { useSoftware } from "../hooks/";
 
 const SoftwareView = () => {
@@ -39,6 +41,7 @@ const SoftwareView = () => {
 								<ContainerCard
 									key={sw.id}
 									name={sw.name}
+									icon={resolveIcon(sw.name, softwareIcons)}
 									active={isAdmin ? sw.active : true}
 									showStatus={isAdmin}
 									onClick={() =>

@@ -17,7 +17,6 @@ export type NewUser = Omit<User, "id">;
 export interface Brand {
 	id: string;
 	name: string;
-	icon?: string;
 	active: boolean;
 	created_at: Timestamp;
 	created_by: ActionBy;
@@ -119,9 +118,7 @@ export interface Software {
 	id: string;
 	name: string;
 	active: boolean;
-
 	created_at: Timestamp;
-
 	created_by: ActionBy;
 	updated_by?: ActionBy;
 }

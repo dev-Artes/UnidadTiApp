@@ -6,8 +6,10 @@ import {
 	Layout,
 	StateHandler,
 } from "../../../components";
+import { deviceIcons } from "../../../assets/icons/devices";
 import { useAuth } from "../../../hooks/useAut";
 import { useNavigateTo } from "../../../hooks/useNavigateTo";
+import { resolveIcon } from "../../../utils/iconResolver";
 import { useDevice } from "../hooks/useDevice";
 
 const DeviceView = () => {
@@ -37,6 +39,7 @@ const DeviceView = () => {
 								<ContainerCard
 									key={device.id}
 									name={device.name}
+									icon={resolveIcon(device.name, deviceIcons)}
 									active={isAdmin ? device.active : true}
 									showStatus={isAdmin}
 									onClick={() =>

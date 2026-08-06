@@ -7,7 +7,9 @@ import {
 	StateHandler,
 	Table,
 } from "../../../components";
+import { brandIcons } from "../../../assets/icons/brands";
 import { useNavigateTo } from "../../../hooks/useNavigateTo";
+import { resolveIcon } from "../../../utils/iconResolver";
 import type { Computer } from "../../../types/entidades";
 import EquipoDetail from "../components/EquipoDetail";
 import { useEquipo } from "../hooks/";
@@ -121,6 +123,10 @@ const EquipoView = () => {
 										<ContainerCard
 											key={uniqueKey}
 											name={equipo.internalTag}
+											icon={resolveIcon(
+												equipo.brand?.name ?? "",
+												brandIcons,
+											)}
 											active={true}
 											showStatus={false}
 											onClick={() => setDetailEquipo(equipo)}

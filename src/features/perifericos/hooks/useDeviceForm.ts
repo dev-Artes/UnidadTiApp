@@ -38,6 +38,7 @@ export const useDeviceForm = () => {
 			setLoading(false);
 		}
 	};
+
 	return {
 		loading,
 		setDevice,

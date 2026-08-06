@@ -6,8 +6,10 @@ import {
 	Layout,
 	StateHandler,
 } from "../../../components";
+import { brandIcons } from "../../../assets/icons/brands";
 import { useAuth } from "../../../hooks/useAut";
 import { useNavigateTo } from "../../../hooks/useNavigateTo";
+import { resolveIcon } from "../../../utils/iconResolver";
 import { useBrand } from "../hooks/";
 
 const BrandView = () => {
@@ -38,7 +40,7 @@ const BrandView = () => {
 								<ContainerCard
 									key={brand.id}
 									name={brand.name}
-									icon={brand.icon}
+									icon={resolveIcon(brand.name, brandIcons)}
 									active={isAdmin ? brand.active : true}
 									showStatus={isAdmin}
 									onClick={() =>
