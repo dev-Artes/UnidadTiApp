@@ -41,7 +41,7 @@ const BrandView = () => {
 									key={brand.id}
 									name={brand.name}
 									icon={resolveIcon(brand.name, brandIcons)}
-									active={isAdmin ? brand.active : true}
+									active={isAdmin ? (brand.active ?? true) : true}
 									showStatus={isAdmin}
 									onClick={() =>
 										isAdmin

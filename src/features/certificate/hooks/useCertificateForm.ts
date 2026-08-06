@@ -5,6 +5,7 @@ import { collection, doc, getDocs, serverTimestamp, Timestamp } from "firebase/f
 
 import { useCertificatePDF } from "./"
 import { useSoftware } from "../../software/hooks/useSoftware"
+import { useAuth } from "../../../hooks/useAut"
 
 import type { Brand, Certificate, Computer, Device, Reassignment, SoftwareItem, TagCounter, TagCounterType } from "../../../types/entidades"
 import { addCertificate, addComputer, getBrands, getComputers, getDevices, getLastCertificateNumber, getNextTag, peekNextTag, updateComputer } from "../../../services"
@@ -12,6 +13,7 @@ import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 export const useCertificateForm = () => {
     const { toAllCertificates } = useNavigateTo()
+    const { user } = useAuth()
 
     const { generatePDF } = useCertificatePDF()
 
@@ -19,7 +21,7 @@ export const useCertificateForm = () => {
     const [selectedSoftware, setSelectedSoftware] = useState<SoftwareItem[]>([])
 
     const [ tag, setTag ] = useState("")
-    const [ user, setUser ] = useState("")
+    const [ assignedTo, setAssignedTo ] = useState("")
     const [ model, setModel ] = useState("")
     const [ observations, setObservations ] = useState("")
     const [ serialNumber, setSerialNumber ] = useState("")
@@ -95,7 +97,7 @@ export const useCertificateForm = () => {
 
     const resetForm = () => {
         setTag("")
-        setUser("")
+        setAssignedTo("")
         setNewUser("")
         setPreviousUser("")
         setSelectedComputer(null)
@@ -120,8 +122,8 @@ export const useCertificateForm = () => {
             const reassignmentData: Reassignment = {
                 id: reassignmentId,
                 previousUser: selectedComputer?.assignedTo ?? '',
-                updated_at: new Timestamp(1775666075, 312000000),
-                updated_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
+                updated_at: Timestamp.now(),
+                updated_by: { name: user?.displayName ?? '', uid: user?.uid ?? '' },
             }
             
             if (!selectedComputer) {
@@ -144,7 +146,7 @@ export const useCertificateForm = () => {
                 software: selectedSoftware,
                 type: 'reasignacion',
                 computer: computerData,
-                created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
+                created_by: { name: user?.displayName ?? '', uid: user?.uid ?? '' },
                 created_at: Timestamp.now(),
 
             }
@@ -173,7 +175,7 @@ export const useCertificateForm = () => {
 
         const now = Timestamp.now()
 
-        if (!user.trim() || !tag.trim() || !selectedDevice || !selectedBrand || !selectedTagCounter) {
+        if (!assignedTo.trim() || !tag.trim() || !selectedDevice || !selectedBrand || !selectedTagCounter) {
             alert('Por favor completa todos los campos obligatorios')
             return
         }
@@ -183,12 +185,12 @@ export const useCertificateForm = () => {
 
             const computerObject: Computer = {
                 internalTag: confirmedTag,
-                assignedTo: user,
+                assignedTo: assignedTo,
                 brand: selectedBrand,
                 type: selectedDevice,
                 model,
                 serialNumber,
-                created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
+                created_by: { name: user?.displayName ?? '', uid: user?.uid ?? '' },
                 created_at: serverTimestamp() as Timestamp,
             }
 
@@ -197,7 +199,7 @@ export const useCertificateForm = () => {
                 observations,
                 software: selectedSoftware,
                 computer: computerObject,
-                created_by: { name: "Mario Labbé", uid: "Vfog3tRIC4QWPfHSRAGR" },
+                created_by: { name: user?.displayName ?? '', uid: user?.uid ?? '' },
                 created_at: serverTimestamp() as Timestamp,
             }
 
@@ -242,7 +244,7 @@ export const useCertificateForm = () => {
 
     return {
         tag, setTag,
-        user, setUser,
+        assignedTo, setAssignedTo,
         model, setModel,
         devices,
         previewNumber,

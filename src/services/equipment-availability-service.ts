@@ -57,7 +57,7 @@ const setAvailability = async (
 		const ref = doc(db, COLLECTION, internalTag);
 		const snap = await getDoc(ref);
 
-		const data: EquipmentAvailability = {
+		const data = {
 			internalTag,
 			status,
 			updatedAt: Timestamp.now(),

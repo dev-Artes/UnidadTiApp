@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Computer, EquipmentStatus } from "../../../types/entidades";
-import { getAvailability, setAvailability, updateComputer } from "../../../services";
+import { getAvailability, setAvailability, updateComputer, deleteComputer } from "../../../services";
 import { useAuth } from "../../../hooks/useAut";
 
 interface EquipoDetailProps {
@@ -65,6 +65,16 @@ const EquipoDetail = ({ item, onClose, onUpdate }: EquipoDetailProps) => {
 		if (!item.id) return;
 		await updateComputer(item.id, { registrationType: newType });
 		setRegistrationType(newType);
+		onUpdate?.();
+	};
+
+	const handleDelete = async () => {
+		const confirmed = window.confirm(
+			`¿Eliminar el equipo "${item.brand?.name} ${item.model}"?`,
+		);
+		if (!confirmed || !item.id) return;
+		await deleteComputer(item.id);
+		onClose();
 		onUpdate?.();
 	};
 
@@ -183,6 +193,17 @@ const EquipoDetail = ({ item, onClose, onUpdate }: EquipoDetailProps) => {
 								) : (
 									<span className="text-sm text-gray-400">En préstamo</span>
 								)}
+							</div>
+							<div className="border-t border-gray-200" />
+							<div className="flex justify-between items-center">
+								<span className="text-sm text-gray-500">Eliminar</span>
+								<button
+									type="button"
+									onClick={handleDelete}
+									className="text-sm font-medium text-red-600 hover:text-red-800 transition"
+								>
+									Eliminar equipo
+								</button>
 							</div>
 						</div>
 					</div>

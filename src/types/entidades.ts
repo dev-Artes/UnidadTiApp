@@ -17,7 +17,7 @@ export type NewUser = Omit<User, "id">;
 export interface Brand {
 	id: string;
 	name: string;
-	active: boolean;
+	active?: boolean;
 	created_at: Timestamp;
 	created_by: ActionBy;
 	updated_by?: ActionBy;
@@ -32,7 +32,7 @@ export type NewBrand = Omit<Brand, "id">;
 export interface Device {
 	id: string;
 	name: string;
-	active: boolean;
+	active?: boolean;
 	created_at: Timestamp;
 	created_by: ActionBy;
 	updated_by?: ActionBy;
@@ -63,10 +63,12 @@ export interface Computer {
 	internalTag: string;
 	type: Device;
 	assignedTo: string;
-	registrationType: "prestamo" | "entrega" | "reasignacion";
+	registrationType?: "prestamo" | "entrega" | "reasignacion";
 	reassignments?: Reassignment[];
 	created_at: Timestamp;
 	created_by: ActionBy;
+	updated_at?: Timestamp;
+	updated_by?: ActionBy;
 }
 
 export interface ComputerEmbedded {
@@ -76,7 +78,7 @@ export interface ComputerEmbedded {
 	internalTag: string;
 	type: Device;
 	assignedTo: string;
-	registrationType: "prestamo" | "entrega" | "reasignacion";
+	registrationType?: "prestamo" | "entrega" | "reasignacion";
 }
 
 export type CertificateType = "entrega" | "reasignacion";

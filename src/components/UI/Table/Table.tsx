@@ -18,7 +18,7 @@ interface TableProps<T> {
 	onSort?: (field: string) => void;
 }
 
-const Table = <T extends { id: string }>({
+const Table = <T extends { id?: string }>({
 	data,
 	headers,
 	renderCellContent,

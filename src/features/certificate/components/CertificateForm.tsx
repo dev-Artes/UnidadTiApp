@@ -10,7 +10,7 @@ const CertificateForm = () => {
         previewNumber, observations, handleSoftwareChange, 
         setObservations, serialNumber, setSerialNumber, model, 
         setModel, brands, setSelectedBrand, selectedBrand, setSelectedDevice,
-        tag, devices, handleSubmit, selectedDevice,  user, setUser, handleTagTypeChange,
+        tag, devices, handleSubmit, selectedDevice,  assignedTo, setAssignedTo, handleTagTypeChange,
     } = useCertificateForm()
 
     return (
@@ -56,12 +56,12 @@ const CertificateForm = () => {
             <label>Usuario:</label>
             <Input
                 id={'user'}
-                value={user}
+                value={assignedTo}
                 name={'user'}
                 type={'text'}
                 required={true}
                 placeholder={'Nombre del usuario'}
-                handleChange={(e) => setUser(e.target.value)}
+                handleChange={(e) => setAssignedTo(e.target.value)} 
             />
 
 

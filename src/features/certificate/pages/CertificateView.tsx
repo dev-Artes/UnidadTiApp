@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react"
 import { Button, Layout, StateHandler, Table, TableActions } from "../../../components"
 
 import { useCertificate, useCertificatePDF } from "../hooks/"
@@ -17,6 +18,47 @@ const CertificateView = () => {
     
     const { generatePDF } = useCertificatePDF()
     const handleGeneratePDF = ( item: Certificate ) => generatePDF( item )
+
+    const [sortField, setSortField] = useState<string>("")
+    const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc")
+
+    const handleSort = (field: string) => {
+        if (sortField === field) {
+            setSortDirection((d) => (d === "asc" ? "desc" : "asc"));
+        } else {
+            setSortField(field);
+            setSortDirection("asc");
+        }
+    };
+
+    const sortedCertificates = useMemo(() => {
+        if (!sortField) return certificates;
+        return [...certificates].sort((a, b) => {
+            let valA = "";
+            let valB = "";
+            if (sortField === "certificateNumber") {
+                valA = String(a.certificateNumber ?? "");
+                valB = String(b.certificateNumber ?? "");
+            } else if (sortField === "internalTag") {
+                valA = a.computer?.internalTag ?? "";
+                valB = b.computer?.internalTag ?? "";
+            } else if (sortField === "assignedTo") {
+                valA = a.computer?.assignedTo ?? "";
+                valB = b.computer?.assignedTo ?? "";
+            } else if (sortField === "date") {
+                valA = String(a.created_at?.toMillis() ?? 0);
+                valB = String(b.created_at?.toMillis() ?? 0);
+            } else if (sortField === "type") {
+                valA = a.type ?? "";
+                valB = b.type ?? "";
+            }
+            valA = valA.toLowerCase();
+            valB = valB.toLowerCase();
+            return sortDirection === "asc"
+                ? valA.localeCompare(valB)
+                : valB.localeCompare(valA);
+        });
+    }, [certificates, sortField, sortDirection]);
 
     const tabs = ['ALL', ...tagPrefixes.sort(), 'OTROS']
     const tabLabels: Record<string, string> = {
@@ -160,9 +202,12 @@ const CertificateView = () => {
                         error={error}
                     >
                         <Table
-                            data = { certificates }
+                            data = { sortedCertificates }
                             headers = { headersTableConfig.headers }
                             renderCellContent = { renderCell }
+                            sortField={sortField}
+                            sortDirection={sortDirection}
+                            onSort={handleSort}
                         />
                         {
                             editingItem && (

@@ -121,10 +121,11 @@ const EquipoView = () => {
 		header: { id: string; label: string; field: keyof Computer | string },
 	) => {
 		if (header.field === "internalTag") return item.internalTag;
-		if (header.field === "brand") return item.brand?.name;
+		if (header.field === "brand") return item.brand?.name ?? "";
 		if (header.field === "model") return item.model;
 		if (header.field === "serialNumber") return item.serialNumber;
-		if (header.field === "type") return item.type?.name;
+		if (header.field === "type") return item.type?.name ?? "";
+		return "";
 	};
 
 	const activeFilterCount =

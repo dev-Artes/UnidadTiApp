@@ -1,6 +1,6 @@
 
 import { Button, Layout } from "../../../components"
-import SoftwareForm from "../components/SoftawreForm"
+import SoftwareForm from "../components/SoftwareForm"
 
 import { useNavigateTo } from "../../../hooks/useNavigateTo"
 

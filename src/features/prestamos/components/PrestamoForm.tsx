@@ -53,6 +53,7 @@ const PrestamoForm = () => {
 				onChange={(e) => {
 					const found = computers.find((c) => c.id === e.target.value);
 					setComputer(found ?? null);
+					if (found) setInternalTag(found.internalTag);
 				}}
 			>
 				<option value="">Seleccionar equipo</option>

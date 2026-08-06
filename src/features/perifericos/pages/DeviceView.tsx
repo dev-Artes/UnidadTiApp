@@ -40,7 +40,7 @@ const DeviceView = () => {
 									key={device.id}
 									name={device.name}
 									icon={resolveIcon(device.name, deviceIcons)}
-									active={isAdmin ? device.active : true}
+									active={isAdmin ? (device.active ?? true) : true}
 									showStatus={isAdmin}
 									onClick={() =>
 										isAdmin

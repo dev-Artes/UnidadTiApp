@@ -21,7 +21,7 @@ const CertificateEdit = ( { item, onClose, onUpdated }: CertificateEditProps ) =
     const [ loading, setLoading ] = useState( false )
 
     const { 
-        user, setUser,
+        assignedTo, setAssignedTo,
         tag, setTag,
         observations, setObservations,
         model, setModel,
@@ -35,7 +35,7 @@ const CertificateEdit = ( { item, onClose, onUpdated }: CertificateEditProps ) =
 
     useEffect(() => {
         if (item) {
-        setUser(item.computer.assignedTo || "")
+        setAssignedTo(item.computer.assignedTo || "")
         setTag(item.computer.internalTag || "")
         setObservations(item.observations || "")
         setModel(item.computer.model || item.computer.model || "")
@@ -64,7 +64,7 @@ const CertificateEdit = ( { item, onClose, onUpdated }: CertificateEditProps ) =
             computer: {
                 ...item.computer,
                 internalTag: tag,
-                assignedTo: user,
+                assignedTo: assignedTo,
                 type: selectedDevice ?? item.computer.type,
                 brand: selectedBrand ?? item.computer.brand,
                 model,
@@ -108,10 +108,10 @@ const CertificateEdit = ( { item, onClose, onUpdated }: CertificateEditProps ) =
                 <Input
                     id={'user'}
                     name={'user'}
-                    value={user}
+                    value={assignedTo}
                     type={'text'}
                     required={true}
-                    handleChange={(e) => setUser(e.target.value)}
+                    handleChange={(e) => setAssignedTo(e.target.value)} 
                     placeholder={item.computer.assignedTo}
                 />
                 </div>
