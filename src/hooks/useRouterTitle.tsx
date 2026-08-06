@@ -16,10 +16,10 @@ const useRouterTitle = () => {
 				document.title = `Crear nuevo Usuario`;
 				break;
 			case "/certificates":
-				document.title = `Registros`;
+				document.title = `Actas de entrega`;
 				break;
 			case "/certificate/create":
-				document.title = `Crear nuevo Registro`;
+				document.title = `Crear nueva acta`;
 				break;
 			case "/brands":
 				document.title = `Marcas Registradas`;
@@ -30,23 +30,23 @@ const useRouterTitle = () => {
 			case "/brand/edit/:id":
 				document.title = `Editar`;
 				break;
-			case "/device-type":
+			case "/peripherals":
 				document.title = `Periféricos Registrados`;
 				break;
-			case "/device-type/create":
+			case "/peripheral/create":
 				document.title = `Nuevo Periférico`;
+				break;
+			case "/devices":
+				document.title = `Equipos Registrados`;
+				break;
+			case "/devices/create":
+				document.title = `Nuevo Equipo`;
 				break;
 			case "/loans":
 				document.title = `Préstamos Registrados`;
 				break;
 			case "/loan/create":
 				document.title = `Nuevo Préstamo`;
-				break;
-			case "/equipos":
-				document.title = `Equipos Registrados`;
-				break;
-			case "/equipo/create":
-				document.title = `Nuevo Equipo`;
 				break;
 		}
 	}, [location]);

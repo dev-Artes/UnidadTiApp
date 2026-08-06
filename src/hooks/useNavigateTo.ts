@@ -9,8 +9,8 @@ export const useNavigateTo = () => {
 	const toAllBrands = () => navigateTo("/brands");
 	const toNewBrand = () => navigateTo("/brand/create");
 
-	const toAllDevices = () => navigateTo("/devices");
-	const toNewDevice = () => navigateTo("/device/create");
+	const toAllDevices = () => navigateTo("/peripherals");
+	const toNewDevice = () => navigateTo("/peripheral/create");
 
 	const toAllSoftware = () => navigateTo("/softwares");
 	const toNewSoftware = () => navigateTo("/software/create");
@@ -23,8 +23,8 @@ export const useNavigateTo = () => {
 	const toAllLoans = () => navigateTo("/loans");
 	const toNewLoan = () => navigateTo("/loan/create");
 
-	const toAllEquipos = () => navigateTo("/equipos");
-	const toNewEquipo = () => navigateTo("/equipo/create");
+	const toAllEquipos = () => navigateTo("/devices");
+	const toNewEquipo = () => navigateTo("/devices/create");
 
 	return {
 		toNewReassignment,

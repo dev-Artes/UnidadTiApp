@@ -44,9 +44,12 @@ const Sidebar = () => {
 			path: "/",
 		},
 		{
-			label: "Registros",
+			label: "Actas de entrega",
 			icon: <FileText size={20} />,
-			path: "/certificates",
+			submenu: [
+				{ label: "Crear", path: "/certificate/create" },
+				{ label: "Registros", path: "/certificates" },
+			],
 		},
 		{
 			label: "Usuarios",
@@ -61,16 +64,16 @@ const Sidebar = () => {
 			label: "Periféricos",
 			icon: <Monitor size={20} />,
 			submenu: [
-				{ label: "Crear", path: "/device/create" },
-				{ label: "Registros", path: "/devices" },
+				{ label: "Crear", path: "/peripheral/create" },
+				{ label: "Registros", path: "/peripherals" },
 			],
 		},
 		{
 			label: "Equipos",
 			icon: <Laptop size={20} />,
 			submenu: [
-				{ label: "Crear", path: "/equipo/create" },
-				{ label: "Registros", path: "/equipos" },
+				{ label: "Crear", path: "/devices/create" },
+				{ label: "Registros", path: "/devices" },
 			],
 		},
 		{

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { deleteComputer, getComputers } from "../../../services";
+import { getCertificates } from "../../../services";
 import type { Computer } from "../../../types/entidades";
 
 export const useEquipo = () => {
@@ -10,8 +10,19 @@ export const useEquipo = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const data = await getComputers();
-				setEquipos(data);
+				const certificates = await getCertificates();
+				const map = new Map<string, Computer>();
+				for (const cert of certificates) {
+					const tag = cert.computer?.internalTag;
+					if (tag) {
+						map.set(tag, {
+							...cert.computer,
+							registrationType:
+								cert.type === "reasignacion" ? "reasignacion" : "entrega",
+						});
+					}
+				}
+				setEquipos(Array.from(map.values()));
 			} catch (_err) {
 				setError("Error loading equipos");
 			} finally {
@@ -21,10 +32,5 @@ export const useEquipo = () => {
 		fetchData();
 	}, []);
 
-	const deleteEquipoById = async (id: string) => {
-		await deleteComputer(id);
-		setEquipos((prev) => prev.filter((e) => e.id !== id));
-	};
-
-	return { equipos, error, loading, deleteEquipoById };
+	return { equipos, error, loading };
 };

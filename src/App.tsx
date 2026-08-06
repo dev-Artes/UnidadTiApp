@@ -108,7 +108,7 @@ function App() {
 				/>
 
 				<Route
-					path="/devices"
+					path="/peripherals"
 					element={
 						<ProtectedRoute>
 							<DeviceView />
@@ -116,10 +116,27 @@ function App() {
 					}
 				/>
 				<Route
-					path="/device/create"
+					path="/peripheral/create"
 					element={
 						<ProtectedRoute>
 							<CreateDevice />
+						</ProtectedRoute>
+					}
+				/>
+
+				<Route
+					path="/devices"
+					element={
+						<ProtectedRoute>
+							<EquipoView />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path="/devices/create"
+					element={
+						<ProtectedRoute>
+							<CreateEquipo />
 						</ProtectedRoute>
 					}
 				/>
@@ -154,23 +171,6 @@ function App() {
 					element={
 						<ProtectedRoute>
 							<CreatePrestamo />
-						</ProtectedRoute>
-					}
-				/>
-
-				<Route
-					path="/equipos"
-					element={
-						<ProtectedRoute>
-							<EquipoView />
-						</ProtectedRoute>
-					}
-				/>
-				<Route
-					path="/equipo/create"
-					element={
-						<ProtectedRoute>
-							<CreateEquipo />
 						</ProtectedRoute>
 					}
 				/>

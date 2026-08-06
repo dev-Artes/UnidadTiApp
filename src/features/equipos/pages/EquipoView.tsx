@@ -1,13 +1,24 @@
 import { useState } from "react";
-import { Button, Layout, StateHandler, Table } from "../../../components";
+import {
+	Button,
+	ContainerCard,
+	ContainerGrid,
+	Layout,
+	StateHandler,
+	Table,
+} from "../../../components";
 import { useNavigateTo } from "../../../hooks/useNavigateTo";
 import type { Computer } from "../../../types/entidades";
+import EquipoDetail from "../components/EquipoDetail";
 import { useEquipo } from "../hooks/";
 import { headersTableConfig } from "../table.config";
 
 const EquipoView = () => {
-	const { error, loading, equipos, deleteEquipoById } = useEquipo();
+	const { error, loading, equipos } = useEquipo();
 	const { toNewEquipo } = useNavigateTo();
+
+	const [viewMode, setViewMode] = useState<"table" | "grid">("grid");
+	const [detailEquipo, setDetailEquipo] = useState<Computer | null>(null);
 
 	const [filterBrand, setFilterBrand] = useState("");
 	const [filterTag, setFilterTag] = useState("");
@@ -30,15 +41,10 @@ const EquipoView = () => {
 		header: { id: string; label: string; field: keyof Computer | string },
 	) => {
 		if (header.field === "internalTag") return item.internalTag;
-
 		if (header.field === "brand") return item.brand?.name;
-
 		if (header.field === "model") return item.model;
-
 		if (header.field === "serialNumber") return item.serialNumber;
-
 		if (header.field === "type") return item.type?.name;
-
 		if (header.field === "registrationType") {
 			const isPrestamo = item.registrationType === "prestamo";
 			const isReasignacion = item.registrationType === "reasignacion";
@@ -60,25 +66,6 @@ const EquipoView = () => {
 				</span>
 			);
 		}
-
-		if (header.field === "actions") {
-			return (
-				<div className="flex justify-center gap-2">
-					<button
-						type="button"
-						onClick={() => {
-							const confirmed = window.confirm(
-								`¿Eliminar el equipo "${item.brand?.name} ${item.model}"?`,
-							);
-							if (confirmed) deleteEquipoById(item.id!);
-						}}
-						className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 text-sm"
-					>
-						Eliminar
-					</button>
-				</div>
-			);
-		}
 	};
 
 	return (
@@ -86,9 +73,33 @@ const EquipoView = () => {
 			<div className="max-w-7xl mx-auto px-4">
 				<div className="flex justify-between items-center">
 					<h2 className="text-2xl font-bold mb-4">Equipos registrados</h2>
-					<Button variant="green" type="submit" onClick={toNewEquipo}>
-						{"Nuevo equipo"}
-					</Button>
+					<div className="flex gap-2">
+						<button
+							type="button"
+							onClick={() => setViewMode("grid")}
+							className={`px-3 py-1 rounded text-sm ${
+								viewMode === "grid"
+									? "bg-indigo-100 text-indigo-700"
+									: "bg-gray-100 text-gray-600"
+							}`}
+						>
+							Cuadrícula
+						</button>
+						<button
+							type="button"
+							onClick={() => setViewMode("table")}
+							className={`px-3 py-1 rounded text-sm ${
+								viewMode === "table"
+									? "bg-indigo-100 text-indigo-700"
+									: "bg-gray-100 text-gray-600"
+							}`}
+						>
+							Tabla
+						</button>
+						<Button variant="green" type="submit" onClick={toNewEquipo}>
+							Nuevo equipo
+						</Button>
+					</div>
 				</div>
 
 				<div className="flex gap-4 mb-4">
@@ -123,14 +134,38 @@ const EquipoView = () => {
 
 				<div className="bg-white p-6 shadow rounded">
 					<StateHandler loading={loading} error={error}>
-						<Table
-							data={filteredEquipos}
-							headers={headersTableConfig.headers}
-							renderCellContent={renderCell}
-						/>
+						{viewMode === "grid" ? (
+							<ContainerGrid>
+								{filteredEquipos.map((equipo, idx) => {
+									const uniqueKey = equipo.id || `${equipo.internalTag}-${idx}`;
+									return (
+										<ContainerCard
+											key={uniqueKey}
+											name={equipo.internalTag}
+											active={true}
+											showStatus={false}
+											onClick={() => setDetailEquipo(equipo)}
+										/>
+									);
+								})}
+							</ContainerGrid>
+						) : (
+							<Table
+								data={filteredEquipos}
+								headers={headersTableConfig.headers}
+								renderCellContent={renderCell}
+							/>
+						)}
 					</StateHandler>
 				</div>
 			</div>
+
+			{detailEquipo && (
+				<EquipoDetail
+					item={detailEquipo}
+					onClose={() => setDetailEquipo(null)}
+				/>
+			)}
 		</Layout>
 	);
 };
