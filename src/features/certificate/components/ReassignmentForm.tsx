@@ -1,10 +1,26 @@
+import { useMemo } from "react"
 import { Button, Input } from "../../../components"
 
 import { useCertificateForm } from "../hooks/"
 
+const ALLOWED_DEVICE_NAMES = ["notebook", "pc de escritorio", "pc de escritorio aio"]
+
 const ReassignmentForm = () => {
 
     const { previewNumber, handleReassignment, loading, availableSoftware, selectedSoftware, handleSoftwareChange, setSelectedComputer, setPreviousUser, newUser, setNewUser, selectedComputer, computers, setObservations, observations } = useCertificateForm()
+
+    const filteredComputers = useMemo(() => {
+        const map = new Map<string, typeof computers[0]>()
+        for (const c of computers) {
+            const typeName = typeof c.type === "string" ? c.type : c.type?.name?.toLowerCase()
+            if (!typeName || !ALLOWED_DEVICE_NAMES.includes(typeName)) continue
+            const existing = map.get(c.internalTag)
+            if (!existing || (c.created_at?.toMillis() ?? 0) > (existing.created_at?.toMillis() ?? 0)) {
+                map.set(c.internalTag, c)
+            }
+        }
+        return Array.from(map.values()).sort((a, b) => a.internalTag.localeCompare(b.internalTag))
+    }, [computers])
 
     const previousUsers = [
         ...(selectedComputer?.reassignments?.map(r => r.previousUser) ?? []),
@@ -33,15 +49,11 @@ const ReassignmentForm = () => {
                     }}
                 >
                     <option value="">Etiqueta</option>
-                    {computers
-                        .filter(computer => computer.internalTag?.startsWith('PC'))
-                        .sort((a, b) => a.internalTag.localeCompare(b.internalTag))  // 👈 orden alfabético bonus
-                        .map((computer, index) => (
-                            <option key={index} value={computer.internalTag}>
-                                {computer.internalTag}
-                            </option>
-                        ))
-                    }
+                    {filteredComputers.map((computer) => (
+                        <option key={computer.internalTag} value={computer.internalTag}>
+                            {computer.internalTag}
+                        </option>
+                    ))}
                 </select>
             </div>
             <label>Nuevo Usuario:</label>

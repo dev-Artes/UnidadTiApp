@@ -48,6 +48,7 @@ const Sidebar = () => {
 			icon: <FileText size={20} />,
 			submenu: [
 				{ label: "Crear", path: "/certificate/create" },
+				{ label: "Reasignación", path: "/certificate/reassignment" },
 				{ label: "Registros", path: "/certificates" },
 			],
 		},

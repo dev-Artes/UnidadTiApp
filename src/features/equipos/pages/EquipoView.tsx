@@ -22,7 +22,7 @@ const TAG_OPTIONS = [
 	{ value: "PCART", label: "PCART", color: "bg-sky-100 text-sky-700 ring-sky-300" },
 	{ value: "PC-LE", label: "PC-LE", color: "bg-emerald-100 text-emerald-700 ring-emerald-300" },
 	{ value: "PCISUCH", label: "PCISUCH", color: "bg-amber-100 text-amber-700 ring-amber-300" },
-	{ value: "PCMACFM", label: "PCMACFM", color: "bg-violet-100 text-violet-700 ring-violet-300" },
+	{ value: "PCMACF", label: "PCMACF", color: "bg-violet-100 text-violet-700 ring-violet-300" },
 	{ value: "PCMACQ", label: "PCMACQ", color: "bg-fuchsia-100 text-fuchsia-700 ring-fuchsia-300" },
 	{ value: "PCMAPA", label: "PCMAPA", color: "bg-rose-100 text-rose-700 ring-rose-300" },
 	{ value: "PCTNCH", label: "PCTNCH", color: "bg-orange-100 text-orange-700 ring-orange-300" },
@@ -354,6 +354,9 @@ const EquipoView = () => {
 					item={detailEquipo}
 					onClose={() => setDetailEquipo(null)}
 					onUpdate={() => window.location.reload()}
+					onAvailabilityChange={(tag, status) =>
+						setAvailabilityMap((prev) => new Map(prev).set(tag, status))
+					}
 				/>
 			)}
 		</Layout>

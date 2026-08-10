@@ -7,9 +7,10 @@ interface EquipoDetailProps {
 	item: Computer;
 	onClose: () => void;
 	onUpdate?: () => void;
+	onAvailabilityChange?: (internalTag: string, status: EquipmentStatus) => void;
 }
 
-const EquipoDetail = ({ item, onClose, onUpdate }: EquipoDetailProps) => {
+const EquipoDetail = ({ item, onClose, onUpdate, onAvailabilityChange }: EquipoDetailProps) => {
 	const { user } = useAuth();
 	const [status, setStatus] = useState<EquipmentStatus>("disponible");
 	const [registrationType, setRegistrationType] = useState(item.registrationType);
@@ -57,6 +58,7 @@ const EquipoDetail = ({ item, onClose, onUpdate }: EquipoDetailProps) => {
 			name: user.displayName ?? "",
 		});
 		setStatus(nextStatus);
+		onAvailabilityChange?.(item.internalTag, nextStatus);
 	};
 
 	const handleRegistrationChange = async (
@@ -157,6 +159,53 @@ const EquipoDetail = ({ item, onClose, onUpdate }: EquipoDetailProps) => {
 							</div>
 						</div>
 					</div>
+
+					{registrationType === "reasignacion" && item.reassignments && item.reassignments.length > 0 && (
+						<div className="space-y-1">
+							<h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+								Historial de reasignaciones
+							</h4>
+							<div className="bg-gray-50 rounded-xl p-4 space-y-3">
+								{item.reassignments.map((reassignment, index) => {
+									const nextUser =
+										index < item.reassignments!.length - 1
+											? item.reassignments![index + 1].previousUser
+											: item.assignedTo;
+									const date = reassignment.updated_at
+										.toDate()
+										.toLocaleDateString("es-CL");
+									return (
+										<div
+											key={reassignment.id}
+											className="flex justify-between items-center"
+										>
+											<div>
+												<span className="text-sm text-gray-500">
+													Reasignado a{" "}
+												</span>
+												<span className="text-sm font-medium text-gray-900">
+													{nextUser}
+												</span>
+											</div>
+											<div className="text-right">
+												<span className="text-sm text-gray-900">{date}</span>
+												<span className="text-sm text-gray-400 ml-2">
+													por {reassignment.updated_by.name}
+												</span>
+											</div>
+										</div>
+									);
+								})}
+								<div className="border-t border-gray-200" />
+								<div className="flex justify-between items-center">
+									<span className="text-sm text-gray-500">Usuario actual</span>
+									<span className="text-sm font-medium text-gray-900">
+										{item.assignedTo || "—"}
+									</span>
+								</div>
+							</div>
+						</div>
+					)}
 
 					<div className="space-y-1">
 						<h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">

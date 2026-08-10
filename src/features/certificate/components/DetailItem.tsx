@@ -64,6 +64,11 @@ const DatailItem = ({ item, onClose }: CertificateDetailProps) => {
                         <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border ${typeColor}`}>
                             {typeLabel}
                         </span>
+                        {item.created_by?.name && (
+                            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200">
+                                {item.created_by.name}
+                            </span>
+                        )}
                     </div>
 
                     <div className="space-y-1">
