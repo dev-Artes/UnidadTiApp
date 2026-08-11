@@ -83,7 +83,7 @@ const EquipoView = () => {
 		const matchTag =
 			!filterTag || getTagPrefix(e.internalTag) === filterTag;
 		const matchRegistration =
-			!filterRegistration || e.registrationType === filterRegistration;
+			!filterRegistration || (e.originalRegistrationType ?? e.registrationType ?? "entrega") === filterRegistration;
 		const equipoStatus = availabilityMap.get(e.internalTag) ?? "disponible";
 		const matchAvailability =
 			!filterAvailability || equipoStatus === filterAvailability;

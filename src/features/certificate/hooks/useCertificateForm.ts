@@ -133,6 +133,7 @@ export const useCertificateForm = () => {
             const computerData: Computer = {
                 ...selectedComputer,
                 assignedTo: newUser,
+                registrationType: 'reasignacion',
                 reassignments: [
                     ...(selectedComputer?.reassignments ?? []),
                     reassignmentData
@@ -190,6 +191,8 @@ export const useCertificateForm = () => {
                 type: selectedDevice,
                 model,
                 serialNumber,
+                registrationType: 'entrega',
+                originalRegistrationType: 'entrega',
                 created_by: { name: user?.displayName ?? '', uid: user?.uid ?? '' },
                 created_at: serverTimestamp() as Timestamp,
             }

@@ -64,6 +64,7 @@ export interface Computer {
 	type: Device;
 	assignedTo: string;
 	registrationType?: "prestamo" | "entrega" | "reasignacion";
+	originalRegistrationType?: "prestamo" | "entrega" | "reasignacion";
 	reassignments?: Reassignment[];
 	created_at: Timestamp;
 	created_by: ActionBy;

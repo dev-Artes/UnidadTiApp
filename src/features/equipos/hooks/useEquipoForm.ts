@@ -53,6 +53,7 @@ export const useEquipoForm = () => {
 				internalTag: internalTag.trim(),
 				assignedTo: "",
 				registrationType,
+				originalRegistrationType: registrationType,
 				created_at: Timestamp.now(),
 				created_by: {
 					uid: user?.uid ?? "",
