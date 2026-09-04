@@ -6,8 +6,6 @@ export { default as CreateBrand } from './brands/pages/CreateBrand'
 export { default as CreateDevice } from './perifericos/pages/CreateDevice'
 export { default as CreateSoftware } from './software/pages/CreateSoftware'
 export { default as CreateCertificate } from './certificate/pages/CreateCertificate'
-export { default as ReassignmentCertificate } from './certificate/pages/ReassignmentCertificate'
-export { default as CreatePrestamo } from './prestamos/pages/CreatePrestamo'
 export { default as CreateEquipo } from './equipos/pages/CreateEquipo'
 
 // Views

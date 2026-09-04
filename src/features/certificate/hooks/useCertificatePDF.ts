@@ -13,7 +13,7 @@ export const useCertificatePDF = () => {
         const createdAt = certificate.created_at
         const year = dateToYear(createdAt)
         const textDate = fullDateText(createdAt)
-        const { computer, software, certificateNumber, observations } = certificate
+        const { computer, software, certificateNumber, observations, type } = certificate
 
         const resolveValue = (value: unknown): string => {
             if (value === null || value === undefined) return '-'
@@ -30,6 +30,22 @@ export const useCertificatePDF = () => {
 
         const observationText = observations || '-'
 
+        const typeLabels: Record<string, string> = {
+            entrega: 'ACTA DE ENTREGA EQUIPAMIENTO COMPUTACIONAL',
+            reasignacion: 'ACTA DE REASIGNACIÓN EQUIPAMIENTO COMPUTACIONAL',
+            prestamo: 'ACTA DE PRÉSTAMO EQUIPAMIENTO COMPUTACIONAL',
+            periferico: 'ACTA DE ENTREGA PERIFÉRICOS',
+        }
+        const typeBodyTexts: Record<string, string> = {
+            entrega: `Con fecha ${textDate}, mediante la presente acta se oficializa entrega de equipamiento computacional a cargo del usuario/a individualizado posteriormente para su uso institucional.`,
+            reasignacion: `Con fecha ${textDate}, mediante la presente acta se oficializa reasignación de equipamiento computacional al usuario/a individualizado posteriormente para su uso institucional.`,
+            prestamo: `Con fecha ${textDate}, mediante la presente acta se oficializa préstamo de equipamiento computacional a cargo del usuario/a individualizado posteriormente para su uso institucional.`,
+            periferico: `Con fecha ${textDate}, mediante la presente acta se oficializa entrega de periféricos a cargo del usuario/a individualizado posteriormente para su uso institucional.`,
+        }
+
+        const title = typeLabels[type ?? 'entrega'] ?? typeLabels.entrega
+        const bodyText = typeBodyTexts[type ?? 'entrega'] ?? typeBodyTexts.entrega
+
         doc.setFontSize(12)
         doc.setFont('helvetica', 'bold')
         doc.text(`Acta N°${certificateNumber}-${year}`, 160, 15, { align: 'left' })
@@ -41,19 +57,11 @@ export const useCertificatePDF = () => {
             doc.addImage(logo, 'PNG', 15, 5, 30, 25)
 
             doc.setFontSize(16)
-            doc.text(
-                'ACTA DE ENTREGA EQUIPAMIENTO COMPUTACIONAL',
-                105, 40,
-                { align: 'center' }
-            )
+            doc.text(title, 105, 40, { align: 'center' })
 
             doc.setFontSize(12)
             doc.setFont('helvetica', 'normal')
-            doc.text(
-                `Con fecha ${textDate}, mediante la presente acta se oficializa entrega de equipamiento computacional a cargo del usuario/a individualizado posteriormente para su uso institucional.`,
-                15, 50,
-                { maxWidth: 190 }
-            )
+            doc.text(bodyText, 15, 50, { maxWidth: 190 })
 
             const observationLines = doc.splitTextToSize(observationText, 140)
             const observationHeight = observationLines.length * 5

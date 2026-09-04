@@ -82,7 +82,7 @@ export interface ComputerEmbedded {
 	registrationType?: "prestamo" | "entrega" | "reasignacion";
 }
 
-export type CertificateType = "entrega" | "reasignacion";
+export type CertificateType = "entrega" | "reasignacion" | "prestamo" | "periferico";
 
 export interface Certificate {
 	id?: string;

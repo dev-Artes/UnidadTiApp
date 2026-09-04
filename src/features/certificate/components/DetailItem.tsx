@@ -16,11 +16,15 @@ const DatailItem = ({ item, onClose }: CertificateDetailProps) => {
         return item.software.slice(0, maxSoftware)
     }
 
-    const typeLabel = item.type === "reasignacion" ? "Reasignación" : "Entrega"
-    const typeColor =
-        item.type === "reasignacion"
-            ? "bg-violet-100 text-violet-800 border-violet-200"
-            : "bg-sky-100 text-sky-800 border-sky-200"
+    const typeMap: Record<string, { label: string; color: string }> = {
+        entrega: { label: 'Entrega', color: 'bg-sky-100 text-sky-800 border-sky-200' },
+        reasignacion: { label: 'Reasignación', color: 'bg-violet-100 text-violet-800 border-violet-200' },
+        prestamo: { label: 'Préstamo', color: 'bg-amber-100 text-amber-800 border-amber-200' },
+        periferico: { label: 'Periféricos', color: 'bg-emerald-100 text-emerald-800 border-emerald-200' },
+    }
+    const typeInfo = typeMap[item.type ?? ''] ?? typeMap.entrega
+    const typeLabel = typeInfo.label
+    const typeColor = typeInfo.color
 
     return (
         <>

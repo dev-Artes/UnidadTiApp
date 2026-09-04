@@ -10,14 +10,12 @@ import {
 	CreateCertificate,
 	CreateDevice,
 	CreateEquipo,
-	CreatePrestamo,
 	CreateSoftware,
 	CreateUser,
 	DeviceView,
 	EquipoView,
 	Home,
 	PrestamoView,
-	ReassignmentCertificate,
 	SoftwareView,
 	UserView,
 } from "./features";
@@ -44,30 +42,22 @@ function App() {
 					}
 				/>
 
-				<Route
-					path="/certificate/create"
-					element={
-						<ProtectedRoute>
-							<CreateCertificate />
-						</ProtectedRoute>
-					}
-				/>
-				<Route
-					path="/certificate/reassignment"
-					element={
-						<ProtectedRoute>
-							<ReassignmentCertificate />
-						</ProtectedRoute>
-					}
-				/>
-				<Route
-					path="/certificates"
-					element={
-						<ProtectedRoute>
-							<CertificateView />
-						</ProtectedRoute>
-					}
-				/>
+			<Route
+				path="/certificate/create"
+				element={
+					<ProtectedRoute>
+						<CreateCertificate />
+					</ProtectedRoute>
+				}
+			/>
+			<Route
+				path="/certificates"
+				element={
+					<ProtectedRoute>
+						<CertificateView />
+					</ProtectedRoute>
+				}
+			/>
 
 				<Route
 					path="/users"
@@ -158,22 +148,14 @@ function App() {
 					}
 				/>
 
-				<Route
-					path="/loans"
-					element={
-						<ProtectedRoute>
-							<PrestamoView />
-						</ProtectedRoute>
-					}
-				/>
-				<Route
-					path="/loan/create"
-					element={
-						<ProtectedRoute>
-							<CreatePrestamo />
-						</ProtectedRoute>
-					}
-				/>
+			<Route
+				path="/loans"
+				element={
+					<ProtectedRoute>
+						<PrestamoView />
+					</ProtectedRoute>
+				}
+			/>
 			</Routes>
 		</Router>
 	);

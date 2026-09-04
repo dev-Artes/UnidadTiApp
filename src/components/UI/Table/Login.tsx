@@ -114,11 +114,11 @@ export default function LoginLuxury() {
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
-    background: "rgba(255,255,255,0.06)",
-    border: "1px solid rgba(255,255,255,0.10)",
+    background: "rgba(0,0,0,0.04)",
+    border: "1px solid rgba(0,0,0,0.12)",
     borderRadius: "12px",
     padding: "14px 16px",
-    color: "#fff",
+    color: "#1a1a1a",
     fontSize: "15px",
     fontFamily: "system-ui, sans-serif",
     outline: "none",
@@ -129,7 +129,7 @@ export default function LoginLuxury() {
   const labelStyle: React.CSSProperties = {
     display: "block",
     fontSize: "12px",
-    color: "rgba(255,255,255,0.4)",
+    color: "rgba(0,0,0,0.45)",
     marginBottom: "8px",
     fontFamily: "system-ui, sans-serif",
     letterSpacing: "0.05em",
@@ -137,12 +137,12 @@ export default function LoginLuxury() {
 
   const onFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     e.target.style.borderColor = "rgba(180,111,255,0.6)";
-    e.target.style.background = "rgba(180,111,255,0.08)";
+    e.target.style.background = "rgba(180,111,255,0.06)";
   };
 
   const onBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    e.target.style.borderColor = "rgba(255,255,255,0.10)";
-    e.target.style.background = "rgba(255,255,255,0.06)";
+    e.target.style.borderColor = "rgba(0,0,0,0.12)";
+    e.target.style.background = "rgba(0,0,0,0.04)";
   };
 
   const linkStyle: React.CSSProperties = {
@@ -155,18 +155,16 @@ export default function LoginLuxury() {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "linear-gradient(135deg, #1a0533 0%, #0d1b2a 50%, #0a2a1a 100%)",
+      background: "linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 50%, #f8f9fa 100%)",
       display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
       fontFamily: "'Georgia', serif",
       position: "relative",
       overflow: "hidden",
     }}>
       {[
-        { top: "-10%", left: "-5%", size: 500, color: "rgba(180,100,255,0.12)" },
-        { top: "60%", right: "-10%", size: 400, color: "rgba(50,200,150,0.10)" },
-        { top: "30%", left: "40%", size: 300, color: "rgba(100,150,255,0.08)" },
+        { top: "-10%", left: "-5%", size: 500, color: "rgba(180,111,255,0.04)" },
+        { top: "60%", right: "-10%", size: 400, color: "rgba(91,143,255,0.04)" },
+        { top: "30%", left: "40%", size: 300, color: "rgba(180,111,255,0.03)" },
       ].map((blob, i) => (
         <div key={i} style={{
           position: "absolute",
@@ -182,18 +180,42 @@ export default function LoginLuxury() {
         }} />
       ))}
 
+      {/* Columna izquierda - Foto (75%) */}
       <div style={{
-        width: "100%",
-        maxWidth: "420px",
-        margin: "2rem",
-        background: "rgba(255,255,255,0.04)",
-        backdropFilter: "blur(24px)",
-        WebkitBackdropFilter: "blur(24px)",
-        border: "1px solid rgba(255,255,255,0.10)",
-        borderRadius: "24px",
-        padding: "3rem",
+        flex: 3,
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        <img
+          src="/login_photo.jpg"
+          alt="Login"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+      </div>
+
+      {/* Columna derecha - Formulario (25%) */}
+      <div style={{
+        flex: 1,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "2rem",
         position: "relative",
       }}>
+        <div style={{
+          width: "100%",
+          maxWidth: "380px",
+          background: "#ffffff",
+          border: "1px solid rgba(0,0,0,0.06)",
+          borderRadius: "24px",
+          padding: "2.5rem",
+          position: "relative",
+          boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+        }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "2.5rem" }}>
           <div style={{
             width: "36px", height: "36px", borderRadius: "10px",
@@ -201,22 +223,23 @@ export default function LoginLuxury() {
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>
             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth="2">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
             </svg>
           </div>
-          <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", letterSpacing: "0.05em" }}>
-            Espacio Privado
+          <span style={{ color: "rgba(0,0,0,0.5)", fontSize: "13px", letterSpacing: "0.05em" }}>
+            Unidad Ti
           </span>
         </div>
 
         {error && (
           <div style={{
-            background: "rgba(239,68,68,0.15)",
-            border: "1px solid rgba(239,68,68,0.3)",
+            background: "rgba(239,68,68,0.1)",
+            border: "1px solid rgba(239,68,68,0.25)",
             borderRadius: "10px",
             padding: "12px 16px",
             marginBottom: "1.5rem",
-            color: "#fca5a5",
+            color: "#dc2626",
             fontSize: "13px",
             fontFamily: "system-ui, sans-serif",
           }}>
@@ -226,12 +249,12 @@ export default function LoginLuxury() {
 
         {success && (
           <div style={{
-            background: "rgba(34,197,94,0.15)",
-            border: "1px solid rgba(34,197,94,0.3)",
+            background: "rgba(34,197,94,0.1)",
+            border: "1px solid rgba(34,197,94,0.25)",
             borderRadius: "10px",
             padding: "12px 16px",
             marginBottom: "1.5rem",
-            color: "#86efac",
+            color: "#16a34a",
             fontSize: "13px",
             fontFamily: "system-ui, sans-serif",
           }}>
@@ -243,13 +266,13 @@ export default function LoginLuxury() {
         {mode === "login" && (
           <>
             <h1 style={{
-              fontSize: "2rem", fontWeight: 400, color: "#fff",
+              fontSize: "2rem", fontWeight: 400, color: "#1a1a1a",
               margin: "0 0 0.5rem 0", letterSpacing: "-0.02em", lineHeight: 1.2,
             }}>
               Bienvenido<br />de vuelta.
             </h1>
             <p style={{
-              color: "rgba(255,255,255,0.35)", fontSize: "14px",
+              color: "rgba(0,0,0,0.4)", fontSize: "14px",
               margin: "0 0 2rem 0", fontFamily: "system-ui, sans-serif",
             }}>
               Ingresa tus credenciales para continuar
@@ -260,11 +283,11 @@ export default function LoginLuxury() {
               disabled={googleLoading}
               style={{
                 width: "100%",
-                background: googleLoading ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.07)",
-                border: "1px solid rgba(255,255,255,0.13)",
+                background: googleLoading ? "rgba(0,0,0,0.04)" : "rgba(0,0,0,0.05)",
+                border: "1px solid rgba(0,0,0,0.12)",
                 borderRadius: "12px",
                 padding: "14px 16px",
-                color: "#fff",
+                color: "#1a1a1a",
                 fontSize: "14px",
                 fontFamily: "system-ui, sans-serif",
                 cursor: googleLoading ? "not-allowed" : "pointer",
@@ -277,20 +300,20 @@ export default function LoginLuxury() {
               }}
               onMouseEnter={(e) => {
                 if (!googleLoading) {
-                  (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.12)";
-                  (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.22)";
+                  (e.currentTarget as HTMLButtonElement).style.background = "rgba(0,0,0,0.08)";
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(0,0,0,0.18)";
                 }
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.07)";
-                (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.13)";
+                (e.currentTarget as HTMLButtonElement).style.background = "rgba(0,0,0,0.05)";
+                (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(0,0,0,0.12)";
               }}
             >
               {googleLoading ? (
                 <span style={{
                   width: "16px", height: "16px",
-                  border: "2px solid rgba(255,255,255,0.2)",
-                  borderTopColor: "#fff",
+                  border: "2px solid rgba(0,0,0,0.15)",
+                  borderTopColor: "#b46fff",
                   borderRadius: "50%",
                   display: "inline-block",
                   animation: "spin 0.8s linear infinite",
@@ -307,11 +330,11 @@ export default function LoginLuxury() {
             </button>
 
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "1.5rem" }}>
-              <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.08)" }} />
-              <span style={{ color: "rgba(255,255,255,0.25)", fontSize: "12px", fontFamily: "system-ui" }}>
+              <div style={{ flex: 1, height: "1px", background: "rgba(0,0,0,0.08)" }} />
+              <span style={{ color: "rgba(0,0,0,0.35)", fontSize: "12px", fontFamily: "system-ui" }}>
                 o con correo
               </span>
-              <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.08)" }} />
+              <div style={{ flex: 1, height: "1px", background: "rgba(0,0,0,0.08)" }} />
             </div>
 
             <form onSubmit={handleSubmitLogin}>
@@ -355,7 +378,7 @@ export default function LoginLuxury() {
                   style={{
                     position: "absolute", right: "14px", bottom: "14px",
                     background: "none", border: "none", cursor: "pointer",
-                    color: "rgba(255,255,255,0.3)", fontSize: "18px", padding: 0, lineHeight: 1,
+                    color: "rgba(0,0,0,0.3)", fontSize: "18px", padding: 0, lineHeight: 1,
                   }}
                 >
                   {showPass ? "🙈" : "👁"}
@@ -391,7 +414,7 @@ export default function LoginLuxury() {
               </button>
 
               <div style={{ marginTop: "1.5rem", textAlign: "center", fontFamily: "system-ui, sans-serif" }}>
-                <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "13px" }}>
+                <span style={{ color: "rgba(0,0,0,0.4)", fontSize: "13px" }}>
                   ¿No tienes cuenta?{" "}
                   <span style={linkStyle} onClick={() => switchMode("register")}>
                     Regístrate aquí
@@ -406,13 +429,13 @@ export default function LoginLuxury() {
         {mode === "register" && (
           <>
             <h1 style={{
-              fontSize: "2rem", fontWeight: 400, color: "#fff",
+              fontSize: "2rem", fontWeight: 400, color: "#1a1a1a",
               margin: "0 0 0.5rem 0", letterSpacing: "-0.02em", lineHeight: 1.2,
             }}>
               Crear cuenta
             </h1>
             <p style={{
-              color: "rgba(255,255,255,0.35)", fontSize: "14px",
+              color: "rgba(0,0,0,0.4)", fontSize: "14px",
               margin: "0 0 2rem 0", fontFamily: "system-ui, sans-serif",
             }}>
               Completa los datos para registrarte
@@ -483,7 +506,7 @@ export default function LoginLuxury() {
                   onChange={(e) => setShowPass(e.target.checked)}
                   style={{ accentColor: "#b46fff" }}
                 />
-                <label htmlFor="showPass" style={{ color: "rgba(255,255,255,0.4)", fontSize: "13px", fontFamily: "system-ui, sans-serif", cursor: "pointer" }}>
+                <label htmlFor="showPass" style={{ color: "rgba(0,0,0,0.45)", fontSize: "13px", fontFamily: "system-ui, sans-serif", cursor: "pointer" }}>
                   Mostrar contraseñas
                 </label>
               </div>
@@ -515,7 +538,7 @@ export default function LoginLuxury() {
               </button>
 
               <div style={{ marginTop: "1.5rem", textAlign: "center", fontFamily: "system-ui, sans-serif" }}>
-                <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "13px" }}>
+                <span style={{ color: "rgba(0,0,0,0.4)", fontSize: "13px" }}>
                   ¿Ya tienes cuenta?{" "}
                   <span style={linkStyle} onClick={() => switchMode("login")}>
                     Inicia sesión
@@ -530,13 +553,13 @@ export default function LoginLuxury() {
         {mode === "forgot" && (
           <>
             <h1 style={{
-              fontSize: "2rem", fontWeight: 400, color: "#fff",
+              fontSize: "2rem", fontWeight: 400, color: "#1a1a1a",
               margin: "0 0 0.5rem 0", letterSpacing: "-0.02em", lineHeight: 1.2,
             }}>
               Recuperar<br />contraseña
             </h1>
             <p style={{
-              color: "rgba(255,255,255,0.35)", fontSize: "14px",
+              color: "rgba(0,0,0,0.4)", fontSize: "14px",
               margin: "0 0 2rem 0", fontFamily: "system-ui, sans-serif",
             }}>
               Ingresa tu correo y te enviaremos un enlace para restablecerla
@@ -591,6 +614,7 @@ export default function LoginLuxury() {
             </form>
           </>
         )}
+        </div>
       </div>
 
       <style>{`

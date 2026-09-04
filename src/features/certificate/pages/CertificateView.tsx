@@ -82,7 +82,13 @@ const CertificateView = () => {
             return `${item.computer?.assignedTo}`
         }
         if (header.field === 'type') {
-            return item.type === 'reasignacion' ? 'Reasignación' : 'Entrega'
+            const typeMap: Record<string, string> = {
+                entrega: 'Entrega',
+                reasignacion: 'Reasignación',
+                prestamo: 'Préstamo',
+                periferico: 'Periféricos',
+            }
+            return typeMap[item.type ?? ''] ?? 'Entrega'
         }
         if ( header.field === 'date') {
             return `${item.created_at ? fullDateNumber(item.created_at) : ''}`

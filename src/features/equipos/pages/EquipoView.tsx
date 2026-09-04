@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
 import {
 	Button,
 	ContainerCard,
@@ -40,16 +41,21 @@ const EquipoView = () => {
 	const { error, loading, equipos } = useEquipo();
 	const { toNewEquipo } = useNavigateTo();
 	const { user } = useAuth();
+	const location = useLocation();
 
 	const [viewMode, setViewMode] = useState<"table" | "grid">("grid");
 	const [detailEquipo, setDetailEquipo] = useState<Computer | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [availabilityMap, setAvailabilityMap] = useState<Map<string, EquipmentStatus>>(new Map());
-	const [filterAvailability, setFilterAvailability] = useState("");
+	const [filterAvailability, setFilterAvailability] = useState<string>(
+		new URLSearchParams(location.search).get("availability") ?? ""
+	);
 
 	const [filterBrand, setFilterBrand] = useState("");
 	const [filterTag, setFilterTag] = useState("");
-	const [filterRegistration, setFilterRegistration] = useState("");
+	const [filterRegistration, setFilterRegistration] = useState<string>(
+		new URLSearchParams(location.search).get("registration") ?? ""
+	);
 	const [filterSearch, setFilterSearch] = useState("");
 
 	const [sortField, setSortField] = useState<string>("");
@@ -66,6 +72,18 @@ const EquipoView = () => {
 	useEffect(() => {
 		setCurrentPage(1);
 	}, [filterBrand, filterTag, filterRegistration, filterAvailability, filterSearch]);
+
+	useEffect(() => {
+		const params = new URLSearchParams(location.search);
+		const incomingAvailability = params.get("availability");
+		const incomingRegistration = params.get("registration");
+		if (incomingAvailability) {
+			setFilterAvailability(incomingAvailability);
+		}
+		if (incomingRegistration) {
+			setFilterRegistration(incomingRegistration);
+		}
+	}, [location.search]);
 
 	const uniqueBrands = useMemo(() => {
 		const brands = new Set<string>();

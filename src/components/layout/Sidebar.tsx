@@ -48,7 +48,6 @@ const Sidebar = () => {
 			icon: <FileText size={20} />,
 			submenu: [
 				{ label: "Crear", path: "/certificate/create" },
-				{ label: "Reasignación", path: "/certificate/reassignment" },
 				{ label: "Registros", path: "/certificates" },
 			],
 		},
@@ -97,7 +96,6 @@ const Sidebar = () => {
 			label: "Préstamos",
 			icon: <HandCoins size={20} />,
 			submenu: [
-				{ label: "Crear", path: "/loan/create" },
 				{ label: "Registros", path: "/loans" },
 			],
 		},

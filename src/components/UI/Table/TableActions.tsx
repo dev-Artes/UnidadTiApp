@@ -1,5 +1,3 @@
-import Button from "../Button"
-
 interface TableActionsProps {
   onDelete?: () => void
   onEdit?: () => void
@@ -22,7 +20,7 @@ const TableActions = ({
 
       {onEdit && (
         <button
-          className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
+          className="bg-amber-100 text-amber-700 ring-amber-200 px-3 py-1.5 rounded-full text-xs font-semibold border ring-1 transition-all hover:bg-amber-200"
           onClick={onEdit}
         >
           Editar
@@ -31,7 +29,7 @@ const TableActions = ({
       
       {onDetail && (
         <button
-          className="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-600"
+          className="bg-sky-100 text-sky-700 ring-sky-200 px-3 py-1.5 rounded-full text-xs font-semibold border ring-1 transition-all hover:bg-sky-200"
           onClick={onDetail}
         >
           Detalle
@@ -40,7 +38,7 @@ const TableActions = ({
 
       {onDelete && (
         <button
-          className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+          className="bg-rose-100 text-rose-700 ring-rose-200 px-3 py-1.5 rounded-full text-xs font-semibold border ring-1 transition-all hover:bg-rose-200"
           onClick={onDelete}
         >
           Eliminar
@@ -51,7 +49,7 @@ const TableActions = ({
         <button
           onClick={onActive}
           className={`relative inline-flex items-center w-11 h-6 rounded-full transition-colors duration-200
-            ${isActive ? 'bg-green-500' : 'bg-gray-300'}`}
+            ${isActive ? 'bg-emerald-500' : 'bg-gray-300'}`}
         >
           <span
             className={`inline-block w-4 h-4 bg-white rounded-full shadow transform transition-transform duration-200
@@ -61,9 +59,12 @@ const TableActions = ({
       )}
 
       {onPDF && (
-        <Button variant="green" onClick={onPDF} >
-          {'PDF'}
-        </Button>
+        <button
+          className="bg-emerald-100 text-emerald-700 ring-emerald-200 px-3 py-1.5 rounded-full text-xs font-semibold border ring-1 transition-all hover:bg-emerald-200"
+          onClick={onPDF}
+        >
+          PDF
+        </button>
       )}
 
     </div>

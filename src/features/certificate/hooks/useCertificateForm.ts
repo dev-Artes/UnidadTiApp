@@ -8,7 +8,7 @@ import { useSoftware } from "../../software/hooks/useSoftware"
 import { useAuth } from "../../../hooks/useAut"
 
 import type { Brand, Certificate, Computer, Device, Reassignment, SoftwareItem, TagCounter, TagCounterType } from "../../../types/entidades"
-import { addCertificate, addComputer, getBrands, getComputers, getDevices, getLastCertificateNumber, getNextTag, peekNextTag, updateComputer } from "../../../services"
+import { addCertificate, addComputer, addPrestamo, getBrands, getComputers, getDevices, getLastCertificateNumber, getNextTag, peekNextTag, setAvailability, updateComputer } from "../../../services"
 import { useNavigateTo } from "../../../hooks/useNavigateTo"
 
 export const useCertificateForm = () => {
@@ -227,6 +227,128 @@ export const useCertificateForm = () => {
         }
     }
 
+    const handlePrestamo = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        const now = Timestamp.now()
+
+        if (!selectedComputer) {
+            alert('Selecciona un equipo')
+            return
+        }
+
+        if (!assignedTo.trim()) {
+            alert('El usuario es obligatorio')
+            return
+        }
+
+        try {
+            const computerData: Computer = {
+                ...selectedComputer,
+                assignedTo: assignedTo,
+                registrationType: 'prestamo',
+            }
+
+            await updateComputer(selectedComputer.id!, computerData)
+
+            const certificateData: Omit<Certificate, 'id' | 'certificateNumber'> = {
+                type: 'prestamo',
+                observations,
+                software: selectedSoftware,
+                computer: computerData,
+                created_by: { name: user?.displayName ?? '', uid: user?.uid ?? '' },
+                created_at: serverTimestamp() as Timestamp,
+            }
+
+            const newNumber = await addCertificate(certificateData)
+
+            const completeCertificate: Certificate = {
+                ...certificateData,
+                certificateNumber: newNumber,
+                created_at: now,
+            }
+
+            await addPrestamo({
+                computer: computerData,
+                assignedTo: assignedTo,
+                internalTag: selectedComputer.internalTag,
+                status: "disponible",
+                created_by: { name: user?.displayName ?? '', uid: user?.uid ?? '' },
+                created_at: Timestamp.now(),
+            })
+
+            if (user) {
+                await setAvailability(selectedComputer.internalTag, "prestado", {
+                    uid: user.uid,
+                    name: user.displayName ?? "",
+                })
+            }
+
+            generatePDF(completeCertificate)
+            resetForm()
+            toAllCertificates()
+
+        } catch (error) {
+            console.error('Error al guardar préstamo:', error)
+            alert('Ha ocurrido un error en el registro')
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    const handlePeriferico = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        const now = Timestamp.now()
+
+        if (!assignedTo.trim() || !selectedDevice || !selectedBrand) {
+            alert('Por favor completa todos los campos obligatorios')
+            return
+        }
+
+        try {
+            const computerObject: Computer = {
+                internalTag: "-",
+                assignedTo: assignedTo,
+                brand: selectedBrand,
+                type: selectedDevice,
+                model,
+                serialNumber,
+                registrationType: 'entrega',
+                originalRegistrationType: 'entrega',
+                created_by: { name: user?.displayName ?? '', uid: user?.uid ?? '' },
+                created_at: serverTimestamp() as Timestamp,
+            }
+
+            const certificateData: Omit<Certificate, 'id' | 'certificateNumber'> = {
+                type: 'periferico',
+                observations,
+                software: selectedSoftware,
+                computer: computerObject,
+                created_by: { name: user?.displayName ?? '', uid: user?.uid ?? '' },
+                created_at: serverTimestamp() as Timestamp,
+            }
+
+            await addComputer(computerObject)
+            const newNumber = await addCertificate(certificateData)
+
+            const completeCertificate: Certificate = {
+                ...certificateData,
+                certificateNumber: newNumber,
+                created_at: now,
+            }
+
+            generatePDF(completeCertificate)
+            resetForm()
+            toAllCertificates()
+
+        } catch (error) {
+            console.error('Error al guardar periférico:', error)
+        } finally {
+            setLoading(false)
+        }
+    }
+
     const handleSoftwareChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value, checked } = e.target
         const name = e.target.dataset.name ?? value
@@ -259,7 +381,7 @@ export const useCertificateForm = () => {
         selectedBrand, setSelectedBrand,
         selectedDevice, setSelectedDevice,
         handleSubmit, handleTagTypeChange, handleSoftwareChange,
-        tagCounters, handleReassignment,
+        tagCounters, handleReassignment, handlePrestamo, handlePeriferico,
         selectedTagCounter,
         availableSoftware,  
         selectedSoftware,
@@ -268,5 +390,3 @@ export const useCertificateForm = () => {
         previousUser, setPreviewNumber, newUser, setNewUser, setPreviousUser,
     }
 }
-
-
